@@ -25,7 +25,6 @@
     --font-main: 'SF Pro Display', -apple-system, sans-serif;
 }
 
-
 /* =========================
    2. RESET / GLOBAL
 ========================= */
@@ -58,7 +57,6 @@ a {
 ul {
     list-style: none;
 }
-
 
 /* =========================
    3. REUSABLE UTILITIES
@@ -118,7 +116,6 @@ ul {
     color: var(--white);
 }
 
-
 /* =========================
    4. HEADER / TOP NAV
 ========================= */
@@ -126,14 +123,11 @@ ul {
     position: sticky;
     top: 0;
     z-index: 1000;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     height: 85px;
     padding: 0 8%;
-
     background: var(--brand-nav-bg);
     backdrop-filter: blur(12px);
     border-bottom: 2px solid var(--border-light);
@@ -149,11 +143,9 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 42px;
     height: 42px;
     border-radius: 10px;
-
     background: var(--brand-primary);
     color: var(--white);
     box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);
@@ -175,11 +167,9 @@ ul {
     display: inline-block;
     padding: 10px 22px;
     border-radius: 50px;
-
     font-size: 14px;
     font-weight: 700;
     color: var(--brand-dark);
-
     transition: all 0.3s ease;
 }
 
@@ -188,7 +178,6 @@ ul {
     color: var(--white);
 }
 
-/* Mobile Menu Toggle Button */
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -198,7 +187,6 @@ ul {
     cursor: pointer;
 }
 
-
 /* =========================
    5. HERO SECTION
 ========================= */
@@ -206,10 +194,8 @@ ul {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
-
     min-height: calc(100vh - 85px);
     padding: 80px 8%;
-
     background: radial-gradient(circle at top right, var(--brand-light) 0%, var(--bg-canvas) 70%);
 }
 
@@ -242,12 +228,10 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     max-width: 450px;
     height: 450px;
     border-radius: 50% 20% 50% 20%;
-
     background: var(--brand-primary);
 }
 
@@ -255,7 +239,6 @@ ul {
     font-size: 150px;
     color: var(--white);
 }
-
 
 /* =========================
    6. ABOUT SECTION
@@ -290,7 +273,6 @@ ul {
     color: var(--text-soft);
 }
 
-
 /* =========================
    7. ECOSYSTEM SECTION
 ========================= */
@@ -299,7 +281,6 @@ ul {
     background: var(--brand-light);
 }
 
-/* Ecosystem Description */
 .ecosystem-desc {
     max-width: 600px;
     margin: -40px auto 50px;
@@ -318,8 +299,6 @@ ul {
     background: var(--white);
     border-bottom: 4px solid transparent;
     transition: 0.4s ease;
-
-    /* Flexbox layout to align buttons at the bottom */
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -334,12 +313,10 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 65px;
     height: 65px;
     margin-bottom: 30px;
     border-radius: 20px;
-
     background: var(--brand-light);
     color: var(--brand-primary);
     font-size: 26px;
@@ -351,7 +328,6 @@ ul {
     color: var(--brand-dark);
 }
 
-/* Card Paragraphs */
 .topic-card p {
     margin-bottom: 25px;
     color: var(--text-soft);
@@ -359,7 +335,6 @@ ul {
     line-height: 1.5;
 }
 
-/* Aligns the button to the bottom of the flex card */
 .topic-card .learn-more-btn {
     margin-top: auto;
     align-self: flex-start;
@@ -369,7 +344,6 @@ ul {
     display: flex;
     align-items: center;
     gap: 12px;
-
     padding: 12px 0;
     border-bottom: 1px solid #f1f5f9;
     font-size: 15px;
@@ -378,7 +352,6 @@ ul {
 .topic-list li i {
     color: var(--brand-primary);
 }
-
 
 /* =========================
    8. TOOLS SECTION
@@ -398,7 +371,6 @@ ul {
     padding: 40px;
     text-align: center;
     border-radius: 25px;
-
     background: var(--bg-canvas);
     border: 1px solid var(--border-light);
     transition: 0.3s ease;
@@ -420,7 +392,6 @@ ul {
     color: var(--brand-dark);
 }
 
-
 /* =========================
    9. CONTACT SECTION
 ========================= */
@@ -433,7 +404,6 @@ ul {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 60px;
-
     padding: 40px;
     border-radius: 40px;
     background: var(--white);
@@ -490,13 +460,11 @@ ul {
     padding: 20px;
     border: none;
     border-radius: 15px;
-
     background: var(--brand-primary);
     color: var(--white);
     font-weight: 800;
     cursor: pointer;
 }
-
 
 /* =========================
    10. FOOTER
@@ -533,7 +501,6 @@ ul {
     opacity: 0.5;
 }
 
-
 /* =========================
    11. GO TO TOP BUTTON
 ========================= */
@@ -542,15 +509,12 @@ ul {
     right: 32px;
     bottom: 32px;
     z-index: 999;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 48px;
     height: 48px;
     border-radius: 50%;
-
     background: var(--brand-primary);
     color: var(--white);
     box-shadow: var(--top-button-shadow);
@@ -561,7 +525,6 @@ ul {
     background: var(--brand-dark);
     transform: translateY(-5px);
 }
-
 
 /* =========================
    12. RESPONSIVE
@@ -580,11 +543,14 @@ ul {
         font-size: 44px;
     }
 
+    .subpage-hero h1 {
+        font-size: 38px;
+    }
+
     .site-header {
         padding: 0 5%;
     }
 
-    /* Mobile Navigation Setup */
     .main-nav .nav-list {
         display: none;
         position: absolute;
@@ -608,4 +574,66 @@ ul {
     .contact-details div {
         justify-content: center;
     }
+}
+
+/* =========================
+   13. SUBPAGE SPECIFIC STYLES
+========================= */
+.subpage-hero {
+    padding: 100px 8%;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, #064e3b 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.subpage-hero::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: var(--brand-primary);
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(60px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.subpage-hero::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 10%;
+    width: 250px;
+    height: 250px;
+    background: var(--brand-light);
+    border-radius: 50%;
+    opacity: 0.1;
+    filter: blur(60px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.subpage-hero h1 {
+    font-size: 54px;
+    color: var(--white);
+    margin-bottom: 24px;
+    letter-spacing: -1.5px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.subpage-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: var(--brand-light);
+    line-height: 1.8;
+    position: relative;
+    z-index: 2;
+    opacity: 0.9;
 }
