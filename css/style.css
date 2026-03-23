@@ -100,6 +100,24 @@ ul {
     transform: translateY(-3px);
 }
 
+/* Learn More Button Styles */
+.learn-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--brand-dark);
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.3s ease;
+    border: 2px solid var(--brand-primary);
+}
+
+.learn-more-btn:hover {
+    background: var(--brand-primary);
+    color: var(--white);
+}
+
 
 /* =========================
    4. HEADER / TOP NAV
@@ -168,6 +186,16 @@ ul {
 .main-nav .nav-list a:hover {
     background: var(--brand-primary);
     color: var(--white);
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--brand-dark);
+    cursor: pointer;
 }
 
 
@@ -271,6 +299,13 @@ ul {
     background: var(--brand-light);
 }
 
+/* Ecosystem Description */
+.ecosystem-desc {
+    max-width: 600px;
+    margin: -40px auto 50px;
+    color: var(--text-muted);
+}
+
 .topics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -283,6 +318,11 @@ ul {
     background: var(--white);
     border-bottom: 4px solid transparent;
     transition: 0.4s ease;
+
+    /* Flexbox layout to align buttons at the bottom */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .topic-card:hover {
@@ -309,6 +349,20 @@ ul {
     margin-bottom: 20px;
     font-size: 24px;
     color: var(--brand-dark);
+}
+
+/* Card Paragraphs */
+.topic-card p {
+    margin-bottom: 25px;
+    color: var(--text-soft);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Aligns the button to the bottom of the flex card */
+.topic-card .learn-more-btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .topic-list li {
@@ -513,6 +567,7 @@ ul {
    12. RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
+
     .hero-section,
     .about-container,
     .contact-wrapper,
@@ -529,8 +584,25 @@ ul {
         padding: 0 5%;
     }
 
+    /* Mobile Navigation Setup */
     .main-nav .nav-list {
         display: none;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        background: var(--brand-nav-bg);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-nav .nav-list.active {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: block;
     }
 
     .contact-details div {
