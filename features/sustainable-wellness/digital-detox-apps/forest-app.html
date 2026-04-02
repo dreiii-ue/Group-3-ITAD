@@ -16,9 +16,9 @@
       --text: #111827; --muted: #6B7280; --white: #ffffff; --border: #E5E7EB;
     }
     header { background: var(--header-bg); padding: 0 64px; height: 72px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(22,163,74,.1); }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-icon { width: 42px; height: 42px; background: var(--green); border-radius: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .logo-icon img { width: 24px; height: 24px; object-fit: contain; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer; }
+    .logo-icon { width: 60px; height: 60px; background: var(--green); border-radius: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .logo-icon img { width: 34px; height: 34px; object-fit: contain; }
     .logo-name { font-size: 1.25rem; font-weight: 800; color: var(--text); letter-spacing: .5px; }
     nav { display: flex; gap: 36px; list-style: none; }
     nav a { font-size: .9rem; font-weight: 600; color: var(--text); text-decoration: none; transition: color .2s; }
@@ -31,7 +31,7 @@
     .muted { color: var(--muted); }
 
     .app-logo-card { background: var(--white); border-radius: 28px; padding: 48px 56px; box-shadow: 0 8px 40px rgba(0,0,0,.08); display: flex; flex-direction: column; align-items: center; gap: 18px; }
-    .app-icon-box { width: 110px; height: 110px; border-radius: 28px; background: var(--accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(21,128,61,.3); overflow: hidden; }
+    .app-icon-box { width: 150px; height: 150px; border-radius: 28px; background: var(--accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(21,128,61,.3); overflow: hidden; }
     .app-icon-box img { width: 100%; height: 100%; object-fit: contain; border-radius: 28px; }
     .app-name { font-size: 2rem; font-weight: 800; color: var(--accent); }
 
@@ -56,7 +56,7 @@
     .benefit-card p { font-size: .85rem; color: var(--muted); }
 
     .video-section { margin-top: 56px; }
-    .video-wrapper { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.12); background: #000; aspect-ratio: 16/9; }
+    .video-wrapper { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.12); background: #000; aspect-ratio: 16/9; max-width: 700px; margin: 0 auto; }
     .video-wrapper iframe { width: 100%; height: 100%; border: none; display: block; }
 
     .cta-banner { background: var(--footer-bg); border-radius: 24px; padding: 52px 56px; display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 56px; }
@@ -92,7 +92,7 @@
 </head>
 <body id="top">
 <header>
-  <a class="logo" href="#top">
+  <a class="logo" href="#top" title="Go to Home">
     <div class="logo-icon"><img src="../../../assets/images/logo/logo-colored.png" alt="TechFit Logo"></div>
     <span class="logo-name">TECHFIT</span>
   </a>
@@ -103,7 +103,7 @@
 <main>
   <section class="hero">
     <div>
-      <p class="sec-label">Gamifying Presence &amp; Planet Health</p>
+      <p class="sec-label">Gamifying Presence & Planet Health</p>
       <h1>Grow a Forest.<br>Grow Your <span>Focus.</span></h1>
       <p class="muted">Discover how Forest turns your focus sessions into a living game — and your productivity into real trees planted on Earth.</p>
     </div>
@@ -171,7 +171,7 @@
 </main>
 <footer>
   <div class="footer-container">
-    <div class="footer-brand">TECHFIT</div>
+    <div class="footer-brand" title="TECHFIT ECOSYSTEM">TECHFIT</div>
     <ul class="footer-nav">
       <li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Ecosystem</a></li><li><a href="#">Tools</a></li><li><a href="#">Contact</a></li>
     </ul>
