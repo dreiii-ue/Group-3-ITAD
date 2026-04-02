@@ -74,30 +74,47 @@
         .hero h1 span { color: var(--green); }
         .sec-label { color: var(--green); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; margin-bottom: 8px; display: block; }
 
-        /* === LOGO CARD & TOOLTIP === */
+        /* === LOGO CARD === */
         .app-logo-card {
             background: var(--white); border-radius: 28px;
-            padding: 60px 70px; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
-            display: flex; flex-direction: column; align-items: center; gap: 24px;
-            text-decoration: none; position: relative; transition: transform 0.3s ease;
+            padding: 60px 40px; /* Reduced side padding for square */
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+            display: flex; flex-direction: column; align-items: center; 
+            gap: 24px; /* Default gap */
+            position: relative;
         }
-        .app-logo-card:hover { transform: translateY(-5px); }
+
+        /* CLICKABLE LOGO TRIGGER */
+        .logo-trigger {
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+        }
         
-        .app-logo-card::after {
+        .logo-trigger::after {
             content: "Opal Logo";
-            position: absolute; top: 20px; background: #111827; color: #fff;
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            background: #111827; color: #fff;
             padding: 6px 14px; border-radius: 8px; font-size: 0.8rem;
             opacity: 0; transition: 0.3s; pointer-events: none;
+            white-space: nowrap;
         }
-        .app-logo-card:hover::after { opacity: 1; transform: translateY(-5px); }
 
-        /* SQUARE LOGO (0px radius) */
+        /* Hover effects now triggered ONLY by the logo-trigger <a> */
+        .logo-trigger:hover::after { opacity: 1; transform: translate(-50%, -5px); }
+        .logo-trigger:hover .app-icon-box { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+
+        /* === UPDATED SQUARE LOGO === */
         .app-icon-box {
-            width: 200px; height: 200px; border-radius: 0px;
-            background: #111827; display: flex; align-items: center; justify-content: center; overflow: hidden;
+            width: 200px; height: 200px; 
+            border-radius: 0px; /* SHARP SQUARE */
+            background: #111827; display: flex; align-items: center; justify-content: center; 
+            overflow: hidden; transition: all 0.3s ease;
         }
         .app-icon-box img { width: 85%; height: 85%; object-fit: contain; }
-        .app-name { font-size: 2.2rem; font-weight: 800; color: var(--accent); }
+        
+        /* Adjusted margin to push name slightly further down from square */
+        .app-name { font-size: 2.2rem; font-weight: 800; color: var(--accent); margin-top: 5px; }
 
         /* === CONTENT SECTIONS === */
         .content-wrap { padding: 64px; }
@@ -174,12 +191,14 @@
             <p class="muted">Discover how Opal uses deep app-blocking technology to help students take back control of their screen time and achieve uninterrupted work.</p>
         </div>
         <div style="display:flex;justify-content:center;">
-            <a href="../../../assets/images/logo/opal-logo.png" target="brand_view" class="app-logo-card">
-                <div class="app-icon-box">
-                    <img src="../../../assets/images/logo/opal-logo.png" alt="Opal App Logo">
-                </div>
+            <div class="app-logo-card">
+                <a href="../../../assets/images/logo/opal-logo.png" target="brand_view" class="logo-trigger">
+                    <div class="app-icon-box">
+                        <img src="../../../assets/images/logo/opal-logo.png" alt="Opal App Logo">
+                    </div>
+                </a>
                 <div class="app-name">Opal</div>
-            </a>
+            </div>
         </div>
     </section>
 

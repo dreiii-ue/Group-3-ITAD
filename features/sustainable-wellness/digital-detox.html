@@ -7,7 +7,7 @@
     <title>Digital Detox | TechFit</title>
     <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
     
     <style>
         /* === THEME & RESET === */
@@ -17,72 +17,79 @@
 
         :root {
             --brand-primary: #22C55E; 
-            --brand-dark: #14532D;    
+            --brand-dark: #166534;
             --nav-bg: #E1FBEA;        
             --footer-bg: #064E3B;
             --text-muted: #4b5563;
         }
 
-        /* === NAVIGATION === */
+        /* === SMALLER NAVIGATION (80px) === */
         .site-header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 8%; background-color: var(--nav-bg);
-            position: sticky; top: 0; z-index: 1000; height: 85px;
+            position: sticky; top: 0; z-index: 1000; height: 80px;
             border-bottom: 2px solid var(--brand-dark);
         }
 
-        .logo-container { display: flex; align-items: center; gap: 14px; }
+        .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+
+        .logo-img-box {
+            width: 38px; height: 38px;
+            background: var(--brand-primary);
+            border-radius: 8px; 
+            display: flex; align-items: center; justify-content: center;
+            padding: 4px; 
+        }
+
+        .logo-img-box img { width: 100%; height: 100%; object-fit: contain; }
         
-        /* LOGO ZOOM TRIGGER */
+        .logo-text { 
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--brand-dark); 
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-list { display: flex; list-style: none; gap: 8px; align-items: center; }
+        .nav-list li a {
+            color: var(--brand-dark); text-decoration: none; font-weight: 700; font-size: 0.9rem;
+            padding: 10px 15px; border-radius: 50px; transition: 0.3s;
+        }
+        .nav-list li a:hover { background-color: var(--brand-primary); color: #ffffff; }
+
+        /* === APP LOGO HOVER (TEXT ON TOP, NO ZOOM CURSOR) === */
         .logo-zoom-trigger {
             text-decoration: none; position: relative; transition: transform 0.3s ease;
-            cursor: zoom-in; display: inline-block;
+            cursor: pointer; /* Removed zoom-in */
+            display: inline-block;
         }
-        .logo-zoom-trigger:hover { transform: scale(1.1); }
+        .logo-zoom-trigger:hover { transform: scale(1.05); }
         
-        /* CLEAN TOOLTIP (No "View" text) */
         .logo-zoom-trigger::after {
             content: attr(data-tooltip); 
-            position: absolute; bottom: -35px; left: 50%;
+            position: absolute; 
+            top: -45px; /* Tooltip on top */
+            left: 50%;
             transform: translateX(-50%); background: #111827; color: #fff;
-            padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700;
+            padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 700;
             opacity: 0; transition: 0.3s; pointer-events: none; white-space: nowrap;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             text-transform: uppercase; letter-spacing: 0.5px;
         }
-        .logo-zoom-trigger:hover::after { opacity: 1; bottom: -45px; }
-
-        .logo-img-box {
-            width: 45px; height: 45px; background: var(--brand-primary);
-            border-radius: 10px; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        /* Triangle indicator for tooltip */
+        .logo-zoom-trigger::before {
+            content: '';
+            position: absolute; top: -15px; left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px 6px 0 6px;
+            border-style: solid;
+            border-color: #111827 transparent transparent transparent;
+            opacity: 0; transition: 0.3s;
         }
-        .logo-img-box img { width: 28px; height: 28px; object-fit: contain; }
-        
-        .logo-text-link { text-decoration: none; }
-        .logo-text { font-size: 1.6rem; font-weight: 900; color: var(--brand-dark); letter-spacing: 1px; }
-
-        .nav-list { display: flex; list-style: none; gap: 8px; align-items: center; }
-        .nav-list li a {
-            color: var(--brand-dark); text-decoration: none; font-weight: 800; font-size: 0.9rem;
-            padding: 10px 18px; border-radius: 50px; transition: 0.3s;
-        }
-        .nav-list li a:hover { background-color: var(--brand-primary); color: #ffffff; }
-
-        /* === HERO SECTION === */
-        .subpage-hero {
-            background: linear-gradient(135deg, #052e16 0%, #14532d 100%);
-            padding: 110px 8% 70px; text-align: center; color: white;
-        }
-        .subpage-hero h1 { font-size: 3.2rem; font-weight: 900; margin-bottom: 15px; }
-        .subpage-hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 35px; }
-        
-        .back-btn {
-            display: inline-flex; align-items: center; gap: 10px; background: var(--brand-primary);
-            color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none;
-            font-weight: 800; transition: 0.3s;
-        }
-        .back-btn:hover { background-color: white; color: var(--brand-dark); transform: translateX(-5px); }
+        .logo-zoom-trigger:hover::after, 
+        .logo-zoom-trigger:hover::before { opacity: 1; }
 
         /* === APP GRID === */
         .ecosystem-section { background-color: #f0fdf4; padding: 90px 8%; }
@@ -103,12 +110,12 @@
             box-shadow: 0 20px 40px rgba(20, 83, 45, 0.1);
         }
 
-        .app-zoom-wrap { margin-bottom: 30px; }
         .app-logo-box-circle {
             height: 150px; width: 150px;
             border-radius: 50%; overflow: hidden;
             background-color: #fff; border: 1px solid #f3f4f6;
             display: flex; align-items: center; justify-content: center;
+            margin-bottom: 30px; margin-left: auto; margin-right: auto;
         }
         .app-logo-box-circle img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -122,7 +129,21 @@
         }
         .explore-btn:hover { background-color: var(--brand-primary); color: white; }
 
-        /* === FOOTER === */
+        /* === HERO & FOOTER === */
+        .subpage-hero {
+            background: linear-gradient(135deg, #052e16 0%, #14532d 100%);
+            padding: 90px 8% 60px; text-align: center; color: white;
+        }
+        .subpage-hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 15px; }
+        .subpage-hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 35px; }
+        
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 10px; background: var(--brand-primary);
+            color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none;
+            font-weight: 800; transition: 0.3s;
+        }
+        .back-btn:hover { background-color: white; color: var(--brand-dark); transform: translateX(-5px); }
+
         .site-footer { background: var(--footer-bg); color: white; padding: 80px 8% 40px; }
         .footer-grid { display: flex; justify-content: space-between; margin-bottom: 60px; gap: 40px; flex-wrap: wrap; }
         .footer-logo { font-size: 2.2rem; font-weight: 900; color: var(--brand-primary); letter-spacing: 1px; }
@@ -141,27 +162,28 @@
         }
         .go-top-btn:hover { transform: translateY(-8px); background-color: var(--brand-dark); }
 
+        @media (max-width: 1024px) {
+            .site-header { padding: 0 4%; }
+            .topics-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
         @media (max-width: 768px) { 
             .topics-grid { grid-template-columns: 1fr; } 
             .footer-grid { flex-direction: column; text-align: center; } 
             .footer-links { align-items: center; }
-            .site-header { padding: 0 4%; }
+            .main-nav { display: none; }
         }
     </style>
 </head>
 
 <body id="top">
     <header class="site-header">
-        <div class="logo-container">
-            <a href="../../assets/images/logo/logo-white.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="TechFit Logo">
-                <div class="logo-img-box">
-                    <img src="../../assets/images/logo/logo-white.png" alt="TechFit Logo">
-                </div>
-            </a>
-            <a href="../../index.html" class="logo-text-link">
-                <span class="logo-text">TECHFIT</span>
-            </a>
-        </div>
+        <a href="../../index.html" class="logo-link">
+            <div class="logo-img-box">
+                <img src="../../assets/images/logo/logo-white.png" alt="TechFit Logo">
+            </div>
+            <span class="logo-text">TECHFIT</span>
+        </a>
 
         <nav class="main-nav">
             <ul class="nav-list">
@@ -190,7 +212,7 @@
                 
                 <div class="topic-card">
                     <div>
-                        <a href="../../assets/images/logo/forest-logo.png" target="brand_view" class="logo-zoom-trigger app-zoom-wrap" data-tooltip="Forest Logo">
+                        <a href="../../assets/images/logo/forest-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Forest Logo">
                             <div class="app-logo-box-circle">
                                 <img src="../../assets/images/logo/forest-logo.png" alt="Forest Logo">
                             </div>
@@ -203,7 +225,7 @@
 
                 <div class="topic-card">
                     <div>
-                        <a href="../../assets/images/logo/freedom-logo.png" target="brand_view" class="logo-zoom-trigger app-zoom-wrap" data-tooltip="Freedom Logo">
+                        <a href="../../assets/images/logo/freedom-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Freedom Logo">
                             <div class="app-logo-box-circle">
                                 <img src="../../assets/images/logo/freedom-logo.png" alt="Freedom Logo">
                             </div>
@@ -216,7 +238,7 @@
 
                 <div class="topic-card">
                     <div>
-                        <a href="../../assets/images/logo/opal-logo.png" target="brand_view" class="logo-zoom-trigger app-zoom-wrap" data-tooltip="Opal Logo">
+                        <a href="../../assets/images/logo/opal-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Opal Logo">
                             <div class="app-logo-box-circle">
                                 <img src="../../assets/images/logo/opal-logo.png" alt="Opal Logo">
                             </div>
