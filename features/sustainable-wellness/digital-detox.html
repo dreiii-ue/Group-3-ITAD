@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Detox | TechFit</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === THEME & RESET === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #111827; line-height: 1.6; }
+
+        :root {
+            --brand-primary: #22C55E; 
+            --brand-dark: #14532D;    
+            --nav-bg: #E1FBEA;        
+            --footer-bg: #064E3B;
+            --text-muted: #4b5563;
+        }
+
+        /* === NAVIGATION === */
+        .site-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 8%; background-color: var(--nav-bg);
+            position: sticky; top: 0; z-index: 1000; height: 85px;
+            border-bottom: 2px solid var(--brand-dark);
+        }
+
+        .logo-container { display: flex; align-items: center; gap: 14px; }
+        
+        /* LOGO ZOOM TRIGGER */
+        .logo-zoom-trigger {
+            text-decoration: none; position: relative; transition: transform 0.3s ease;
+            cursor: zoom-in; display: inline-block;
+        }
+        .logo-zoom-trigger:hover { transform: scale(1.1); }
+        
+        /* CLEAN TOOLTIP (No "View" text) */
+        .logo-zoom-trigger::after {
+            content: attr(data-tooltip); 
+            position: absolute; bottom: -35px; left: 50%;
+            transform: translateX(-50%); background: #111827; color: #fff;
+            padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700;
+            opacity: 0; transition: 0.3s; pointer-events: none; white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .logo-zoom-trigger:hover::after { opacity: 1; bottom: -45px; }
+
+        .logo-img-box {
+            width: 45px; height: 45px; background: var(--brand-primary);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .logo-img-box img { width: 28px; height: 28px; object-fit: contain; }
+        
+        .logo-text-link { text-decoration: none; }
+        .logo-text { font-size: 1.6rem; font-weight: 900; color: var(--brand-dark); letter-spacing: 1px; }
+
+        .nav-list { display: flex; list-style: none; gap: 8px; align-items: center; }
+        .nav-list li a {
+            color: var(--brand-dark); text-decoration: none; font-weight: 800; font-size: 0.9rem;
+            padding: 10px 18px; border-radius: 50px; transition: 0.3s;
+        }
+        .nav-list li a:hover { background-color: var(--brand-primary); color: #ffffff; }
+
+        /* === HERO SECTION === */
+        .subpage-hero {
+            background: linear-gradient(135deg, #052e16 0%, #14532d 100%);
+            padding: 110px 8% 70px; text-align: center; color: white;
+        }
+        .subpage-hero h1 { font-size: 3.2rem; font-weight: 900; margin-bottom: 15px; }
+        .subpage-hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 35px; }
+        
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 10px; background: var(--brand-primary);
+            color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none;
+            font-weight: 800; transition: 0.3s;
+        }
+        .back-btn:hover { background-color: white; color: var(--brand-dark); transform: translateX(-5px); }
+
+        /* === APP GRID === */
+        .ecosystem-section { background-color: #f0fdf4; padding: 90px 8%; }
+        .topics-grid { 
+            display: grid; grid-template-columns: repeat(3, 1fr); 
+            gap: 35px; max-width: 1300px; margin: 0 auto; 
+        }
+
+        .topic-card {
+            background: #ffffff; border-radius: 35px; padding: 50px 40px;
+            text-align: center; display: flex; flex-direction: column;
+            justify-content: space-between; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-bottom: 6px solid transparent; box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .topic-card:hover { 
+            transform: translateY(-12px); 
+            border-bottom: 6px solid var(--brand-primary);
+            box-shadow: 0 20px 40px rgba(20, 83, 45, 0.1);
+        }
+
+        .app-zoom-wrap { margin-bottom: 30px; }
+        .app-logo-box-circle {
+            height: 150px; width: 150px;
+            border-radius: 50%; overflow: hidden;
+            background-color: #fff; border: 1px solid #f3f4f6;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .app-logo-box-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+        .topic-card h3 { color: var(--brand-dark); font-size: 1.8rem; font-weight: 800; margin-bottom: 18px; }
+        .topic-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 35px; line-height: 1.7; }
+
+        .explore-btn {
+            display: inline-block; padding: 12px 30px; border: 2px solid var(--brand-primary);
+            color: var(--brand-dark); text-decoration: none; border-radius: 12px;
+            font-weight: 800; transition: 0.3s;
+        }
+        .explore-btn:hover { background-color: var(--brand-primary); color: white; }
+
+        /* === FOOTER === */
+        .site-footer { background: var(--footer-bg); color: white; padding: 80px 8% 40px; }
+        .footer-grid { display: flex; justify-content: space-between; margin-bottom: 60px; gap: 40px; flex-wrap: wrap; }
+        .footer-logo { font-size: 2.2rem; font-weight: 900; color: var(--brand-primary); letter-spacing: 1px; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 15px; }
+        .footer-links a { color: #cbd5e1; text-decoration: none; transition: 0.3s; font-weight: 500; }
+        .footer-links a:hover { color: var(--brand-primary); padding-left: 8px; }
+        .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 35px; font-size: 0.95rem; opacity: 0.8; }
+
+        .go-top-btn {
+            position: fixed; bottom: 35px; right: 35px;
+            width: 55px; height: 55px; background-color: var(--brand-primary); 
+            color: white !important; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 1000;
+            transition: 0.3s ease;
+        }
+        .go-top-btn:hover { transform: translateY(-8px); background-color: var(--brand-dark); }
+
+        @media (max-width: 768px) { 
+            .topics-grid { grid-template-columns: 1fr; } 
+            .footer-grid { flex-direction: column; text-align: center; } 
+            .footer-links { align-items: center; }
+            .site-header { padding: 0 4%; }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <header class="site-header">
+        <div class="logo-container">
+            <a href="../../assets/images/logo/logo-white.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="TechFit Logo">
+                <div class="logo-img-box">
+                    <img src="../../assets/images/logo/logo-white.png" alt="TechFit Logo">
+                </div>
+            </a>
+            <a href="../../index.html" class="logo-text-link">
+                <span class="logo-text">TECHFIT</span>
+            </a>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../technology-fitness.html">Tech & Fit</a></li>
+                <li><a href="../health-monitoringtools.html">Health Tools</a></li>
+                <li><a href="../sustainable-wellness.html">Sustainability</a></li>
+                <li><a href="../../index.html#tools">Tools</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="subpage-hero">
+            <h1>Digital Detox</h1>
+            <p>Minimize distractions and reclaim your productivity.</p>
+            <a href="../sustainable-wellness.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Wellness
+            </a>
+        </section>
+
+        <section class="ecosystem-section">
+            <div class="topics-grid">
+                
+                <div class="topic-card">
+                    <div>
+                        <a href="../../assets/images/logo/forest-logo.png" target="brand_view" class="logo-zoom-trigger app-zoom-wrap" data-tooltip="Forest Logo">
+                            <div class="app-logo-box-circle">
+                                <img src="../../assets/images/logo/forest-logo.png" alt="Forest Logo">
+                            </div>
+                        </a>
+                        <h3>Forest</h3>
+                        <p>Plant a tree when you need to focus. If you leave the app to check your phone, your tree withers and dies.</p>
+                    </div>
+                    <a href="digital-detox-apps/forest-app.html" class="explore-btn">Explore App</a>
+                </div>
+
+                <div class="topic-card">
+                    <div>
+                        <a href="../../assets/images/logo/freedom-logo.png" target="brand_view" class="logo-zoom-trigger app-zoom-wrap" data-tooltip="Freedom Logo">
+                            <div class="app-logo-box-circle">
+                                <img src="../../assets/images/logo/freedom-logo.png" alt="Freedom Logo">
+                            </div>
+                        </a>
+                        <h3>Freedom</h3>
+                        <p>The gold standard for blocking distracting apps and websites across all your devices simultaneously.</p>
+                    </div>
+                    <a href="digital-detox-apps/freedom-app.html" class="explore-btn">Explore App</a>
+                </div>
+
+                <div class="topic-card">
+                    <div>
+                        <a href="../../assets/images/logo/opal-logo.png" target="brand_view" class="logo-zoom-trigger app-zoom-wrap" data-tooltip="Opal Logo">
+                            <div class="app-logo-box-circle">
+                                <img src="../../assets/images/logo/opal-logo.png" alt="Opal Logo">
+                            </div>
+                        </a>
+                        <h3>Opal</h3>
+                        <p>Screen time protection that uses focus sessions to help you disconnect from social media automatically.</p>
+                    </div>
+                    <a href="digital-detox-apps/opal-app.html" class="explore-btn">Explore App</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <a href="#top" class="go-top-btn"><i class="fas fa-chevron-up"></i></a>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="footer-logo">TECHFIT</span>
+                <p style="margin-top: 15px; opacity: 0.8; max-width: 320px; line-height: 1.8;">
+                    Leading the charge in digital wellness. We help you use technology as a tool for health, not a distraction from it.
+                </p>
+            </div>
+            
+            <div class="footer-nav">
+                <h4 style="margin-bottom: 25px; color: var(--brand-primary); font-size: 1.2rem;">Quick Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../index.html#about">About Our Mission</a></li>
+                    <li><a href="../sustainable-wellness.html">Sustainability Core</a></li>
+                    <li><a href="../../index.html#contact">Get In Touch</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 TechFit | University of the East CCSS Manila | All Rights Reserved
+        </div>
+    </footer>
+</body>
+</html>
