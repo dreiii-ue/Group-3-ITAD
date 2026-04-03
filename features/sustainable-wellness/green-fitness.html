@@ -19,22 +19,35 @@
             top: 0;
         }
 
+        /* --- Updated App Logo Box for Circles --- */
         .app-logo-box {
             margin-bottom: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 150px; 
-            width: 100%;
+            /* To make a perfect circle, the box must be a square */
+            height: 140px; 
+            width: 140px;
+            /* Center the square box within the card */
+            margin-left: auto;
+            margin-right: auto;
+            /* Make the box itself a circle */
+            border-radius: 50%;
+            overflow: hidden; /* Important: keeps image inside the circle */
+            background-color: #fff; /* Optional: adds background if logo is transparent */
+            border: 1px solid #eee; /* Optional: adds a faint border definition */
         }
 
         .app-logo-box img {
             width: 100%;
             height: 100%;
-            max-width: 140px; 
-            object-fit: contain;
+            /* 'cover' ensures the image fills the circle without stretching, 
+               'contain' ensures the whole logo is visible but might leave gaps. 
+               We'll use cover for the clean circle look from the request. */
+            object-fit: cover; 
         }
 
+        /* --- Rest of your styles remain the same --- */
         .go-top-btn {
             position: fixed;
             bottom: 30px;
@@ -85,9 +98,9 @@
             <ul class="nav-list">
                 <li><a href="../../index.html#home">Home</a></li>
                 <li><a href="../../index.html#about">About</a></li>
-                <li><a href="../../index.html#home">Tech & Fit</a></li>
-                <li><a href="../../index.html#home">Health Tools</a></li>
-                <li><a href="../../index.html#home">Sustainability</a></li>
+                <li><a href="../../features/technology-fitness.html#Tech-&-Fit">Tech & Fit</a></li>
+                <li><a href="../../features/health-monitoringtools.html#Health-Tools">Health Tools</a></li>
+                <li><a href="../../features/sustainable-wellness.html#Sustainability">Sustainability</a></li>
                 <li><a href="../../index.html#tools">Tools</a></li>
                 <li><a href="../../index.html#contact">Contact</a></li>
             </ul>
