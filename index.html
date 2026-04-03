@@ -4,75 +4,172 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechFit | Innovation in Motion</title>
+    <title>TechFit</title>
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --brand-primary: #22C55E;
-            --brand-dark: #166534;
-            --footer-bg: #064E3B;
-            --footer-text: #E2E8F0;
-        }
-
+        /* --- UNIFIED FOOTER STYLES --- */
         .site-footer {
-            background: var(--footer-bg);
-            color: var(--footer-text);
-            padding: 80px 8% 40px;
-            margin-top: 0;
+            background: #064E3B;
+            color: #cbd5e1;
+            padding: 72px 8% 30px;
+            font-family: 'DM Sans', sans-serif;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1.5fr;
-            gap: 60px;
-            margin-bottom: 50px;
+            grid-template-columns: 2.2fr 1fr 1fr 1.2fr;
+            gap: 56px;
+            margin-bottom: 60px;
             text-align: left;
         }
 
-        .footer-brand .logo-text-footer { 
-            font-size: 24px; 
-            font-weight: 900; 
-            color: var(--brand-primary); 
+        /* Branding matches your guide */
+        .footer-wordmark {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
             text-decoration: none;
+        }
+
+        .footer-wordmark-icon {
+            width: 36px;
+            height: 36px;
+            background: #22C55E;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .footer-wordmark-icon img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        .footer-wordmark-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 800; /* Matching the guide font weight */
+            color: #22C55E;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .footer-brand-desc {
+            font-size: 14px;
+            line-height: 1.75;
+            color: #cbd5e1;
+            max-width: 320px;
+            margin-bottom: 28px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social-btn:hover {
+            background: #22C55E;
+            transform: translateY(-3px);
+        }
+
+        .footer-col-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #22C55E;
+            margin-bottom: 25px;
             display: block;
         }
-        
-        .footer-brand p { margin-top: 15px; color: #cbd5e1; line-height: 1.6; font-size: 15px; max-width: 400px; }
 
-        .footer-heading { color: var(--brand-primary); font-size: 16px; font-weight: 700; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
-
-        .footer-links { list-style: none; padding: 0; margin: 0; }
-        .footer-links li { margin-bottom: 12px; }
-        .footer-links a { color: #cbd5e1; text-decoration: none; transition: 0.3s; font-size: 15px; }
-        .footer-links a:hover { color: var(--brand-primary); padding-left: 5px; }
-
-        .social-links { display: flex; gap: 15px; margin-top: 20px; }
-        .social-links a { 
-            width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); 
-            display: flex; align-items: center; justify-content: center; color: #fff; transition: 0.3s; text-decoration: none;
-        }
-        .social-links a:hover { background: var(--brand-primary); color: #fff; transform: translateY(-3px); }
-
-        .footer-bottom { 
-            border-top: 1px solid rgba(255,255,255,0.1); 
-            padding-top: 30px; 
-            text-align: center; 
-            color: #94a3b8; 
-            font-size: 14px; 
+        .footer-nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        @media (max-width: 1100px) {
-            .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+        .footer-nav-links a {
+            font-size: 14px;
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.2s;
         }
 
-        @media (max-width: 600px) {
+        .footer-nav-links a:hover {
+            color: #22C55E;
+            padding-left: 5px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 40px 0 30px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        .footer-bottom-badges {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-badges span {
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom-badges span:hover { color: #22C55E; }
+
+        @media (max-width: 1024px) {
+            .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .social-links { justify-content: center; }
-            .footer-brand p { margin: 15px auto 0; }
+            .footer-wordmark, .footer-socials, .footer-contact-item { justify-content: center; }
+            .footer-brand-desc { margin: 0 auto 28px; }
+            .footer-bottom { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -93,32 +190,25 @@
 
         <nav class="main-nav">
             <ul class="nav-list" id="nav-menu">
-                <li><a href="#home" onclick="document.getElementById('nav-menu').classList.remove('active')">Home</a></li>
-                <li><a href="#about" onclick="document.getElementById('nav-menu').classList.remove('active')">About</a></li>
-                <li><a href="features/technology-fitness.html" onclick="document.getElementById('nav-menu').classList.remove('active')">Tech & Fit</a></li>
-                <li><a href="features/health-monitoringtools.html" onclick="document.getElementById('nav-menu').classList.remove('active')">Health Tools</a></li>
-                <li><a href="features/sustainable-wellness.html" onclick="document.getElementById('nav-menu').classList.remove('active')">Sustainability</a></li>
-                <li><a href="#tools" onclick="document.getElementById('nav-menu').classList.remove('active')">Tools</a></li>
-                <li><a href="#contact" onclick="document.getElementById('nav-menu').classList.remove('active')">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="features/technology-fitness.html">Tech & Fit</a></li>
+                <li><a href="features/health-monitoringtools.html">Health Tools</a></li>
+                <li><a href="features/sustainable-wellness.html">Sustainability</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-
         <section id="home" class="hero-section">
             <div class="hero-content">
                 <span class="section-tag">Innovation in Motion</span>
                 <h1>Smarter Tech, <span>Healthier Life.</span></h1>
-                <p>
-                    Empowering students and professionals to integrate fitness technology
-                    with sustainable wellness habits.
-                </p>
-                <a href="features/technology-fitness.html" class="cta-btn">
-                    Explore Tech & Fit <i class="fas fa-arrow-right"></i>
-                </a>
+                <p>Empowering students and professionals to integrate fitness technology with sustainable wellness habits.</p>
+                <a href="features/technology-fitness.html" class="cta-btn">Explore Technology <i class="fas fa-arrow-right"></i></a>
             </div>
-
             <div class="hero-image">
                 <div class="hero-icon-box">
                     <img src="assets/images/logo/logo-white.png" alt="TechFit Logo">
@@ -128,56 +218,38 @@
 
         <section id="about" class="about-section">
             <h2 class="section-title text-center">Bridging Tech and Vitality</h2>
-
             <div class="about-container">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800"
-                        alt="Active Lifestyle" />
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800" alt="Active Lifestyle" />
                 </div>
-
                 <div class="about-text">
                     <h3>Our Mission</h3>
-                    <p>
-                        TechFit aims to combat sedentary modern lifestyles by providing
-                        centralized biometric monitoring and AI training.
-                    </p>
-
+                    <p>TechFit aims to combat sedentary modern lifestyles by providing centralized biometric monitoring and AI training.</p>
                     <h3>Our Vision</h3>
-                    <p>
-                        A culture where professionals leverage digital tools for long-term
-                        physical sustainability.
-                    </p>
+                    <p>A culture where professionals leverage digital tools for long-term physical sustainability.</p>
                 </div>
             </div>
         </section>
 
-        <section id="ecosystem" class="ecosystem-section">
-            <h2 class="section-title text-center">The TechFit Ecosystem</h2>
-
-            <p class="text-center ecosystem-desc">
-                A connected system of apps, devices, and platforms that work together to provide a seamless experience
-                for the user.
-            </p>
-
+        <section class="ecosystem-section">
+            <h2 class="section-title text-center">Core Pillars</h2>
             <div class="topics-grid">
                 <div class="topic-card">
                     <div class="icon-box"><i class="fas fa-microchip"></i></div>
-                    <h3>Tech & Fit</h3>
-                    <p>Explore how modern technology including fitness apps, smartwatches, and health trackers helps you stay active.</p>
+                    <h3>Tech & Fitness</h3>
+                    <p>Explore how modern technology helps you stay active and efficient.</p>
                     <a href="features/technology-fitness.html" class="learn-more-btn">Learn More</a>
                 </div>
-
                 <div class="topic-card">
                     <div class="icon-box"><i class="fas fa-heartbeat"></i></div>
                     <h3>Health Tools</h3>
-                    <p>Learn how apps and wearable devices support exercise, track workouts, and keep you motivated.</p>
+                    <p>Centralized biometric monitoring to keep your vitals in check.</p>
                     <a href="features/health-monitoringtools.html" class="learn-more-btn">Learn More</a>
                 </div>
-
                 <div class="topic-card">
                     <div class="icon-box"><i class="fas fa-leaf"></i></div>
                     <h3>Sustainability</h3>
-                    <p>Discover how technology promotes long-term wellness and eco-friendly habits for a better environment.</p>
+                    <p>Long-term physical sustainability through smart digital habits.</p>
                     <a href="features/sustainable-wellness.html" class="learn-more-btn">Learn More</a>
                 </div>
             </div>
@@ -206,22 +278,14 @@
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h3>Let's Talk!</h3>
-                    <div class="contact-details">
-                        <div><i class="fas fa-envelope"></i> contact@techfit.ue.edu.ph</div>
-                        <div><i class="fas fa-map-marker-alt"></i> CCSS Dept, UE Manila</div>
-                    </div>
+                    <p><i class="fas fa-envelope"></i> contact@techfit.ue.edu.ph</p>
+                    <p><i class="fas fa-map-marker-alt"></i> CCSS Dept, UE Manila</p>
                 </div>
                 <div class="contact-form">
-                    <form action="#" onsubmit="event.preventDefault(); alert('Form submission simulated successfully!');">
-                        <div class="form-group">
-                            <label for="full-name">Full Name</label>
-                            <input type="text" id="full-name" placeholder="Juan Dela Cruz" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="juan.dc@ue.edu.ph" required />
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
+                    <form onsubmit="event.preventDefault(); alert('Message Sent!');">
+                        <input type="text" placeholder="Full Name" required style="width:100%; margin-bottom:15px; padding:12px; border-radius:6px; border:1px solid #ddd;">
+                        <input type="email" placeholder="Email Address" required style="width:100%; margin-bottom:15px; padding:12px; border-radius:6px; border:1px solid #ddd;">
+                        <button type="submit" class="submit-btn" style="width:100%; padding:12px; font-weight:bold; cursor:pointer;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -230,43 +294,57 @@
 
     <footer class="site-footer">
         <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="#home" class="logo-text-footer">TECHFIT</a>
-                <p>Empowering the modern student with data-driven tools for a balanced lifestyle. We believe that physical health is the ultimate foundation for academic excellence and long-term success.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+            <div>
+                <a href="#home" class="footer-wordmark">
+                    <div class="footer-wordmark-icon">
+                        <img src="assets/images/logo/logo-white.png" alt="TechFit Logo">
+                    </div>
+                    <span class="footer-wordmark-text">TECHFIT</span>
+                </a>
+                <p class="footer-brand-desc">
+                   TechFit is a platform dedicated to helping students choose the right technology & applications to support their fitness and overall health, making it easier to build smarter, healthier habits.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/techfit.ph/?fbclid=IwY2xjawQ8k7BleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeP3KU07hvFWKVltYZZupjtJ5pnaSsz9ifmyX51E5XSzt1o-l8PS7SUcKo2q0_aem_F6XoIQzxp6AhKp3vbM3c_A" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
             <div>
-                <h4 class="footer-heading">Platform</h4>
-                <ul class="footer-links">
+                <span class="footer-col-label">Platform</span>
+                <ul class="footer-nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="features/technology-fitness.html">Tech & Fit</a></li>
-                    <li><a href="#tools">Fitness Tools</a></li>
+                    <li><a href="#tools">Wellness Tools</a></li>
                 </ul>
             </div>
 
             <div>
-                <h4 class="footer-heading">Contact Us</h4>
-                <p style="color: #cbd5e1; line-height: 1.6; font-size: 15px;">
-                    University of the East - CCSS<br>
-                    221 Recto Ave, Sampaloc,<br>
-                    Manila, 1008 Philippines
-                </p>
-                <p style="margin-top: 15px;">
-                    <a href="mailto:wellness@ue.edu.ph" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">wellness@ue.edu.ph</a>
-                </p>
+                <span class="footer-col-label">Features</span>
+                <ul class="footer-nav-links">
+                    <li><a href="features/technology-fitness.html">Tech & Fit</a></li>
+                    <li><a href="features/health-monitoringtools.html">Health Tools</a></li>
+                    <li><a href="features/sustainable-wellness.html">Sustainability</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <span class="footer-col-label">Contact Us</span>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope" style="color:#22C55E;"></i>
+                    <a href="mailto:contact_techfit@gmail.com" style="color:inherit; text-decoration:none;">contact_techfit@gmail.com</a>
+                </div>
             </div>
         </div>
+
+        <div class="footer-divider"></div>
+
         <div class="footer-bottom">
-            <p>&copy; 2026 TechFit | University of the East CCSS Manila. All rights reserved.</p>
+            <p>&copy; 2026 TechFit by Group 3. All rights reserved.</p>
         </div>
     </footer>
 
-    <a href="#home" class="go-top-anchor" title="Go to top">
+    <a href="#home" class="go-top-anchor" style="position:fixed; bottom:25px; right:25px; background:#22C55E; color:white; width:45px; height:45px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
         <i class="fas fa-chevron-up"></i>
     </a>
 
