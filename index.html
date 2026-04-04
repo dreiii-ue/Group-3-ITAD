@@ -14,7 +14,39 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* --- UNIFIED FOOTER STYLES --- */
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img-box {
+            width: 36px;
+            height: 36px;
+            background: #22C55E;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .logo-img-box img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #22C55E;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
         .site-footer {
             background: #064E3B;
             color: #cbd5e1;
@@ -30,7 +62,6 @@
             text-align: left;
         }
 
-        /* Branding matches your guide */
         .footer-wordmark {
             display: flex;
             align-items: center;
@@ -59,7 +90,7 @@
         .footer-wordmark-text {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 24px;
-            font-weight: 800; /* Matching the guide font weight */
+            font-weight: 800;
             color: #22C55E;
             letter-spacing: -0.5px;
             text-transform: uppercase;
@@ -148,18 +179,6 @@
             font-size: 13px;
             color: #94a3b8;
         }
-
-        .footer-bottom-badges {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-bottom-badges span {
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .footer-bottom-badges span:hover { color: #22C55E; }
 
         @media (max-width: 1024px) {
             .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
@@ -279,12 +298,12 @@
                 <div class="contact-info">
                     <h3>Let's Talk!</h3>
                     <p><i class="fas fa-envelope"></i> contact@techfit.ue.edu.ph</p>
-                    <p><i class="fas fa-map-marker-alt"></i> CCSS Dept, UE Manila</p>
                 </div>
                 <div class="contact-form">
                     <form onsubmit="event.preventDefault(); alert('Message Sent!');">
-                        <input type="text" placeholder="Full Name" required style="width:100%; margin-bottom:15px; padding:12px; border-radius:6px; border:1px solid #ddd;">
-                        <input type="email" placeholder="Email Address" required style="width:100%; margin-bottom:15px; padding:12px; border-radius:6px; border:1px solid #ddd;">
+                        <input type="email" placeholder="Email" required style="width:100%; margin-bottom:15px; padding:12px; border-radius:6px; border:1px solid #ddd;">
+                        <input type="tel" placeholder="Phone Number" required style="width:100%; margin-bottom:15px; padding:12px; border-radius:6px; border:1px solid #ddd;">
+                        <input type="text" placeholder="Address" required style="width:100%; margin-bottom:15px; padding:12px; border-radius:6px; border:1px solid #ddd;">
                         <button type="submit" class="submit-btn" style="width:100%; padding:12px; font-weight:bold; cursor:pointer;">Send Message</button>
                     </form>
                 </div>
@@ -302,11 +321,11 @@
                     <span class="footer-wordmark-text">TECHFIT</span>
                 </a>
                 <p class="footer-brand-desc">
-                   TechFit is a platform dedicated to helping students choose the right technology & applications to support their fitness and overall health, making it easier to build smarter, healthier habits.
+                    TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Whether you are a student, a professional, or just starting your fitness journey, our platform provides the digital solutions and guidance needed to stay energized and balanced.
                 </p>
                 <div class="footer-socials">
                     <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/techfit.ph/?fbclid=IwY2xjawQ8k7BleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeP3KU07hvFWKVltYZZupjtJ5pnaSsz9ifmyX51E5XSzt1o-l8PS7SUcKo2q0_aem_F6XoIQzxp6AhKp3vbM3c_A" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
@@ -340,7 +359,7 @@
         <div class="footer-divider"></div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 TechFit by Group 3. All rights reserved.</p>
+            <p>&copy; 2026 Techfit by Seraphit. All rights reserved.</p>
         </div>
     </footer>
 

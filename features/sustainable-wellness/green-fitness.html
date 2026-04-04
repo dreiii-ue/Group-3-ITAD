@@ -7,7 +7,8 @@
     <title>Green Fitness | TechFit</title>
     <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
     
     <style>
         /* === THEME & RESET === */
@@ -34,20 +35,21 @@
         .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 
         .logo-img-box {
-            width: 38px; height: 38px;
+            width: 36px; height: 36px;
             background: var(--brand-primary);
             border-radius: 8px; 
             display: flex; align-items: center; justify-content: center;
-            padding: 4px; 
+            flex-shrink: 0;
         }
 
-        .logo-img-box img { width: 100%; height: 100%; object-fit: contain; }
+        .logo-img-box img { width: 22px; height: 22px; object-fit: contain; }
         
+        /* UPDATED LOGO TEXT ONLY */
         .logo-text { 
-            font-family: 'Inter', sans-serif;
-            font-size: 20px;
-            font-weight: 900;
-            color: var(--brand-dark); 
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #22C55E; 
             letter-spacing: -0.5px;
             text-transform: uppercase;
         }
@@ -128,7 +130,7 @@
         }
         .explore-btn:hover { background-color: var(--brand-primary); color: white; }
 
-        /* === HERO & FOOTER === */
+        /* === HERO === */
         .subpage-hero {
             background: linear-gradient(135deg, #052e16 0%, #14532d 100%);
             padding: 90px 8% 60px; text-align: center; color: white;
@@ -143,13 +145,139 @@
         }
         .back-btn:hover { background-color: white; color: var(--brand-dark); transform: translateX(-5px); }
 
-        .site-footer { background: var(--footer-bg); color: white; padding: 80px 8% 40px; }
-        .footer-grid { display: flex; justify-content: space-between; margin-bottom: 60px; gap: 40px; flex-wrap: wrap; }
-        .footer-logo { font-size: 2.2rem; font-weight: 900; color: var(--brand-primary); letter-spacing: 1px; }
-        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 15px; }
-        .footer-links a { color: #cbd5e1; text-decoration: none; transition: 0.3s; font-weight: 500; }
-        .footer-links a:hover { color: var(--brand-primary); padding-left: 8px; }
-        .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 35px; font-size: 0.95rem; opacity: 0.8; }
+        /* === FOOTER === */
+        .site-footer {
+            background: #064E3B;
+            color: #cbd5e1;
+            padding: 72px 8% 30px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2.2fr 1fr 1fr 1.2fr;
+            gap: 56px;
+            margin-bottom: 60px;
+            text-align: left;
+        }
+
+        .footer-wordmark {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .footer-wordmark-icon {
+            width: 36px;
+            height: 36px;
+            background: #22C55E;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .footer-wordmark-icon img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        .footer-wordmark-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #22C55E;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .footer-brand-desc {
+            font-size: 14px;
+            line-height: 1.75;
+            color: #cbd5e1;
+            max-width: 320px;
+            margin-bottom: 28px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social-btn:hover {
+            background: #22C55E;
+            transform: translateY(-3px);
+        }
+
+        .footer-col-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #22C55E;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .footer-nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-nav-links a {
+            font-size: 14px;
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-nav-links a:hover {
+            color: #22C55E;
+            padding-left: 5px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 40px 0 30px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #94a3b8;
+        }
 
         .go-top-btn {
             position: fixed; bottom: 35px; right: 35px;
@@ -163,13 +291,16 @@
 
         @media (max-width: 1024px) {
             .topics-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
         }
 
         @media (max-width: 768px) { 
             .topics-grid { grid-template-columns: 1fr; } 
-            .footer-grid { flex-direction: column; text-align: center; } 
-            .footer-links { align-items: center; }
             .main-nav { display: none; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-wordmark, .footer-socials, .footer-contact-item { justify-content: center; }
+            .footer-brand-desc { margin: 0 auto 28px; }
+            .footer-bottom { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -281,25 +412,53 @@
 
     <footer class="site-footer">
         <div class="footer-grid">
-            <div class="footer-brand">
-                <span class="footer-logo">TECHFIT</span>
-                <p style="margin-top: 15px; opacity: 0.8; max-width: 320px; line-height: 1.8;">
-                    Leading the charge in digital wellness. We help you use technology as a tool for health, not a distraction from it.
+            <div>
+                <a href="../../index.html" class="footer-wordmark">
+                    <div class="footer-wordmark-icon">
+                        <img src="../../assets/images/logo/logo-white.png" alt="TechFit Logo">
+                    </div>
+                    <span class="footer-wordmark-text">TECHFIT</span>
+                </a>
+                <p class="footer-brand-desc">
+                   TecFit was created to bridge the gap between busy modern lifestyles and physical well-being. Whether you are a student, a professional, or just starting your fitness journey, our platform provides the digital solutions and guidance needed to stay energized and balanced
                 </p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-            
-            <div class="footer-nav">
-                <h4 style="margin-bottom: 25px; color: var(--brand-primary); font-size: 1.2rem;">Quick Navigation</h4>
-                <ul class="footer-links">
+
+            <div>
+                <span class="footer-col-label">Platform</span>
+                <ul class="footer-nav-links">
                     <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../../index.html#about">About Our Mission</a></li>
-                    <li><a href="../sustainable-wellness.html">Sustainability Core</a></li>
-                    <li><a href="../../index.html#contact">Get In Touch</a></li>
+                    <li><a href="../../index.html#about">About Us</a></li>
+                    <li><a href="../../index.html#tools">Wellness Tools</a></li>
                 </ul>
             </div>
+
+            <div>
+                <span class="footer-col-label">Features</span>
+                <ul class="footer-nav-links">
+                    <li><a href="../../features/technology-fitness.html">Tech & Fit</a></li>
+                    <li><a href="../../features/health-monitoringtools.html">Health Tools</a></li>
+                    <li><a href="../../features/sustainable-wellness.html">Sustainability</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <span class="footer-col-label">Contact Us</span>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope" style="color:#22C55E;"></i>
+                    <a href="mailto:contact_techfit@gmail.com" style="color:inherit; text-decoration:none;">contact_techfit@gmail.com</a>
+                </div>
+            </div>
         </div>
+
+        <div class="footer-divider"></div>
+
         <div class="footer-bottom">
-            © 2026 TechFit | University of the East CCSS Manila | All Rights Reserved
+            <p>&copy; 2026 Techfit by Seraphit. All rights reserved.</p>
         </div>
     </footer>
 </body>
