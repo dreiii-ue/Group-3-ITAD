@@ -180,7 +180,6 @@
       font-size: 0.9rem;
     }
 
-    /* UPDATED: Increased Caliber Logo Card Size */
     .app-logo-card {
       background: var(--white);
       border-radius: 28px;
@@ -192,7 +191,7 @@
       gap: 24px;
     }
 
-    /* UPDATED: Increased Caliber Logo Icon Box Size */
+    /* === CLICKABLE IMAGE PREVIEW STYLES === */
     .app-icon-box {
       width: 200px; 
       height: 200px; 
@@ -202,6 +201,15 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      border: 4px solid var(--accent-mid);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+      cursor: zoom-in;
+      text-decoration: none;
+    }
+
+    .app-icon-box:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(21, 128, 61, 0.2);
     }
 
     .app-icon-box img {
@@ -414,16 +422,13 @@
         text-align: center;
         padding-top: 120px;
       }
-
       .back-nav-container {
         left: 24px;
         top: 85px;
       }
-
       .nav-list {
         display: none;
       }
-
       .site-header {
         padding: 0 24px;
       }
@@ -433,7 +438,7 @@
 <body id="top">
 
 <header class="site-header">
-  <a href="../../index.html" class="logo-link">
+  <a href="../../../index.html" class="logo-link">
     <div class="logo-img-box">
       <img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo">
     </div>
@@ -467,9 +472,9 @@
     </div>
     <div style="display:flex;justify-content:center;">
       <div class="app-logo-card">
-        <div class="app-icon-box">
+        <a href="../../../assets/images/caliber-app.png" target="_blank" class="app-icon-box">
           <img src="../../../assets/images/caliber-app.png" alt="Caliber App Logo">
-        </div>
+        </a>
         <div class="app-name">Caliber</div>
       </div>
     </div>
@@ -564,7 +569,7 @@
         <h2>Ready to Master Your Strength?</h2>
         <p>Join the TechFit community and start your data-driven transformation today.</p>
       </div>
-      <a href="https://caliberstrong.com/" target="_blank" class="btn-white">Download Caliber Free <i class="fas fa-arrow-right"></i></a>
+      <a href="https://caliberstrong.com/" target="_blank" class="btn-white">Visit Caliber <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 </main>
@@ -573,11 +578,11 @@
   <div class="footer-container">
     <div class="footer-brand">TECHFIT</div>
     <ul class="footer-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Ecosystem</a></li>
-      <li><a href="#">Tools</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../index.html#about">About</a></li>
+      <li><a href="../../../features/technology-fitness.html">Ecosystem</a></li>
+      <li><a href="../../../index.html#tools">Tools</a></li>
+      <li><a href="../../../index.html#contact">Contact</a></li>
     </ul>
     <div></div>
   </div>
