@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFit | Breethe</title>
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon.ico">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #F5F5FC;
+            color: #111827;
+            line-height: 1.6;
+        }
+
+        :root {
+            --bg: #F5F5FC;
+            --header-bg: #D1FAE5;
+            --footer-bg: #064E3B;
+            --green: #22C55E;
+            --green-hover: #166534;
+            --accent: #15803D;
+            --accent-light: #DCFCE7;
+            --accent-mid: #BBF7D0;
+            --text: #111827;
+            --muted: #6B7280;
+            --white: #ffffff;
+            --border: #E5E7EB;
+            --brand-green: #166534;
+            --brand-primary: #22C55E;
+        }
+
+        .site-header {
+            background: var(--header-bg);
+            padding: 0 64px;
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--brand-green);
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-img-box {
+            width: 42px;
+            height: 42px;
+            background: var(--brand-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img-box img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--brand-primary);
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            margin-left: 5px;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-list a {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--brand-green);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .nav-list a:hover {
+            background-color: var(--brand-primary);
+            color: white;
+        }
+
+        .back-nav-container {
+            position: absolute;
+            top: 100px;
+            left: 64px;
+            z-index: 10;
+        }
+
+        .back-btn {
+            background-color: var(--brand-primary);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: white;
+            color: var(--brand-green);
+            transform: translateX(-5px);
+        }
+
+        .hero {
+            background: var(--header-bg);
+            padding: 100px 64px 72px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--brand-primary);
+        }
+
+        .sec-label {
+            color: var(--brand-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .app-logo-card {
+            background: var(--white);
+            border-radius: 28px;
+            padding: 60px 70px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .app-icon-box {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .app-icon-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(34, 197, 94, 0.2);
+            border-color: var(--brand-primary);
+        }
+
+        .app-icon-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .app-icon-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .app-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .content-wrap {
+            padding: 64px 64px 0;
+        }
+
+        .sec-title {
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .sec-description {
+            color: var(--muted);
+            margin-bottom: 32px;
+        }
+
+        .steps-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .step-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: 26px 28px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .step-num {
+            width: 38px;
+            height: 38px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 32px;
+            margin-bottom: 48px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px 26px;
+            box-shadow: 0 3px 16px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--accent);
+            transition: 0.3s;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            background: var(--brand-primary);
+            color: white;
+        }
+
+        .benefit-card h4 {
+            color: var(--brand-green);
+            margin-bottom: 10px;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+            background: #000;
+            aspect-ratio: 16/9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .cta-banner {
+            background: var(--brand-green);
+            border-radius: 24px;
+            padding: 52px 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            margin: 56px 0 64px 0;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .cta-banner:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-banner h2 {
+            color: white;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .cta-banner p {
+            color: white;
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: var(--brand-green);
+            font-weight: 700;
+            padding: 13px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: scale(1.05);
+            background: var(--accent-light);
+        }
+
+        .site-footer {
+            background: #064E3B;
+            color: #cbd5e1;
+            padding: 72px 8% 30px;
+            font-family: 'DM Sans', sans-serif;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2.2fr 1fr 1fr 1.2fr;
+            gap: 56px;
+            margin-bottom: 60px;
+            text-align: left;
+        }
+
+        .footer-wordmark {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        .footer-wordmark-icon {
+            width: 36px;
+            height: 36px;
+            background: #22C55E;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-wordmark-icon img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        .footer-wordmark-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #22C55E;
+            text-transform: uppercase;
+        }
+
+        .footer-brand-desc {
+            font-size: 14px;
+            line-height: 1.75;
+            color: #cbd5e1;
+            max-width: 320px;
+            margin-bottom: 28px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-social-btn:hover {
+            background: #22C55E;
+            transform: translateY(-3px);
+        }
+
+        .footer-col-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #22C55E;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .footer-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-nav-links a {
+            font-size: 14px;
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-nav-links a:hover {
+            color: #22C55E;
+            padding-left: 5px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .footer-contact-item a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 40px 0 30px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #94a3b8;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .go-top-btn {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            width: 55px;
+            height: 55px;
+            background-color: var(--brand-primary);
+            color: white !important;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .go-top-btn:hover {
+            transform: translateY(-8px);
+            background-color: var(--brand-green);
+        }
+
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 120px;
+            }
+
+            .steps-list,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-list {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-wordmark,
+            .footer-socials,
+            .footer-contact-item {
+                justify-content: center;
+            }
+
+            .footer-brand-desc {
+                margin: 0 auto 28px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .back-nav-container {
+                left: 24px;
+                top: 90px;
+            }
+
+            .hero {
+                padding: 100px 24px 60px;
+            }
+
+            .content-wrap {
+                padding: 40px 24px 0;
+            }
+
+            .cta-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 36px 24px;
+                margin-bottom: 40px;
+            }
+
+            .app-logo-card {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <header class="site-header">
+        <a href="../../../index.html" class="logo-link">
+            <div class="logo-img-box"><img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo"></div>
+            <span class="logo-text">TECHFIT</span>
+        </a>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../../../index.html#about">About</a></li>
+                <li><a href="../../technology-fitness.html">Tech & Fit</a></li>
+                <li><a href="../../health-monitoringtools.html">Health Tools</a></li>
+                <li><a href="../../sustainable-wellness.html">Sustainability</a></li>
+                <li><a href="../../../index.html#tools">Tools</a></li>
+                <li><a href="../../../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="back-nav-container">
+            <a href="mindfull-apps.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+        </div>
+
+        <section class="hero">
+            <div>
+                <p class="sec-label">De-stress & Sleep</p>
+                <h1>Your Inner <span>Peace Coach.</span></h1>
+                <p class="muted">Practical tools to help you de-stress, sleep better, and stay centered in modern life
+                    so you can excel both personally and academically.</p>
+            </div>
+            <div style="display:flex;justify-content:center;">
+                <div class="app-logo-card">
+                    <a href="https://breethe.com" target="_blank" class="app-icon-box">
+                        <img src="../../../assets/images/logo/breethe-logo.png" alt="Breethe Logo">
+                    </a>
+                    <div class="app-name">Breethe</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-wrap">
+            <p class="sec-label">What is Breethe?</p>
+            <h2 class="sec-title">Practical Tools for Modern Life</h2>
+            <p class="sec-description"><strong>Breethe provides meditation and sleep tools for real-life situations.
+                    Whether you're feeling overwhelmed, sleepless, or simply need a break, Breethe guides you back to
+                    balance.</strong></p>
+
+            <p class="sec-label">How To Use Breethe</p>
+            <h2 class="sec-title">Get Started in 6 Simple Steps</h2>
+            <div class="steps-list">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <div>
+                        <h4>Download Breethe</h4>
+                        <p class="muted small">Find the Breethe app in your device's application market.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <div>
+                        <h4>Answer the Quiz</h4>
+                        <p class="muted small">Take the personalization quiz to let the app know your pain points.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <div>
+                        <h4>Find a Track</h4>
+                        <p class="muted small">Look for tracks titled specifically for real-world situations.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <div>
+                        <h4>Follow a Program</h4>
+                        <p class="muted small">Enroll in a multi-day masterclass to deeply learn new habits.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">5</div>
+                    <div>
+                        <h4>Relax & Unwind</h4>
+                        <p class="muted small">Engage with hypnotherapy or deep relaxation sessions before bed.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">6</div>
+                    <div>
+                        <h4>Review Progress</h4>
+                        <p class="muted small">Check your statistics to see how your mental fitness is improving.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin: 56px 0; border: 0; height: 1px; background: var(--border);"></div>
+
+            <div class="video-section">
+                <p class="sec-label">VIDEO PREVIEW</p>
+                <h2 class="sec-title">Overview of Breethe</h2>
+                <div class="video-wrapper">
+                    <iframe width="1071" height="602" src="https://www.youtube.com/embed/1zvqwiXlDps"
+                        title="Inside Beautiful Outside Beautiful Meditation | Breethe" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <p class="sec-label" style="margin-top: 56px;">Key Features</p>
+            <h2 class="sec-title">Why Students Use Breethe?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-solid fa-street-view"></i></div>
+                    <h4>Real-Life Scenarios</h4>
+                    <p class="muted small">Meditations titled for exactly what you're feeling (e.g., 'Overwhelmed by
+                        exams').</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-solid fa-yin-yang"></i></div>
+                    <h4>Hypnotherapy</h4>
+                    <p class="muted small">Deep subconscious programming to help break bad academic habits.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h4>Masterclasses</h4>
+                    <p class="muted small">Learn the 'why' behind anxiety and stress from renowned wellness experts.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-solid fa-cloud-moon"></i></div>
+                    <h4>Sleep Sounds</h4>
+                    <p class="muted small">Customizable background noise combinations to ensure deep rest.</p>
+                </div>
+            </div>
+
+            <div class="cta-banner">
+                <div>
+                    <h2>Ready to Breathe Easier?</h2>
+                    <p>Access the tools you need to manage your stress and improve your sleep today.</p>
+                </div>
+                <a href="https://breethe.com" target="_blank" class="btn-white">Visit Breethe <i
+                        class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <a href="../../../index.html" class="footer-wordmark">
+                    <div class="footer-wordmark-icon"><img src="../../../assets/images/logo/logo-white.png"
+                            alt="TechFit Logo"></div>
+                    <span class="footer-wordmark-text">TECHFIT</span>
+                </a>
+                <p class="footer-brand-desc">TechFit was created to bridge the gap between busy modern lifestyles and
+                    physical well-being. Whether you are a student, a professional, or just starting your fitness
+                    journey, our platform provides the digital solutions and guidance needed to stay energized and
+                    balanced.</p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn"
+                        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <span class="footer-col-label">Platform</span>
+                <ul class="footer-nav-links">
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../../index.html#about">About Us</a></li>
+                    <li><a href="../../../index.html#tools">Wellness Tools</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <span class="footer-col-label">Features</span>
+                <ul class="footer-nav-links">
+                    <li><a href="../../technology-fitness.html">Tech & Fit</a></li>
+                    <li><a href="../../health-monitoringtools.html">Health Tools</a></li>
+                    <li><a href="../../sustainable-wellness.html">Sustainability</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <span class="footer-col-label">Connect</span>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope" style="color:#22C55E;"></i>
+                    <a href="mailto:techfit.itad@gmail.com">techfit.itad@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top-btn"><i class="fas fa-chevron-up"></i></a>
+</body>
+
+</html>
