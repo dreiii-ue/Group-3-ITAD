@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechFit | Opal</title>
+    <title>TechFit | Flipd</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -20,6 +20,7 @@
             --footer-bg: #064E3B; /* Deep Forest Green */
             --green: #16A34A;
             --green-hover: #22C55E; /* Sprout Green */
+            --brand-primary: #22C55E;
             --accent: #15803D;
             --accent-light: #DCFCE7;
             --text: #111827;
@@ -64,6 +65,7 @@
             padding: 12px 24px; border-radius: 10px; font-weight: 800;
             display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
         }
+        .back-btn:hover { background-color: var(--brand-green); transform: translateX(-5px); }
 
         .hero {
             background: var(--header-bg); padding: 120px 64px 80px;
@@ -84,90 +86,98 @@
 
         .logo-trigger { text-decoration: none; position: relative; display: inline-block; }
         .logo-trigger::after {
-            content: "Opal Logo";
+            content: "Flipd Logo";
             position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
             background: #111827; color: #fff;
             padding: 8px 16px; border-radius: 8px; font-size: 0.8rem; font-weight: 700;
             opacity: 0; transition: 0.3s; pointer-events: none; white-space: nowrap;
         }
         .logo-trigger:hover::after { opacity: 1; transform: translate(-50%, -5px); }
-        .logo-trigger:hover .app-icon-box { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(22, 101, 52, 0.12); }
+        .logo-trigger:hover .app-icon-box { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(22, 101, 52, 0.2); }
 
         .app-icon-box {
             width: 200px; height: 200px; border-radius: 50%;
-            background: #f1f5f9; display: flex; align-items: center; justify-content: center;
+            background: #f8fafc; display: flex; align-items: center; justify-content: center;
             overflow: hidden; border: 1px solid var(--border); transition: 0.4s;
         }
-        .app-icon-box img { width: 80%; height: 80%; object-fit: contain; }
+        .app-icon-box img { width: 100%; height: 100%; object-fit: cover; }
         .app-name { font-size: 2.2rem; font-weight: 900; color: var(--brand-green); }
 
         /* === CONTENT SECTIONS === */
         .content-wrap { padding: 80px 64px; max-width: 1300px; margin: 0 auto; }
         .sec-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--brand-green); margin-bottom: 16px; }
-        
+        .sec-description { font-size: 1.1rem; color: var(--muted); max-width: 800px; margin-bottom: 40px; }
+
         .steps-list { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
         .step-card {
             background: var(--white); border-radius: 20px; padding: 30px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); display: flex; gap: 20px; transition: 0.3s;
         }
+        .step-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
         .step-num {
             width: 44px; height: 44px; background: var(--brand-green);
             border-radius: 12px; display: flex; align-items: center; justify-content: center;
-            font-weight: 800; color: #fff; flex-shrink: 0;
+            font-weight: 800; color: #fff; flex-shrink: 0; font-size: 1.2rem;
         }
+
+        .video-wrapper { border-radius: 24px; overflow: hidden; box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15); aspect-ratio: 16/9; max-width: 900px; margin: 50px auto; background: #000; }
+        .video-wrapper iframe { width: 100%; height: 100%; border: none; }
 
         .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
         .benefit-card { background: var(--white); border-radius: 24px; padding: 40px 30px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); transition: 0.3s; }
         .benefit-card:hover { background: var(--accent-light); }
         .benefit-icon { width: 50px; height: 50px; border-radius: 14px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; color: var(--brand-green); font-size: 1.4rem; }
 
-        .video-wrapper {
-            width: 100%; max-width: 900px; border-radius: 24px; overflow: hidden;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15); aspect-ratio: 16/9; background: #000; margin: 50px auto;
-        }
-        .video-wrapper iframe { width: 100%; height: 100%; border: none; }
-
         .cta-banner {
             background: var(--brand-green); border-radius: 30px; padding: 60px;
             display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-top: 80px; color: white;
         }
         .cta-banner h2 { font-size: 2rem; font-weight: 800; margin-bottom: 10px; }
-        .btn-white { background: #fff; color: var(--brand-green); font-weight: 800; padding: 16px 32px; border-radius: 14px; text-decoration: none; transition: 0.3s; }
+        .btn-white { background: #fff; color: var(--brand-green); font-weight: 800; padding: 16px 32px; border-radius: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
+        .btn-white:hover { background: var(--header-bg); transform: translateX(5px); }
 
-        /* === FOOTER STYLES === */
-        .site-footer { background: var(--footer-bg); padding: 80px 64px 40px; color: white; margin-top: 80px; }
+        /* === FOOTER STYLING === */
+        .site-footer { background: var(--footer-bg); color: white; padding: 80px 64px 40px; margin-top: 80px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 60px; }
         
-        .footer-wordmark { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-bottom: 24px; }
+        .footer-wordmark { display: flex; align-items: center; gap: 15px; text-decoration: none; margin-bottom: 25px; }
         .footer-wordmark-icon img { width: 40px; height: 40px; object-fit: contain; }
         .footer-wordmark-text { font-size: 1.5rem; font-weight: 900; color: white; letter-spacing: 1px; }
-        
-        .footer-brand-desc { color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; max-width: 380px; }
-        .footer-socials { display: flex; gap: 12px; }
-        .footer-social-btn { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: 0.3s; }
-        .footer-social-btn:hover { background: var(--green-hover); transform: translateY(-3px); }
 
-        .footer-col-label { display: block; font-weight: 800; text-transform: uppercase; color: var(--green-hover); font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 24px; }
-        .footer-nav-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-        .footer-nav-links a { color: rgba(255, 255, 255, 0.8); text-decoration: none; font-weight: 600; transition: 0.3s; }
-        .footer-nav-links a:hover { color: var(--green-hover); padding-left: 4px; }
+        .footer-brand-desc { color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; line-height: 1.8; margin-bottom: 30px; max-width: 400px; }
+        .footer-socials { display: flex; gap: 15px; }
+        .footer-social-btn { width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; transition: 0.3s; }
+        .footer-social-btn:hover { background: var(--green-hover); transform: translateY(-5px); }
 
-        .footer-contact-item { display: flex; align-items: center; gap: 12px; color: rgba(255, 255, 255, 0.8); font-weight: 600; }
-        .footer-divider { height: 1px; background: rgba(255, 255, 255, 0.1); margin-bottom: 40px; }
+        .footer-col-label { display: block; color: var(--green-hover); font-weight: 800; font-size: 0.85rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-nav-links { list-style: none; }
+        .footer-nav-links li { margin-bottom: 15px; }
+        .footer-nav-links a { color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: 0.3s; font-weight: 600; }
+        .footer-nav-links a:hover { color: white; padding-left: 8px; }
+
+        .footer-contact-item { display: flex; align-items: center; gap: 12px; color: rgba(255, 255, 255, 0.8); }
+        .footer-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 40px; }
         .footer-bottom { text-align: left; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); }
 
-        .go-top-anchor { position: fixed; bottom: 25px; right: 25px; background: var(--green-hover); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s; z-index: 1000; }
-        .go-top-anchor:hover { background: var(--brand-green); transform: translateY(-5px); }
+        .go-top-anchor {
+            position: fixed; bottom: 25px; right: 25px; background: var(--green-hover); color: white; 
+            width: 45px; height: 45px; border-radius: 50%; display: flex; 
+            align-items: center; justify-content: center; text-decoration: none; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s ease; z-index: 1000;
+        }
+        .go-top-anchor:hover { transform: translateY(-8px); background-color: var(--brand-green); }
 
         @media (max-width: 1024px) {
-            .footer-grid { grid-template-columns: 1fr 1fr; }
             .hero { grid-template-columns: 1fr; text-align: center; }
+            .back-nav-container { left: 50%; transform: translateX(-50%); top: 100px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
         }
+
         @media (max-width: 768px) {
-            .footer-grid { grid-template-columns: 1fr; }
             .site-header { padding: 0 24px; }
-            .site-footer, .content-wrap { padding: 60px 24px; }
+            .content-wrap { padding: 60px 24px; }
             .steps-list, .benefits-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -198,68 +208,86 @@
 
     <section class="hero">
         <div>
-            <p class="sec-label">Behavioral Science & Focus</p>
-            <h1>Block Distractions.<br>Reclaim Your <span>Focus.</span></h1>
-            <p style="color: var(--muted);">Discover how Opal uses deep app-blocking technology to help you take back control of your screen time and achieve uninterrupted work.</p>
+            <p class="sec-label">Group Accountability & Phone Lock</p>
+            <h1>Flip Your Phone.<br>Own Your <span>Focus.</span></h1>
+            <p style="color: var(--muted);">Flipd helps students lock out distracting apps and join live study sessions with peers — turning solo study time into a shared accountability experience.</p>
         </div>
         <div style="display:flex;justify-content:center;">
             <div class="app-logo-card">
-                <a href="../../../assets/images/logo/opal-logo.png" target="brand_view" class="logo-trigger">
+                <a href="../../../assets/images/logo/flipd-logo.png" target="brand_view" class="logo-trigger">
                     <div class="app-icon-box">
-                        <img src="../../../assets/images/logo/opal-logo.png" alt="Opal App Logo">
+                        <img src="../../../assets/images/logo/flipd-logo.png" alt="Flipd App Logo">
                     </div>
                 </a>
-                <div class="app-name">Opal</div>
+                <div class="app-name">Flipd</div>
             </div>
         </div>
     </section>
 
     <div class="content-wrap">
-        <p class="sec-label">What is Opal?</p>
-        <h2 class="sec-title">Your Phone's Built-In Willpower</h2>
-        <p style="color: var(--muted); margin-bottom: 40px;">Opal is a powerful screen time interventionist designed to break scroll addiction. By utilizing specialized "Deep Focus" modes that physically block distracting apps and notifications, it helps users achieve hours of uninterrupted work and better sleep.</p>
+        <p class="sec-label">What is Flipd?</p>
+        <h2 class="sec-title">Stay Off Your Phone. Together.</h2>
+        <p class="sec-description">Flipd is a focus and accountability app designed for students and professionals. It lets you lock out distracting apps, join group study rooms, and track your screen-free time — all while connecting with a community of focused peers working toward the same goals.</p>
 
         <p class="sec-label">How To Use</p>
-        <h2 class="sec-title">Master Opal in 6 Steps</h2>
+        <h2 class="sec-title">Focus Smarter in 6 Steps</h2>
         <div class="steps-list">
-            <div class="step-card"><div class="step-num">1</div><div><h4>Install Opal</h4><p style="color: var(--muted); font-size: 0.9rem;">Download the app for free on the iOS App Store or Google Play.</p></div></div>
-            <div class="step-card"><div class="step-num">2</div><div><h4>Choose Your Apps</h4><p style="color: var(--muted); font-size: 0.9rem;">Select the specific apps or web categories that steal your attention.</p></div></div>
-            <div class="step-card"><div class="step-num">3</div><div><h4>Schedule Sessions</h4><p style="color: var(--muted); font-size: 0.9rem;">Automate focus blocks during class, study hours, or nightly sleep.</p></div></div>
-            <div class="step-card"><div class="step-num">4</div><div><h4>Activate Deep Focus</h4><p style="color: var(--muted); font-size: 0.9rem;">Lock sessions in place so they cannot be bypassed or deleted mid-session.</p></div></div>
-            <div class="step-card"><div class="step-num">5</div><div><h4>Track Weekly Stats</h4><p style="color: var(--muted); font-size: 0.9rem;">Analyze patterns of screen time and see your reclaimed hours grow.</p></div></div>
-            <div class="step-card"><div class="step-num">6</div><div><h4>Improve Habits</h4><p style="color: var(--muted); font-size: 0.9rem;">Use data to gradually reduce dependencies on highly distracting apps.</p></div></div>
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <div><h4>Download Flipd</h4><p class="muted small">Install Flipd for free on iOS or Android and create your account.</p></div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <div><h4>Set a Focus Timer</h4><p class="muted small">Choose how long you want to stay phone-free — from 5 minutes to hours.</p></div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <div><h4>Lock Your Screen</h4><p class="muted small">Activate Full Lock mode to block all apps and keep distractions away.</p></div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">4</div>
+                <div><h4>Join a Study Room</h4><p class="muted small">Hop into a live virtual study session and focus alongside real people.</p></div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">5</div>
+                <div><h4>Track Your Streaks</h4><p class="muted small">Watch your phone-free minutes accumulate and build daily streaks.</p></div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">6</div>
+                <div><h4>Review Progress</h4><p class="muted small">Check weekly reports to see how much screen-free time you've reclaimed.</p></div>
+            </div>
         </div>
 
         <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/WGD4FfMuWBY" title="Opal Overview" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/mQkkQ32W5zw?si=PRWBh8N8RPgs-8CI" title="Flipd App Overview" allowfullscreen></iframe>
         </div>
 
         <p class="sec-label">Benefits</p>
-        <h2 class="sec-title">Why Students and Pros Choose Opal</h2>
+        <h2 class="sec-title">Why Students Choose Flipd</h2>
         <div class="benefits-grid">
             <div class="benefit-card">
-                <div class="benefit-icon"><i class="fas fa-lock"></i></div>
-                <h4>Unbreakable Blocking</h4>
-                <p style="color: var(--muted); font-size: 0.9rem;">Deep Focus mode prevents you from deleting the app or bypassing blocks through passcodes.</p>
+                <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                <h4>Group Accountability</h4>
+                <p class="muted small">Study alongside peers in live virtual rooms — when others can see you working, you stay on task.</p>
             </div>
             <div class="benefit-card">
-                <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
-                <h4>Focus Insights</h4>
-                <p style="color: var(--muted); font-size: 0.9rem;">Opal measures your screen time and provides a "Focus Score" to track your wellness progress.</p>
+                <div class="benefit-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h4>Full Phone Lock</h4>
+                <p class="muted small">Full Lock mode blocks every app on your phone so there's no way to cheat your focus session.</p>
             </div>
             <div class="benefit-card">
-                <div class="benefit-icon"><i class="fas fa-microscope"></i></div>
-                <h4>Science-Based</h4>
-                <p style="color: var(--muted); font-size: 0.9rem;">Built on behavioral psychology to reward staying present and disconnecting without anxiety.</p>
+                <div class="benefit-icon"><i class="fas fa-fire"></i></div>
+                <h4>Streak Motivation</h4>
+                <p class="muted small">Build daily focus streaks that keep you motivated and visually track your growing discipline.</p>
             </div>
         </div>
 
         <div class="cta-banner">
             <div>
-                <h2>Ready to Master Your Attention?</h2>
-                <p>Join the TechFit community and reclaim your first hour of productivity today.</p>
+                <h2>Ready to Flip the Script on Distraction?</h2>
+                <p>Join the TechFit community and start your first phone-free session today.</p>
             </div>
-            <a href="https://www.opal.so" target="_blank" class="btn-white">Download Opal Free <i class="fas fa-arrow-right"></i></a>
+            <a href="https://www.flipdapp.co" target="_blank" class="btn-white">Download Flipd Free <i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
 </main>
