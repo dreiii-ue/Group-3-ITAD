@@ -4,130 +4,349 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechFit</title>
+    <title>TechFit | Innovation in Motion</title>
 
-    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* === UNIFORM COLOR PALETTE === */
+        :root {
+            --bg-light-green: #F0FDF4; 
+            --header-bg: #D1FAE5;
+            --footer-bg: #064E3B;
+            --brand-primary: #22C55E;
+            --brand-green: #166534;
+            --muted: #6B7280;
+            --white: #ffffff;
+            --text-dark: #111827;
+            --border-light: #E5E7EB;
+        }
 
-    <link rel="stylesheet" href="assets/css/style.css">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.6; }
+
+        /* === ORIGINAL NAVIGATION DESIGN === */
+        .site-header {
+            background: var(--header-bg);
+            padding: 0 64px; height: 85px;
+            display: flex; align-items: center; justify-content: space-between;
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 2px solid var(--brand-green);
+        }
+        .logo-link { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .logo-img-box {
+            width: 42px; height: 42px; background: var(--brand-primary);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+        }
+        .logo-img-box img { width: 28px; height: 28px; object-fit: contain; }
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.7rem; font-weight: 800; color: var(--brand-primary);
+            letter-spacing: -0.5px; text-transform: uppercase;
+        }
+        .nav-list { display: flex; gap: 8px; list-style: none; align-items: center; }
+        .nav-list a {
+            font-size: 0.9rem; font-weight: 700; color: var(--brand-green);
+            text-decoration: none; padding: 10px 20px; border-radius: 50px; transition: 0.3s;
+        }
+        .nav-list a:hover { background-color: var(--brand-primary); color: white; }
+
+        /* === HERO SECTION WITH BRAND LOGO === */
+        .hero-section { 
+            display: grid; 
+            grid-template-columns: 1.2fr 1fr; 
+            gap: 40px; 
+            align-items: center; 
+            padding: 80px 8% 120px; 
+            background: linear-gradient(180deg, var(--header-bg) 0%, var(--white) 100%);
+        }
+        .hero-content { text-align: left; }
+        .hero-logo-container { 
+            position: relative; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+        /* Stylish box for the big logo - Static (No Float) */
+        .logo-visual-box {
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1/1;
+            background: var(--brand-primary);
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 30px 60px rgba(34, 197, 94, 0.2);
+            /* Removed floating animation for stability */
+        }
+        .logo-visual-box img { 
+            width: 60%; 
+            height: auto;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+        }
+
+        /* === SHARED LAYOUT STYLES === */
+        .section-padding { padding: 100px 8%; }
+        .section-tag { color: var(--brand-primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; display: block; margin-bottom: 12px; }
+        .section-title { font-size: 3rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
+
+        /* ABOUT SECTION */
+        .about-section { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding: 100px 8%; }
+        .about-content h3 { font-size: 1.5rem; color: var(--brand-green); margin: 25px 0 10px; font-weight: 800; }
+        .about-image img { width: 100%; border-radius: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+        /* Eco Container */
+        .eco-container { 
+            background-color: var(--bg-light-green); 
+            border-radius: 50px; 
+            margin: 0 4% 60px;
+            padding: 80px 6%;
+        }
+
+        .ecosystem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .eco-card {
+            background: var(--white); padding: 50px 40px; border-radius: 32px;
+            text-decoration: none; color: inherit; transition: 0.4s;
+            border: 1px solid #dcfce7;
+        }
+        .eco-card:hover { transform: translateY(-12px); border-color: var(--brand-primary); box-shadow: 0 20px 40px rgba(34, 197, 94, 0.1); }
+        .eco-card i { font-size: 2.5rem; color: var(--brand-primary); margin-bottom: 20px; display: block; }
+        .eco-card h3 { font-size: 1.6rem; color: var(--brand-green); margin-bottom: 15px; }
+
+        /* === UPDATED WELLNESS TOOLS SECTION (GREEN THEME) === */
+        .tools-area { 
+            background: var(--white); /* Changed to white for light theme */
+            color: var(--text-dark); /* Changed text color */
+            border-radius: 60px; 
+            margin: 0 4% 60px; 
+            padding: 100px 8%; 
+            border: 1px solid var(--border-light); /* Added subtle border */
+        }
+        .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .tool-card {
+            background: var(--bg-light-green); /* Light green background for cards */
+            padding: 45px; border-radius: 28px;
+            text-align: center; text-decoration: none; 
+            color: var(--text-dark); /* Dark text */
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid transparent;
+        }
+        /* Hover effect: Green background, white text */
+        .tool-card:hover { 
+            background: var(--brand-primary); 
+            transform: translateY(-10px); 
+            color: white;
+            box-shadow: 0 15px 30px rgba(34, 197, 94, 0.2);
+        }
+        /* Icon color - primary green */
+        .tool-card i { font-size: 2.8rem; color: var(--brand-primary); margin-bottom: 25px; display: block; transition: 0.3s; }
+        /* Title color - dark green */
+        .tool-card h3 { font-size: 1.6rem; color: var(--brand-green); margin-bottom: 15px; transition: 0.3s; }
+        .tool-card p { color: var(--muted); transition: 0.3s; }
+
+        /* Hover states for card elements */
+        .tool-card:hover i { color: white; }
+        .tool-card:hover h3 { color: white; }
+        .tool-card:hover p { color: rgba(255,255,255,0.8); }
+
+        /* Team Section */
+        .seraphit-section { 
+            background: var(--bg-light-green); 
+            text-align: center; 
+            border-radius: 50px; 
+            margin: 0 4% 60px; 
+            padding: 100px 8%;
+        }
+        .seraphit-btn {
+            display: inline-flex; align-items: center; gap: 12px; background: var(--brand-green);
+            color: white !important; padding: 20px 45px; border-radius: 50px; text-decoration: none;
+            font-weight: 800; margin-top: 35px; transition: 0.3s;
+        }
+        .seraphit-btn:hover { background: var(--brand-primary); transform: translateY(-3px); }
+
+        /* Contact Hub */
+        .contact-area {
+            background-color: var(--bg-light-green); 
+            padding: 100px 8%;
+            border-radius: 50px;
+            margin: 0 4% 60px;
+        }
+        .contact-hub { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .social-item {
+            display: flex; align-items: center; gap: 20px; padding: 25px;
+            background: var(--white); 
+            border-radius: 20px; text-decoration: none;
+            color: var(--text-dark); font-weight: 700; transition: 0.3s; margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+        }
+        .social-item:hover { background: var(--brand-primary); color: white; transform: translateX(10px); }
+        .social-item i { font-size: 1.8rem; color: var(--brand-primary); }
+        .social-item:hover i { color: white; }
+
+        /* Footer */
+        .site-footer {
+            background: var(--footer-bg); color: #cbd5e1;
+            padding: 72px 8% 30px; font-family: 'DM Sans', sans-serif;
+        }
+        .footer-grid { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1.2fr; gap: 56px; margin-bottom: 60px; }
+        .footer-wordmark { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; text-decoration: none; }
+        .footer-wordmark-icon { width: 36px; height: 36px; background: var(--brand-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .footer-wordmark-icon img { width: 22px; height: 22px; object-fit: contain; }
+        .footer-wordmark-text { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 800; color: var(--brand-primary); text-transform: uppercase; }
+        .footer-socials { display: flex; gap: 12px; }
+        .footer-social-btn { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; transition: 0.3s; }
+        .footer-social-btn:hover { background: var(--brand-primary); transform: translateY(-3px); }
+        .footer-col-label { display: block; margin-bottom: 25px; font-weight: 800; color: var(--brand-primary); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .footer-nav-links { list-style: none; }
+        .footer-nav-links li { margin-bottom: 12px; }
+        .footer-nav-links a { font-size: 14px; color: #cbd5e1; text-decoration: none; transition: 0.2s; }
+        .footer-nav-links a:hover { color: var(--brand-primary); padding-left: 5px; }
+
+        @media (max-width: 1024px) {
+            .hero-section, .footer-grid, .ecosystem-grid, .tools-grid, .contact-hub, .about-section { grid-template-columns: 1fr; }
+            .hero-content { text-align: center; }
+            .site-header { padding: 0 24px; }
+            .nav-list { display: none; }
+            .eco-container, .tools-area, .seraphit-section, .contact-area { margin: 0 2% 40px; border-radius: 30px; }
+        }
+    </style>
 </head>
 
-<body>
+<body id="top">
 
     <header class="site-header">
-        <a href="../index.html" class="logo-link">
-            <div class="logo-img-box">
-                <img src="../assets/images/logo/logo-white.png" alt="TechFit Logo">
-            </div>
+        <a href="index.html" class="logo-link">
+            <div class="logo-img-box"><img src="assets/images/logo/logo-white.png" alt="TechFit Logo"></div>
             <span class="logo-text">TECHFIT</span>
         </a>
-
         <nav class="main-nav">
             <ul class="nav-list">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../features/technology-fitness.html">Tech & Fit</a></li>
-                <li><a href="../features/health-monitoringtools.html">Health Tools</a></li>
-                <li><a href="../features/sustainable-wellness.html">Sustainability</a></li>
-                <li><a href="../index.html#tools">Tools</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="features/technology-fitness.html">Tech & Fit</a></li>
+                <li><a href="features/health-monitoringtools.html">Health Tools</a></li>
+                <li><a href="features/sustainable-wellness.html">Sustainability</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero-section">
+        <section class="hero-section">
             <div class="hero-content">
                 <span class="section-tag">Innovation in Motion</span>
-                <h1>Smarter Tech, <span>Healthier Life.</span></h1>
-                <p>Empowering students and professionals to integrate fitness technology with sustainable wellness habits.</p>
-                <a href="features/technology-fitness.html" class="cta-btn">Explore Technology <i class="fas fa-arrow-right"></i></a>
+                <h1 class="section-title">Smarter Tech,<br><span style="color: var(--brand-primary);">Healthier Life.</span></h1>
+                <p style="color: var(--muted); max-width: 600px; font-size: 1.2rem; margin-bottom: 30px;">Empowering students and professionals to integrate cutting-edge technology with sustainable wellness habits for a balanced lifestyle.</p>
+                <a href="#ecosystem" class="seraphit-btn" style="background: var(--brand-primary); margin-top: 0;">Explore Platform <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="hero-image">
-                <div class="hero-icon-box">
+            <div class="hero-logo-container">
+                <div class="logo-visual-box">
                     <img src="assets/images/logo/logo-white.png" alt="TechFit Logo">
                 </div>
             </div>
         </section>
 
         <section id="about" class="about-section">
-            <h2 class="section-title text-center">Bridging Tech and Vitality</h2>
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800" alt="Active Lifestyle" title="Active Lifestyle" />
-                </div>
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>We empower everyone to live healthier, more active lives by simplifying fitness through technology.</p>
-                    <h3>Our Vision</h3>
-                    <p>To create a world where wellness is seamlessly integrated into everyday life, empowering people everywhere to thrive through accessible, innovative technology.</p>
-                </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800" alt="Active Lifestyle">
             </div>
-        </section>
-
-        <section class="ecosystem-section">
-            <h2 class="section-title text-center">Core Pillars</h2>
-            <div class="topics-grid">
-                <div class="topic-card">
-                    <div class="icon-box"><i class="fas fa-microchip"></i></div>
-                    <h3>Tech & Fitness</h3>
-                    <p>Explore how modern technology helps you stay active and efficient.</p>
-                    <a href="features/technology-fitness.html" class="learn-more-btn">Learn More</a>
-                </div>
-                <div class="topic-card">
-                    <div class="icon-box"><i class="fas fa-heartbeat"></i></div>
-                    <h3>Health Tools</h3>
-                    <p>Centralized biometric monitoring to keep your vitals in check.</p>
-                    <a href="features/health-monitoringtools.html" class="learn-more-btn">Learn More</a>
-                </div>
-                <div class="topic-card">
-                    <div class="icon-box"><i class="fas fa-leaf"></i></div>
-                    <h3>Sustainability</h3>
-                    <p>Long-term physical sustainability through smart digital habits.</p>
-                    <a href="features/sustainable-wellness.html" class="learn-more-btn">Learn More</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="tools" class="tools-section">
-            <h2 class="section-title text-center">Wellness Tools</h2>
-            <div class="tools-container">
+            <div class="about-content">
+                <span class="section-tag">Bridging Tech and Vitality</span>
+                <h2 class="section-title" style="font-size: 2.5rem;">Why TechFit?</h2>
                 
+                <h3>Our Mission</h3>
+                <p style="color: var(--muted);">We empower students and professionals to live healthier, more active lives by simplifying complex fitness data through accessible, innovative technology. We aim to make wellness an achievable daily habit rather than a chore.</p>
+                
+                <h3>Our Vision</h3>
+                <p style="color: var(--muted);">To create a world where health technology is seamlessly integrated into everyday life, empowering people everywhere to thrive through data-driven insight and long-term physical sustainability.</p>
+            </div>
+        </section>
+
+        <div class="eco-container" id="ecosystem">
+            <div style="text-align: center;">
+                <span class="section-tag">Digital Environment</span>
+                <h2 class="section-title">The TechFit Ecosystem</h2>
+            </div>
+            <div class="ecosystem-grid">
+                <a href="features/technology-fitness.html" class="eco-card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Tech & Fit</h3>
+                    <p>Integrate wearables and AI coaching into your daily routine to stay active and efficient.</p>
+                </a>
+                <a href="features/sustainable-wellness.html" class="eco-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainability</h3>
+                    <p>Building long-term health through responsible technology use and mindful digital habits.</p>
+                </a>
+                <a href="features/health-monitoringtools.html" class="eco-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Biometrics Tool</h3>
+                    <p>Centralized monitoring for your vitals, sleep cycles, and physical recovery metrics.</p>
+                </a>
+            </div>
+        </div>
+
+        <section class="tools-area" id="tools">
+            <div style="text-align: center;">
+                <span class="section-tag">Personalized Data</span>
+                <h2 class="section-title">Wellness Tools</h2>
+            </div>
+            <div class="tools-grid">
                 <a href="bmi.html" class="tool-card">
                     <i class="fas fa-calculator"></i>
-                    <h4>BMI Calculator</h4>
+                    <h3>BMI Calculator</h3>
+                    <p>Instant assessment of your body mass index.</p>
                 </a>
-
-                <a href="nutrition-planner.html" class="tool-card">
-                    <i class="fas fa-utensils"></i>
-                    <h4>Nutrition Planner</h4>
-                </a>
-
                 <a href="sleep-tracker.html" class="tool-card">
                     <i class="fas fa-bed"></i>
-                    <h4>Sleep Tracker</h4>
+                    <h3>Sleep Tracker</h3>
+                    <p>Optimize your rest and recovery for better performance.</p>
+                </a>
+                <a href="nutrition-planner.html" class="tool-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Nutrition Planner</h3>
+                    <p>Fuel your body with science-backed meal planning.</p>
                 </a>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <h2 class="section-title text-center">Contact TechFit</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Let's Talk!</h3>
-                    <p><i class="fas fa-envelope"></i> techfit.itad@gmail.com</p>
+        <section class="seraphit-section" id="team">
+            <div style="max-width: 850px; margin: 0 auto;">
+                <span class="section-tag">Project Authors</span>
+                <h2 class="section-title">Meet Team Seraphit</h2>
+                <p style="color: var(--muted); font-size: 1.15rem;">TechFit is the brainchild of dedicated student-innovators from the University of the East, Manila. We are committed to redefining the synergy between high-tech living and physical vitality.</p>
+                <a href="seraphit.html" class="seraphit-btn">Explore Team Seraphit <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section class="contact-area" id="contact">
+            <div class="contact-hub">
+                <div>
+                    <span class="section-tag">Get in Touch</span>
+                    <h2 class="section-title" style="font-size: 2.5rem;">Connect With Us</h2>
+                    <p style="color: var(--muted); margin-bottom: 30px;">Follow our journey on social media or reach out directly via email. Team Seraphit is always active and ready to collaborate.</p>
                 </div>
-                <div class="contact-form">
-                    <form onsubmit="event.preventDefault(); alert('Message Sent!');">
-                        <input type="email" placeholder="Email" required style="width:100%; margin-bottom:15px; padding:12px; border-radius:6px; border:1px solid #ddd;">
-                        <input type="tel" placeholder="Phone Number" required style="width:100%; margin-bottom:15px; padding:12px; border-radius:6px; border:1px solid #ddd;">
-                        <input type="text" placeholder="Address" required style="width:100%; margin-bottom:15px; padding:12px; border-radius:6px; border:1px solid #ddd;">
-                        <button type="submit" class="submit-btn" style="width:100%; padding:12px; font-weight:bold; cursor:pointer;">Send Message</button>
-                    </form>
+                <div>
+                    <a href="https://www.facebook.com/profile.php?id=61576647603926" target="_blank" class="social-item">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook Page</span>
+                    </a>
+                    <a href="https://www.instagram.com/techfit.ph/" target="_blank" class="social-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram Account</span>
+                    </a>
+                    <a href="mailto:techfit.itad@gmail.com" class="social-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>techfit.itad@gmail.com</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -136,30 +355,24 @@
     <footer class="site-footer">
         <div class="footer-grid">
             <div>
-                <a href="#home" class="footer-wordmark">
-                    <div class="footer-wordmark-icon">
-                        <img src="assets/images/logo/logo-white.png" alt="TechFit Logo">
-                    </div>
+                <a href="#top" class="footer-wordmark">
+                    <div class="footer-wordmark-icon"><img src="assets/images/logo/logo-white.png" alt="TechFit Logo"></div>
                     <span class="footer-wordmark-text">TECHFIT</span>
                 </a>
-                <p class="footer-brand-desc">
-                    TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Whether you are a student, a professional, or just starting your fitness journey, our platform provides the digital solutions and guidance needed to stay energized and balanced.
-                </p>
-                <div class="footer-socials">
+                <p style="font-size: 14px; line-height: 1.75; opacity: 0.7;">TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Our platform provides digital solutions needed to stay energized and balanced.</p>
+                <div class="footer-socials" style="margin-top: 25px;">
                     <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-
             <div>
                 <span class="footer-col-label">Platform</span>
                 <ul class="footer-nav-links">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#tools">Wellness Tools</a></li>
                 </ul>
             </div>
-
             <div>
                 <span class="footer-col-label">Features</span>
                 <ul class="footer-nav-links">
@@ -168,24 +381,21 @@
                     <li><a href="features/sustainable-wellness.html">Sustainability</a></li>
                 </ul>
             </div>
-
             <div>
-                <span class="footer-col-label">Contact Us</span>
-                <div class="footer-contact-item">
-                    <i class="fas fa-envelope" style="color:#22C55E;"></i>
-                    <a href="mailto:techfit.itad@gmail.com" style="color:inherit; text-decoration:none;">techfit.itad@gmail.com</a>
+                <span class="footer-col-label">Contact</span>
+                <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+                    <i class="fas fa-envelope" style="color: var(--brand-primary);"></i>
+                    <a href="mailto:techfit.itad@gmail.com" style="color: inherit; text-decoration: none;">techfit.itad@gmail.com</a>
                 </div>
             </div>
         </div>
-
-        <div class="footer-divider"></div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Techfit by Seraphit. All rights reserved.</p>
+        <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 40px 0 30px;"></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 13px; opacity: 0.6;">
+            <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
         </div>
     </footer>
 
-    <a href="#home" class="go-top-anchor" style="position:fixed; bottom:25px; right:25px; background:#22C55E; color:white; width:45px; height:45px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+    <a href="#top" style="position:fixed; bottom:25px; right:25px; background:var(--brand-primary); color:white; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 1000;">
         <i class="fas fa-chevron-up"></i>
     </a>
 
