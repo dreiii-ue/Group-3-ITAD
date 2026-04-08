@@ -6,117 +6,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nutrition Planner | TechFit</title>
 
-    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <style>
-        /* YOUR ORIGINAL LOGO STYLES */
-        .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-img-box { width: 36px; height: 36px; background: #22C55E; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .logo-img-box img { width: 22px; height: 22px; object-fit: contain; }
-        .logo-text { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 800; color: #22C55E; letter-spacing: -0.5px; text-transform: uppercase; }
+        /* === UNIFORM COLOR PALETTE === */
+        :root {
+            --bg-light-green: #F0FDF4; 
+            --header-bg: #D1FAE5;
+            --footer-bg: #064E3B;
+            --brand-primary: #22C55E;
+            --brand-green: #166534;
+            --muted: #6B7280;
+            --white: #ffffff;
+            --text-dark: #111827;
+            --border-light: #E5E7EB;
+        }
 
-        /* NUTRITION PAGE CUSTOM CONTENT STYLES */
-        .nutrition-hero {
-            padding: 140px 8% 60px; /* Extra top padding so it doesn't hide under your fixed header */
-            background: #f8fafc;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--white); color: var(--text-dark); line-height: 1.6; }
+
+        /* === FIXED UNIFORM NAVIGATION (EXACTLY LIKE INDEX/SLEEP/BMI) === */
+        .site-header {
+            background: var(--header-bg);
+            padding: 0 64px; height: 85px;
+            display: flex; align-items: center; justify-content: space-between;
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 2px solid var(--brand-green);
+        }
+        .logo-link { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .logo-img-box {
+            width: 42px; height: 42px; background: var(--brand-primary);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+        }
+        .logo-img-box img { width: 28px; height: 28px; object-fit: contain; }
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.7rem; font-weight: 800; color: var(--brand-primary);
+            letter-spacing: -0.5px; text-transform: uppercase;
+        }
+        .nav-list { display: flex; gap: 8px; list-style: none; align-items: center; }
+        .nav-list a {
+            font-size: 0.9rem; font-weight: 700; color: var(--brand-green);
+            text-decoration: none; padding: 10px 20px; border-radius: 50px; transition: 0.3s;
+        }
+        .nav-list a:hover { background-color: var(--brand-primary); color: white; }
+
+        /* === INTERNAL PAGE HERO === */
+        .internal-hero { 
+            padding: 80px 8% 60px; 
+            background: linear-gradient(180deg, var(--header-bg) 0%, var(--white) 100%);
             text-align: center;
         }
 
-        .nutrition-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 8% 100px;
+        .section-tag { color: var(--brand-primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; display: block; margin-bottom: 12px; }
+        .section-title { font-size: 3rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; }
+
+        /* === CONTENT LAYOUT === */
+        .content-container { max-width: 1200px; margin: 0 auto; padding: 0 4%; }
+
+        .nutrition-wrapper { 
+            background-color: var(--bg-light-green); 
+            border-radius: 50px; 
+            padding: 80px 6%;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
         }
 
         .planner-card {
-            background: white;
-            border-radius: 24px;
+            background: var(--white);
             padding: 50px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            border: 1px solid #e2e8f0;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-light);
         }
 
-        .planner-text { flex: 1; text-align: left; }
-        .planner-image { 
-            flex: 1; 
-            background: #ecfdf5; 
-            border-radius: 16px; 
-            padding: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .planner-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; color: var(--brand-green); margin-bottom: 20px; font-weight: 800; }
+        .feature-list { list-style: none; padding: 0; margin-bottom: 40px; }
+        .feature-list li { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; font-weight: 700; color: var(--text-dark); }
+        .feature-list i { color: var(--brand-primary); }
+
+        .btn-launch {
+            display: inline-flex; align-items: center; gap: 12px; background: var(--brand-primary);
+            color: white !important; padding: 20px 40px; border-radius: 50px; font-weight: 800;
+            text-decoration: none; transition: 0.3s;
         }
+        .btn-launch:hover { background: var(--brand-green); transform: translateY(-5px); }
 
-        .planner-image i { font-size: 140px; color: #22C55E; opacity: 0.9; }
-        .planner-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 36px; color: #064E3B; margin-bottom: 20px; }
-        .planner-card p { font-family: 'DM Sans', sans-serif; line-height: 1.8; color: #64748b; margin-bottom: 30px; }
-
-        .external-link-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: #22C55E;
-            color: white;
-            padding: 18px 36px;
-            border-radius: 8px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: 0.3s;
+        .visual-box {
+            width: 100%; aspect-ratio: 1/1; background: var(--white);
+            border-radius: 60px; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05); border: 1px solid var(--border-light);
         }
+        .visual-box i { font-size: 8rem; color: var(--brand-primary); }
 
-        .external-link-btn:hover { background: #16a34a; transform: translateY(-2px); }
-
-        @media (max-width: 768px) {
-            .planner-card { flex-direction: column; text-align: center; padding: 30px; }
-            .planner-text { text-align: center; }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding: 80px 0;
+            border-top: 1px solid var(--border-light);
         }
+        .info-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; color: var(--brand-green); margin-bottom: 20px; font-weight: 800; }
+        .info-card p { color: var(--muted); margin-bottom: 20px; }
 
-        /* YOUR ORIGINAL FOOTER STYLES */
-        .site-footer { background: #064E3B; color: #cbd5e1; padding: 72px 8% 30px; font-family: 'DM Sans', sans-serif; }
-        .footer-grid { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1.2fr; gap: 56px; margin-bottom: 60px; text-align: left; }
+        /* === FOOTER (FIXED UNIFORM) === */
+        .site-footer {
+            background: var(--footer-bg); color: #cbd5e1;
+            padding: 72px 8% 30px; font-family: 'DM Sans', sans-serif;
+        }
+        .footer-grid { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1.2fr; gap: 56px; margin-bottom: 60px; }
         .footer-wordmark { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; text-decoration: none; }
-        .footer-wordmark-icon { width: 36px; height: 36px; background: #22C55E; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .footer-wordmark-icon { width: 36px; height: 36px; background: var(--brand-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
         .footer-wordmark-icon img { width: 22px; height: 22px; object-fit: contain; }
-        .footer-wordmark-text { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 800; color: #22C55E; letter-spacing: -0.5px; text-transform: uppercase; }
-        .footer-brand-desc { font-size: 14px; line-height: 1.75; color: #cbd5e1; max-width: 320px; margin-bottom: 28px; }
+        .footer-wordmark-text { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 800; color: var(--brand-primary); text-transform: uppercase; }
         .footer-socials { display: flex; gap: 12px; }
-        .footer-social-btn { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; transition: all 0.3s ease; }
-        .footer-social-btn:hover { background: #22C55E; transform: translateY(-3px); }
-        .footer-col-label { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #22C55E; margin-bottom: 25px; display: block; }
-        .footer-nav-links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+        .footer-social-btn { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; transition: 0.3s; }
+        .footer-social-btn:hover { background: var(--brand-primary); transform: translateY(-3px); }
+        .footer-col-label { display: block; margin-bottom: 25px; font-weight: 800; color: var(--brand-primary); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .footer-nav-links { list-style: none; padding: 0; }
+        .footer-nav-links li { margin-bottom: 12px; }
         .footer-nav-links a { font-size: 14px; color: #cbd5e1; text-decoration: none; transition: 0.2s; }
-        .footer-nav-links a:hover { color: #22C55E; padding-left: 5px; }
-        .footer-contact-item { display: flex; align-items: center; gap: 10px; font-size: 14px; }
-        .footer-divider { height: 1px; background: rgba(255, 255, 255, 0.1); margin: 40px 0 30px; }
-        .footer-bottom { display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: #94a3b8; }
+        .footer-nav-links a:hover { color: var(--brand-primary); padding-left: 5px; }
+
+        @media (max-width: 1024px) {
+            .nutrition-wrapper, .info-grid, .footer-grid { grid-template-columns: 1fr; }
+            .site-header { padding: 0 24px; }
+            .nav-list { display: none; }
+            .nutrition-wrapper { border-radius: 30px; padding: 40px 20px; }
+            .section-title { font-size: 2.2rem; }
+        }
     </style>
 </head>
 
-<body>
+<body id="top">
 
     <header class="site-header">
-        <a href="index.html#home" class="logo-link">
-            <div class="logo-img-box">
-                <img src="assets/images/logo/logo-white.png" alt="TechFit Logo">
-            </div>
+        <a href="index.html" class="logo-link">
+            <div class="logo-img-box"><img src="assets/images/logo/logo-white.png" alt="TechFit Logo"></div>
             <span class="logo-text">TECHFIT</span>
         </a>
-
-        <button class="mobile-menu-btn" onclick="document.getElementById('nav-menu').classList.toggle('active')">
-            <i class="fas fa-bars"></i>
-        </button>
-
         <nav class="main-nav">
-            <ul class="nav-list" id="nav-menu">
-                <li><a href="index.html#home">Home</a></li>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="features/technology-fitness.html">Tech & Fit</a></li>
                 <li><a href="features/health-monitoringtools.html">Health Tools</a></li>
@@ -128,61 +167,78 @@
     </header>
 
     <main>
-        <section class="nutrition-hero">
-            <span class="section-tag" style="color: #22C55E; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 12px;">Smarter Eating</span>
-            <h1 style="font-family: 'Space Grotesk'; font-size: 48px; margin-top: 10px; color: #064E3B; font-weight: 800;">NUTRITION PLANNER</h1>
+        <section class="internal-hero">
+            <div class="content-container">
+                <span class="section-tag">Techfit Tool</span>
+                <h1 class="section-title">Nutrition Planner</h1>
+                <p style="color: var(--muted); max-width: 800px; margin: 0 auto; font-size: 1.2rem;">Fuel your body with science-backed meal planning designed for busy students and high-performing professionals.</p>
+            </div>
         </section>
 
-        <div class="nutrition-container">
-            <div class="planner-card">
-                <div class="planner-text">
+        <div class="content-container">
+            <div class="nutrition-wrapper">
+                <div class="planner-card">
+                    <span class="section-tag" style="color: var(--brand-primary);">Powered by Eat This Much</span>
                     <h2>Eat This Much</h2>
-                    <p>Put your diet on autopilot. We have integrated "Eat This Much" to help you create personalized meal plans based on your calorie goals, budget, and schedule. Perfect for students and professionals who need to stay healthy without the guesswork.</p>
+                    <p>Put your diet on autopilot. We have integrated "Eat This Much" to help you create personalized meal plans based on your calorie goals, budget, and schedule.</p>
                     
-                    <ul style="list-style: none; padding: 0; margin-bottom: 30px; color: #475569; font-family: 'DM Sans';">
-                        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: #22C55E; margin-right: 10px;"></i> Instant plans for any macro target</li>
-                        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: #22C55E; margin-right: 10px;"></i> Custom filters for Keto, Vegan, or Paleo</li>
-                        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: #22C55E; margin-right: 10px;"></i> Smart grocery lists in one click</li>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Instant plans for any macro target</li>
+                        <li><i class="fas fa-check-circle"></i> Custom filters for Keto, Vegan, or Paleo</li>
+                        <li><i class="fas fa-check-circle"></i> Smart grocery lists in one click</li>
                     </ul>
 
-                    <a href="https://www.eatthismuch.com/" target="_blank" class="external-link-btn">
+                    <a href="https://www.eatthismuch.com/" target="_blank" class="btn-launch">
                         Open Planner <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
-                <div class="planner-image">
+
+                <div class="visual-box">
                     <i class="fas fa-utensils"></i>
                 </div>
             </div>
+
+            <section class="info-grid">
+                <div class="info-card">
+                    <span class="section-tag">Fuel for Thought</span>
+                    <h3>Optimizing Your Macros</h3>
+                    <p>What you eat directly impacts your cognitive function. For those balancing long study sessions, a balance of <strong>complex carbohydrates</strong> and <strong>lean proteins</strong> is essential.</p>
+                    <p>By planning your meals, you avoid the energy crashes caused by processed sugars and maintain steady focus throughout the day.</p>
+                </div>
+                <div class="info-card">
+                    <span class="section-tag">Healthy Habits</span>
+                    <h3>Sustainability Tips</h3>
+                    <ul style="list-style: none; color: var(--muted);">
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--brand-primary); margin-right: 10px;"></i> <strong>Hydration:</strong> Aim for 2-3 liters of water daily.</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--brand-primary); margin-right: 10px;"></i> <strong>Meal Prep:</strong> Prep snacks to avoid unhealthy choices.</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--brand-primary); margin-right: 10px;"></i> <strong>Mindful Eating:</strong> Avoid eating while working at your desk.</li>
+                    </ul>
+                </div>
+            </section>
         </div>
     </main>
 
     <footer class="site-footer">
         <div class="footer-grid">
             <div>
-                <a href="index.html#home" class="footer-wordmark">
-                    <div class="footer-wordmark-icon">
-                        <img src="assets/images/logo/logo-white.png" alt="TechFit Logo">
-                    </div>
+                <a href="#top" class="footer-wordmark">
+                    <div class="footer-wordmark-icon"><img src="assets/images/logo/logo-white.png" alt="TechFit Logo"></div>
                     <span class="footer-wordmark-text">TECHFIT</span>
                 </a>
-                <p class="footer-brand-desc">
-                    TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Whether you are a student, a professional, or just starting your fitness journey, our platform provides the digital solutions and guidance needed to stay energized and balanced.
-                </p>
-                <div class="footer-socials">
+                <p style="font-size: 14px; line-height: 1.75; opacity: 0.7;">TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Our platform provides digital solutions needed to stay energized and balanced.</p>
+                <div class="footer-socials" style="margin-top: 25px;">
                     <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-
             <div>
                 <span class="footer-col-label">Platform</span>
                 <ul class="footer-nav-links">
-                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="index.html#about">About Us</a></li>
                     <li><a href="index.html#tools">Wellness Tools</a></li>
                 </ul>
             </div>
-
             <div>
                 <span class="footer-col-label">Features</span>
                 <ul class="footer-nav-links">
@@ -191,22 +247,23 @@
                     <li><a href="features/sustainable-wellness.html">Sustainability</a></li>
                 </ul>
             </div>
-
             <div>
-                <span class="footer-col-label">Contact Us</span>
-                <div class="footer-contact-item">
-                    <i class="fas fa-envelope" style="color:#22C55E;"></i>
-                    <a href="mailto:contact_techfit@gmail.com" style="color:inherit; text-decoration:none;">contact_techfit@gmail.com</a>
+                <span class="footer-col-label">Contact</span>
+                <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+                    <i class="fas fa-envelope" style="color: var(--brand-primary);"></i>
+                    <a href="mailto:techfit.itad@gmail.com" style="color: inherit; text-decoration: none;">techfit.itad@gmail.com</a>
                 </div>
             </div>
         </div>
-
-        <div class="footer-divider"></div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Techfit by Seraphit. All rights reserved.</p>
+        <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 40px 0 30px;"></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 13px; opacity: 0.6;">
+            <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
         </div>
     </footer>
 
+    <a href="#top" style="position:fixed; bottom:25px; right:25px; background:var(--brand-primary); color:white; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 1000;">
+        <i class="fas fa-chevron-up"></i>
+    </a>
 </body>
+
 </html>
