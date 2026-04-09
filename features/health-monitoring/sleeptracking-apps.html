@@ -1,225 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sleep Tracking Apps | TechFit</title>
-
-  <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../../../assets/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-
-  <style>
-    .bootstrap-scope .row {
-      --bs-gutter-x: 1.5rem;
-      --bs-gutter-y: 1.5rem;
-    }
-
-    /* Make the grid flex so the last 2 cards sit centered instead of left-aligned */
-    .topics-grid {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      justify-content: center !important;
-      gap: 35px !important;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .topics-grid .topic-card {
-      flex: 0 1 calc(33.333% - 35px) !important;
-      min-width: 300px;
-      max-width: 400px;
-    }
-
-    @media (max-width: 1024px) {
-      .topics-grid .topic-card {
-        flex: 0 1 calc(50% - 35px) !important;
-        max-width: 420px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .topics-grid .topic-card {
-        flex: 1 1 100% !important;
-        max-width: 100%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Tracking Apps | TechFit</title>
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
 </head>
 
 <body id="top">
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a href="../../../index.html" class="navbar-brand logo-link">
+                    <div class="logo-img-box">
+                        <img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo" title="TechFit Logo">
+                    </div>
+                    <span class="logo-text">TECHFIT</span>
+                </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars" style="color:#22C55E; font-size:20px;"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                    <ul class="navbar-nav nav-list">
+                        <li class="nav-item"><a class="nav-link" href="../../../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../../index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../../features/technology-fitness.html">Tech &amp; Fit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../../features/health-monitoringtools.html">Health Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../../features/sustainable-wellness.html">Sustainability</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../../index.html#tools">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  <header class="site-header">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a href="../../../index.html" class="navbar-brand logo-link">
-          <div class="logo-img-box">
-            <img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo">
-          </div>
-          <span class="logo-text">TECHFIT</span>
-        </a>
-
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars" style="color:#22C55E; font-size:20px;"></i>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-          <ul class="navbar-nav nav-list">
-            <li class="nav-item"><a class="nav-link" href="../../../index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../../index.html#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../../features/technology-fitness.html">Tech &amp; Fit</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../../features/health-monitoringtools.html">Health Tools</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../../features/sustainable-wellness.html">Sustainability</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../../index.html#tools">Tools</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../../index.html#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <div class="bootstrap-scope">
     <main>
-      <div class="back-nav-container">
-        <a href="../health-monitoringtools.html" class="back-btn">
-          <i class="fas fa-arrow-left"></i>
-          <span>Back</span>
-        </a>
-      </div>
+        <section class="subpage-hero">
+            <h1>Sleep Tracking Apps</h1>
+            <p>Monitor your sleep cycles and wake up refreshed every morning.</p>
+            <a href="../health-monitoringtools.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Health Tools
+            </a>
+        </section>
 
-      <section class="subpage-hero">
-        <h1>Sleep Tracking Apps</h1>
-        <p>Monitor your sleep cycles and wake up refreshed every morning.</p>
-      </section>
+        <section class="ecosystem-section">
+            <div class="container py-5">
+                <div class="row g-4 justify-content-center">
 
-      <section class="ecosystem-section">
-        <div class="topics-grid">
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="topic-card w-100">
+                            <div>
+                                <a href="../../../assets/images/logo/sleep-cycle-logo.png" target="brand_view"
+                                    class="logo-zoom-trigger" data-tooltip="Sleep Cycle Logo">
+                                    <div class="app-logo-box-circle">
+                                        <img src="../../../assets/images/logo/sleep-cycle-logo.png"
+                                            alt="Sleep Cycle Logo" title="Sleep Cycle Logo">
+                                    </div>
+                                </a>
+                                <h3>Sleep Cycle</h3>
+                                <p>Uses sound analysis to track sleep stages and wake you up during your lightest sleep phase.</p>
+                            </div>
+                            <a href="sleeping-tracking-apps/sleep-cycle.html" class="explore-btn">Explore App</a>
+                        </div>
+                    </div>
 
-          <div class="topic-card">
-            <div>
-              <a href="../../../assets/images/logo/sleep-cycle-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Sleep Cycle Logo">
-                <div class="app-logo-box-circle">
-                  <img src="../../../assets/images/logo/sleep-cycle-logo.png" alt="Sleep Cycle Logo">
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="topic-card w-100">
+                            <div>
+                                <a href="../../../assets/images/logo/pillow-logo.png" target="brand_view"
+                                    class="logo-zoom-trigger" data-tooltip="Pillow Logo">
+                                    <div class="app-logo-box-circle">
+                                        <img src="../../../assets/images/logo/pillow-logo.png"
+                                            alt="Pillow Logo" title="Pillow Logo">
+                                    </div>
+                                </a>
+                                <h3>Pillow</h3>
+                                <p>An all-in-one sleep assistant that records audio events and provides heart rate analysis.</p>
+                            </div>
+                            <a href="sleeping-tracking-apps/pillow.html" class="explore-btn">Explore App</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="topic-card w-100">
+                            <div>
+                                <a href="../../../assets/images/logo/sleep-as-android-logo.png" target="brand_view"
+                                    class="logo-zoom-trigger" data-tooltip="Sleep as Android Logo">
+                                    <div class="app-logo-box-circle">
+                                        <img src="../../../assets/images/logo/sleep-as-android-logo.png"
+                                            alt="Sleep as Android Logo" title="Sleep as Android Logo">
+                                    </div>
+                                </a>
+                                <h3>Sleep as Android</h3>
+                                <p>Feature-rich tracking that supports sonar sensing and anti-snoring vibration alerts.</p>
+                            </div>
+                            <a href="sleeping-tracking-apps/sleep-as-android.html" class="explore-btn">Explore App</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="topic-card w-100">
+                            <div>
+                                <a href="../../../assets/images/logo/autosleep-logo.png" target="brand_view"
+                                    class="logo-zoom-trigger" data-tooltip="AutoSleep Logo">
+                                    <div class="app-logo-box-circle">
+                                        <img src="../../../assets/images/logo/autosleep-logo.png"
+                                            alt="AutoSleep Logo" title="AutoSleep Logo">
+                                    </div>
+                                </a>
+                                <h3>AutoSleep</h3>
+                                <p>Leverages Apple Watch to automatically track sleep time without needing to start an app manually.</p>
+                            </div>
+                            <a href="sleeping-tracking-apps/autoSleep.html" class="explore-btn">Explore App</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+                        <div class="topic-card w-100">
+                            <div>
+                                <a href="../../../assets/images/logo/sleepscore-logo.png" target="brand_view"
+                                    class="logo-zoom-trigger" data-tooltip="SleepScore Logo">
+                                    <div class="app-logo-box-circle">
+                                        <img src="../../../assets/images/logo/sleepscore-logo.png"
+                                            alt="SleepScore Logo" title="SleepScore Logo">
+                                    </div>
+                                </a>
+                                <h3>SleepScore</h3>
+                                <p>Uses sonar technology to track movements and breathing from your nightstand without wearables.</p>
+                            </div>
+                            <a href="sleeping-tracking-apps/sleepscore.html" class="explore-btn">Explore App</a>
+                        </div>
+                    </div>
+
                 </div>
-              </a>
-              <h3>Sleep Cycle</h3>
-              <p>Uses sound analysis to track sleep stages and wake you up during your lightest sleep phase.</p>
             </div>
-            <a href="sleeping-tracking-apps/sleep-cycle.html" class="explore-btn">Explore App</a>
-          </div>
-
-          <div class="topic-card">
-            <div>
-              <a href="../../../assets/images/logo/pillow-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Pillow Logo">
-                <div class="app-logo-box-circle">
-                  <img src="../../../assets/images/logo/pillow-logo.png" alt="Pillow Logo">
-                </div>
-              </a>
-              <h3>Pillow</h3>
-              <p>An all-in-one sleep assistant that records audio events and provides heart rate analysis.</p>
-            </div>
-            <a href="sleeping-tracking-apps/pillow.html" class="explore-btn">Explore App</a>
-          </div>
-
-          <div class="topic-card">
-            <div>
-              <a href="../../../assets/images/logo/sleep-as-android-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Sleep as Android Logo">
-                <div class="app-logo-box-circle">
-                  <img src="../../../assets/images/logo/sleep-as-android-logo.png" alt="Sleep as Android Logo">
-                </div>
-              </a>
-              <h3>Sleep as Android</h3>
-              <p>Feature-rich tracking that supports sonar sensing and anti-snoring vibration alerts.</p>
-            </div>
-            <a href="sleeping-tracking-apps/sleep-as-android.html" class="explore-btn">Explore App</a>
-          </div>
-
-          <div class="topic-card">
-            <div>
-              <a href="../../../assets/images/logo/autosleep-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="AutoSleep Logo">
-                <div class="app-logo-box-circle">
-                  <img src="../../../assets/images/logo/autosleep-logo.png" alt="AutoSleep Logo">
-                </div>
-              </a>
-              <h3>AutoSleep</h3>
-              <p>Leverages Apple Watch to automatically track sleep time without needing to start an app manually.</p>
-            </div>
-            <a href="sleeping-tracking-apps/autoSleep.html" class="explore-btn">Explore App</a>
-          </div>
-
-          <div class="topic-card">
-            <div>
-              <a href="../../../assets/images/logo/sleepscore-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="SleepScore Logo">
-                <div class="app-logo-box-circle">
-                  <img src="../../../assets/images/logo/sleepscore-logo.png" alt="SleepScore Logo">
-                </div>
-              </a>
-              <h3>SleepScore</h3>
-              <p>Uses sonar technology to track movements and breathing from your nightstand without wearables.</p>
-            </div>
-            <a href="sleeping-tracking-apps/sleepscore.html" class="explore-btn">Explore App</a>
-          </div>
-
-        </div>
-      </section>
-
+        </section>
     </main>
-  </div>
 
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <a href="../../../index.html" class="footer-wordmark">
-          <div class="footer-wordmark-icon">
-            <img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo">
-          </div>
-          <span class="footer-wordmark-text">TECHFIT</span>
-        </a>
-        <p class="footer-brand-desc">TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Whether you are a student, a professional, or just starting your fitness journey, our platform provides the digital solutions and guidance needed to stay energized and balanced.</p>
-        <div class="footer-socials">
-          <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#top" class="go-top-btn"><i class="fas fa-chevron-up"></i></a>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <a href="../../../index.html" class="footer-wordmark">
+                    <div class="footer-wordmark-icon">
+                        <img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo" title="TechFit Logo">
+                    </div>
+                    <span class="footer-wordmark-text">TECHFIT</span>
+                </a>
+                <p class="footer-brand-desc">
+                    TechFit was created to bridge the gap between busy modern lifestyles and physical well-being.
+                    Whether you are a student, a professional, or just starting your fitness journey, our platform
+                    provides the digital solutions and guidance needed to stay energized and balanced.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <span class="footer-col-label">Platform</span>
+                <ul class="footer-nav-links">
+                    <li><a href="../../../index.html">Home</a></li>
+                    <li><a href="../../../index.html#about">About Us</a></li>
+                    <li><a href="../../../index.html#tools">Wellness Tools</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-label">Features</span>
+                <ul class="footer-nav-links">
+                    <li><a href="../../../features/technology-fitness.html">Tech &amp; Fit</a></li>
+                    <li><a href="../../../features/health-monitoringtools.html">Health Tools</a></li>
+                    <li><a href="../../../features/sustainable-wellness.html">Sustainability</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="footer-col-label">Contact Us</span>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope" style="color:#22C55E;"></i>
+                    <a href="mailto:techfit.itad@gmail.com" style="color:inherit; text-decoration:none;">techfit.itad@gmail.com</a>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div>
-        <span class="footer-col-label">Platform</span>
-        <ul class="footer-nav-links">
-          <li><a href="../../../index.html">Home</a></li>
-          <li><a href="../../../index.html#about">About Us</a></li>
-          <li><a href="../../../index.html#tools">Wellness Tools</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <span class="footer-col-label">Features</span>
-        <ul class="footer-nav-links">
-          <li><a href="../../../features/technology-fitness.html">Tech &amp; Fit</a></li>
-          <li><a href="../../../features/health-monitoringtools.html">Health Tools</a></li>
-          <li><a href="../../../features/sustainable-wellness.html">Sustainability</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <span class="footer-col-label">Connect</span>
-        <div class="footer-contact-item">
-          <i class="fas fa-envelope" style="color:#22C55E;"></i>
-          <a href="mailto:techfit.itad@gmail.com">techfit.itad@gmail.com</a>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechFit by Seraphit. University of the East CCSS Manila. All rights reserved.</p>
         </div>
-      </div>
-    </div>
+    </footer>
 
-    <div class="footer-divider"></div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <a href="#top" class="go-top-btn"><i class="fas fa-chevron-up"></i></a>
-
-  <script src="../../../assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
