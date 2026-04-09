@@ -205,7 +205,6 @@ select {
     height: 85px;
     padding: 0 64px;
     background: var(--brand-nav-bg);
-    border-bottom: 2px solid var(--brand-primary);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
@@ -795,6 +794,8 @@ select {
     font-weight: 800;
     color: var(--white);
     flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .benefits-grid {
