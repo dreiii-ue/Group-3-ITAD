@@ -94,7 +94,7 @@ select {
 .section-tag,
 .sec-label {
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     font-size: 13px;
     font-weight: 800;
     text-transform: uppercase;
@@ -119,6 +119,11 @@ select {
 .sec-description,
 .muted {
     color: var(--muted);
+    
+}
+
+p.sec-description {
+    margin-bottom: 60px;
 }
 
 .small {
@@ -609,7 +614,7 @@ select {
 .topic-card h3 {
     font-weight: bold;
     min-height: 72px;
-    color: var(--text-soft);
+    color: var(--text-main);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -619,7 +624,7 @@ select {
 
 .topic-card p {
     margin-bottom: 30px;
-    color: var(--text-soft);
+    color: var(--muted);
     font-size: 1rem;
     line-height: 1.7;
 }
@@ -775,6 +780,7 @@ select {
 
 .content-wrap {
     padding: 64px 64px;
+    margin-bottom: 64px;
 }
 
 .steps-list {
