@@ -104,7 +104,7 @@ select {
 
 .section-title {
     font-size: clamp(2rem, 4vw, 42px);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     letter-spacing: -1.5px;
     color: var(--brand-dark);
 }
@@ -527,7 +527,7 @@ p.sec-description {
 
 .ecosystem-desc {
     max-width: 600px;
-    margin: -40px auto 50px;
+    margin: 0px auto 50px;
     color: var(--text-muted);
 }
 
