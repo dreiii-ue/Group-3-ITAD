@@ -607,6 +607,7 @@ select {
 }
 
 .topic-card h3 {
+    font-weight: bold;
     min-height: 72px;
     color: var(--text-soft);
     display: flex;
