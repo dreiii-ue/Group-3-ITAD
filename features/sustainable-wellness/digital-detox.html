@@ -1,225 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Detox | TechFit</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Wellness Apps | TechFit</title>
 
-  <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 
-  <style>
-    .bootstrap-scope .row {
-      --bs-gutter-x: 1.5rem;
-      --bs-gutter-y: 1.5rem;
-    }
+    <style>
+        .bootstrap-scope .row {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 1.5rem;
+        }
 
-    /* Center the last row so the 2 remaining cards are not left-aligned */
-    .topics-grid {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      justify-content: center !important;
-      gap: 35px !important;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
+        .topics-grid {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 35px !important;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
 
-    .topics-grid .topic-card {
-      flex: 0 1 calc(33.333% - 35px) !important;
-      min-width: 300px;
-      max-width: 400px;
-    }
+        .topics-grid .topic-card {
+            flex: 0 1 calc(33.333% - 35px) !important;
+            min-width: 300px;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    @media (max-width: 1024px) {
-      .topics-grid .topic-card {
-        flex: 0 1 calc(50% - 35px) !important;
-        max-width: 420px;
-      }
-    }
+        @media (max-width: 1024px) {
+            .topics-grid .topic-card {
+                flex: 0 1 calc(50% - 35px) !important;
+                max-width: 420px;
+            }
+        }
 
-    @media (max-width: 640px) {
-      .topics-grid .topic-card {
-        flex: 1 1 100% !important;
-        max-width: 100%;
-      }
-    }
-  </style>
+        @media (max-width: 640px) {
+            .topics-grid .topic-card {
+                flex: 1 1 100% !important;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body id="top">
 
-  <header class="site-header">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a href="../../index.html" class="navbar-brand logo-link">
-          <div class="logo-img-box">
-            <img src="../../assets/images/logo/logo-white.png" alt="TechFit Logo">
-          </div>
-          <span class="logo-text">TECHFIT</span>
-        </a>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a href="../../index.html" class="navbar-brand logo-link">
+                    <div class="logo-img-box">
+                        <img src="../../assets/images/logo/logo-white.png" alt="TechFit Logo">
+                    </div>
+                    <span class="logo-text">TECHFIT</span>
+                </a>
 
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars" style="color:#22C55E; font-size:20px;"></i>
-        </button>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars" style="color:#22C55E; font-size:20px;"></i>
+                </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-          <ul class="navbar-nav nav-list">
-            <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../index.html#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../features/technology-fitness.html">Tech &amp; Fit</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../features/health-monitoringtools.html">Health Tools</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../features/sustainable-wellness.html">Sustainability</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../index.html#tools">Tools</a></li>
-            <li class="nav-item"><a class="nav-link" href="../../index.html#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <div class="bootstrap-scope">
-    <main>
-      <div class="back-nav-container">
-        <a href="../sustainable-wellness.html" class="back-btn">
-          <i class="fas fa-arrow-left"></i>
-          <span>Back</span>
-        </a>
-      </div>
-
-      <section class="subpage-hero">
-        <h1>Digital Detox</h1>
-        <p>Minimize distractions and reclaim your productivity.</p>
-      </section>
-
-      <section class="ecosystem-section">
-        <div class="topics-grid">
-
-          <div class="topic-card">
-            <div>
-              <a href="../../assets/images/logo/forest-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Forest Logo">
-                <div class="app-logo-box-circle">
-                  <img src="../../assets/images/logo/forest-logo.png" alt="Forest Logo">
+                <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                    <ul class="navbar-nav nav-list">
+                        <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../features/technology-fitness.html">Tech &amp; Fit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../features/health-monitoringtools.html">Health Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../features/sustainable-wellness.html">Sustainability</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../index.html#tools">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../index.html#contact">Contact</a></li>
+                    </ul>
                 </div>
-              </a>
-              <h3>Forest</h3>
-              <p>Plant a tree when you need to focus. If you leave the app to check your phone, your tree withers and dies.</p>
             </div>
-            <a href="digital-detox-apps/forest-app.html" class="explore-btn">Explore App</a>
-          </div>
+        </nav>
+    </header>
 
-          <div class="topic-card">
-            <div>
-              <a href="../../assets/images/logo/freedom-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Freedom Logo">
-                <div class="app-logo-box-circle">
-                  <img src="../../assets/images/logo/freedom-logo.png" alt="Freedom Logo">
+    <div class="bootstrap-scope">
+        <main>
+            <div class="back-nav-container">
+                <a href="../sustainable-wellness.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back</span>
+                </a>
+            </div>
+
+            <section class="subpage-hero">
+                <h1>Community Wellness Apps</h1>
+                <p>Connect, support, and grow with the best digital spaces for mental and physical well-being.</p>
+            </section>
+
+            <section class="ecosystem-section">
+                <div class="topics-grid">
+
+                    <div class="topic-card">
+                        <div>
+                            <a href="../../assets/images/logo/headspace-logo.jpg" target="brand_view" class="logo-zoom-trigger" data-tooltip="Headspace Logo">
+                                <div class="app-logo-box-circle">
+                                    <img src="../../assets/images/logo/headspace-logo.jpg" alt="Headspace Logo">
+                                </div>
+                            </a>
+                            <h3>Headspace</h3>
+                            <p>Guiding users to relax, stress less, and sleep better through meditation and mindfulness.</p>
+                        </div>
+                        <a href="community-wellness-apps/headspace-app.html" class="explore-btn">Explore App</a>
+                    </div>
+
+                    <div class="topic-card">
+                        <div>
+                            <a href="../../assets/images/logo/pacer-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Pacer Logo">
+                                <div class="app-logo-box-circle">
+                                    <img src="../../assets/images/logo/pacer-logo.png" alt="Pacer Logo">
+                                </div>
+                            </a>
+                            <h3>Pacer: Walking Together</h3>
+                            <p>A fitness community focused on walking and activity tracking, motivating users through global challenges.</p>
+                        </div>
+                        <a href="community-wellness-apps/pacer-app.html" class="explore-btn">Explore App</a>
+                    </div>
+
+                    <div class="topic-card">
+                        <div>
+                            <a href="../../assets/images/logo/tellmi-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Tellmi Logo">
+                                <div class="app-logo-box-circle">
+                                    <img src="../../assets/images/logo/tellmi-logo.png" alt="Tellmi Logo">
+                                </div>
+                            </a>
+                            <h3>Tellmi</h3>
+                            <p>A safe, anonymous space for young people to share openly, offering peer support and advice.</p>
+                        </div>
+                        <a href="community-wellness-apps/tellmi-app.html" class="explore-btn">Explore App</a>
+                    </div>
+
+                    <div class="topic-card">
+                        <div>
+                            <a href="../../assets/images/logo/welltrack-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="WellTrack Logo">
+                                <div class="app-logo-box-circle">
+                                    <img src="../../assets/images/logo/welltrack-logo.png" alt="WellTrack Logo">
+                                </div>
+                            </a>
+                            <h3>WellTrack</h3>
+                            <p>An app with evidence-based tools for building healthier thinking habits designed to help with your mental health.</p>
+                        </div>
+                        <a href="community-wellness-apps/welltrack-app.html" class="explore-btn">Explore App</a>
+                    </div>
+
+                    <div class="topic-card">
+                        <div>
+                            <a href="../../assets/images/logo/happify-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Happify Logo">
+                                <div class="app-logo-box-circle">
+                                    <img src="../../assets/images/logo/happify-logo.png" alt="Happify Logo">
+                                </div>
+                            </a>
+                            <h3>Happify</h3>
+                            <p>Science-based activities and games designed to reduce stress, overcome negative thoughts, and build resilience.</p>
+                        </div>
+                        <a href="community-wellness-apps/happify-app.html" class="explore-btn">Explore App</a>
+                    </div>
+
                 </div>
-              </a>
-              <h3>Freedom</h3>
-              <p>The gold standard for blocking distracting apps and websites across all your devices simultaneously.</p>
-            </div>
-            <a href="digital-detox-apps/freedom-app.html" class="explore-btn">Explore App</a>
-          </div>
-
-          <div class="topic-card">
-            <div>
-              <a href="../../assets/images/logo/opal-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Opal Logo">
-                <div class="app-logo-box-circle">
-                  <img src="../../assets/images/logo/opal-logo.png" alt="Opal Logo">
-                </div>
-              </a>
-              <h3>Opal</h3>
-              <p>Screen time protection that uses focus sessions to help you disconnect from social media automatically.</p>
-            </div>
-            <a href="digital-detox-apps/opal-app.html" class="explore-btn">Explore App</a>
-          </div>
-
-          <div class="topic-card">
-            <div>
-              <a href="../../assets/images/logo/flipd-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Flipd Logo">
-                <div class="app-logo-box-circle">
-                  <img src="../../assets/images/logo/flipd-logo.png" alt="Flipd Logo">
-                </div>
-              </a>
-              <h3>Flipd</h3>
-              <p>Lock your phone and join live group study rooms — built for students who need both focus and accountability.</p>
-            </div>
-            <a href="digital-detox-apps/flipd-app.html" class="explore-btn">Explore App</a>
-          </div>
-
-          <div class="topic-card">
-            <div>
-              <a href="../../assets/images/logo/minimalist-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Minimalist Phone Logo">
-                <div class="app-logo-box-circle">
-                  <img src="../../assets/images/logo/minimalist-logo.png" alt="Minimalist Phone Logo">
-                </div>
-              </a>
-              <h3>Minimalist Phone</h3>
-              <p>Reclaim your brain from addictive app design by replacing icons with a clean, text-based minimalist interface.</p>
-            </div>
-            <a href="digital-detox-apps/minimalist-phone.html" class="explore-btn">Explore App</a>
-          </div>
-
-        </div>
-      </section>
-
-    </main>
-  </div>
-
-  <footer class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <a href="../../index.html" class="footer-wordmark">
-          <div class="footer-wordmark-icon">
-            <img src="../../assets/images/logo/logo-white.png" alt="TechFit Logo">
-          </div>
-          <span class="footer-wordmark-text">TECHFIT</span>
-        </a>
-        <p class="footer-brand-desc">TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Whether you are a student, a professional, or just starting your fitness journey, our platform provides the digital solutions and guidance needed to stay energized and balanced.</p>
-        <div class="footer-socials">
-          <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-
-      <div>
-        <span class="footer-col-label">Platform</span>
-        <ul class="footer-nav-links">
-          <li><a href="../../index.html">Home</a></li>
-          <li><a href="../../index.html#about">About Us</a></li>
-          <li><a href="../../index.html#tools">Wellness Tools</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <span class="footer-col-label">Features</span>
-        <ul class="footer-nav-links">
-          <li><a href="../../features/technology-fitness.html">Tech &amp; Fit</a></li>
-          <li><a href="../../features/health-monitoringtools.html">Health Tools</a></li>
-          <li><a href="../../features/sustainable-wellness.html">Sustainability</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <span class="footer-col-label">Connect</span>
-        <div class="footer-contact-item">
-          <i class="fas fa-envelope" style="color:#22C55E;"></i>
-          <a href="mailto:techfit.itad@gmail.com">techfit.itad@gmail.com</a>
-        </div>
-      </div>
+            </section>
+        </main>
     </div>
 
-    <div class="footer-divider"></div>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <a href="../../index.html" class="footer-wordmark">
+                    <div class="footer-wordmark-icon">
+                        <img src="../../assets/images/logo/logo-white.png" alt="TechFit Logo">
+                    </div>
+                    <span class="footer-wordmark-text">TECHFIT</span>
+                </a>
+                <p class="footer-brand-desc">TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Whether you are a student, a professional, or just starting your fitness journey, our platform provides the digital solutions and guidance needed to stay energized and balanced.</p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
 
-    <div class="footer-bottom">
-      <p>&copy; 2026 TechFit by Seraphit. University of the East CCSS Manila. All rights reserved.</p>
-    </div>
-  </footer>
+            <div>
+                <span class="footer-col-label">Platform</span>
+                <ul class="footer-nav-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../index.html#about">About Us</a></li>
+                    <li><a href="../../index.html#tools">Wellness Tools</a></li>
+                </ul>
+            </div>
 
-  <a href="#top" class="go-top-btn"><i class="fas fa-chevron-up"></i></a>
+            <div>
+                <span class="footer-col-label">Features</span>
+                <ul class="footer-nav-links">
+                    <li><a href="../../features/technology-fitness.html">Tech &amp; Fit</a></li>
+                    <li><a href="../../features/health-monitoringtools.html">Health Tools</a></li>
+                    <li><a href="../../features/sustainable-wellness.html">Sustainability</a></li>
+                </ul>
+            </div>
 
-  <script src="../../assets/bootstrap/bootstrap.bundle.min.js"></script>
+            <div>
+                <span class="footer-col-label">Connect</span>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope" style="color:#22C55E;"></i>
+                    <a href="mailto:techfit.itad@gmail.com">techfit.itad@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechFit by Seraphit. University of the East CCSS Manila. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top-btn"><i class="fas fa-chevron-up"></i></a>
+
+    <script src="../../assets/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>
