@@ -2,173 +2,298 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Wellness Apps | TechFit</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Detox | TechFit</title>
     <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+    
     <style>
-        .bootstrap-scope .row {
-            --bs-gutter-x: 1.5rem;
-            --bs-gutter-y: 1.5rem;
+        /* === THEME & RESET === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #111827; line-height: 1.6; }
+
+        :root {
+            --brand-primary: #22C55E; 
+            --brand-dark: #166534;
+            --nav-bg: #E1FBEA;         
+            --footer-bg: #064E3B;
+            --text-muted: #4b5563;
         }
 
-        .topics-grid {
-            display: flex !important;
-            flex-wrap: wrap !important;
-            justify-content: center !important;
-            gap: 35px !important;
-            max-width: 1300px;
-            margin: 0 auto;
+        /* === NAVIGATION === */
+        .site-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 8%; background-color: var(--nav-bg);
+            position: sticky; top: 0; z-index: 1000; height: 80px;
+            border-bottom: 2px solid var(--brand-dark);
         }
 
-        .topics-grid .topic-card {
-            flex: 0 1 calc(33.333% - 35px) !important;
+        .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+
+        .logo-img-box {
+            width: 38px; height: 38px;
+            background: var(--brand-primary);
+            border-radius: 8px; 
+            display: flex; align-items: center; justify-content: center;
+            padding: 4px; 
+        }
+
+        .logo-img-box img { width: 100%; height: 100%; object-fit: contain; }
+        
+        .logo-text { 
+            font-family: 'Inter', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--brand-dark); 
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-list { display: flex; list-style: none; gap: 8px; align-items: center; }
+        .nav-list li a {
+            color: var(--brand-dark); text-decoration: none; font-weight: 700; font-size: 0.9rem;
+            padding: 10px 15px; border-radius: 50px; transition: 0.3s;
+        }
+        .nav-list li a:hover { background-color: var(--brand-primary); color: #ffffff; }
+
+        /* === APP LOGO HOVER === */
+        .logo-zoom-trigger {
+            text-decoration: none; position: relative; transition: transform 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .logo-zoom-trigger:hover { transform: scale(1.05); }
+        
+        .logo-zoom-trigger::after {
+            content: attr(data-tooltip); 
+            position: absolute; 
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%); background: #111827; color: #fff;
+            padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 700;
+            opacity: 0; transition: 0.3s; pointer-events: none; white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .logo-zoom-trigger::before {
+            content: '';
+            position: absolute; top: -15px; left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px 6px 0 6px;
+            border-style: solid;
+            border-color: #111827 transparent transparent transparent;
+            opacity: 0; transition: 0.3s;
+        }
+        .logo-zoom-trigger:hover::after, 
+        .logo-zoom-trigger:hover::before { opacity: 1; }
+
+        /* === SYMMETRICAL APP GRID === */
+        .ecosystem-section { background-color: #f0fdf4; padding: 90px 8%; }
+        .topics-grid { 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* This centers the bottom row items */
+            gap: 35px; 
+            max-width: 1300px; 
+            margin: 0 auto; 
+        }
+
+        .topic-card {
+            background: #ffffff; border-radius: 35px; padding: 50px 40px;
+            text-align: center; display: flex; flex-direction: column;
+            justify-content: space-between; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-bottom: 6px solid transparent; box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            flex: 1 1 calc(33.333% - 35px); /* Basis for 3 columns */
             min-width: 300px;
             max-width: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
+        .topic-card:hover { 
+            transform: translateY(-12px); 
+            border-bottom: 6px solid var(--brand-primary);
+            box-shadow: 0 20px 40px rgba(20, 83, 45, 0.1);
+        }
+
+        .app-logo-box-circle {
+            height: 150px; width: 150px;
+            border-radius: 50%; overflow: hidden;
+            background-color: #fff; border: 1px solid #f3f4f6;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 30px; margin-left: auto; margin-right: auto;
+        }
+        .app-logo-box-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+        .topic-card h3 { color: var(--brand-dark); font-size: 1.8rem; font-weight: 800; margin-bottom: 18px; }
+        .topic-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 35px; line-height: 1.7; }
+
+        .explore-btn {
+            display: inline-block; padding: 12px 30px; border: 2px solid var(--brand-primary);
+            color: var(--brand-dark); text-decoration: none; border-radius: 12px;
+            font-weight: 800; transition: 0.3s;
+        }
+        .explore-btn:hover { background-color: var(--brand-primary); color: white; }
+
+        /* === HERO === */
+        .subpage-hero {
+            background: linear-gradient(135deg, #052e16 0%, #14532d 100%);
+            padding: 90px 8% 60px; text-align: center; color: white;
+        }
+        .subpage-hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 15px; }
+        .subpage-hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 35px; }
+        
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 10px; background: var(--brand-primary);
+            color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none;
+            font-weight: 800; transition: 0.3s;
+        }
+        .back-btn:hover { background-color: white; color: var(--brand-dark); transform: translateX(-5px); }
+
+        /* === FOOTER STYLING === */
+        .site-footer { background: var(--footer-bg); color: white; padding: 80px 8% 40px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 60px; }
+        .footer-wordmark { display: flex; align-items: center; gap: 15px; text-decoration: none; margin-bottom: 25px; }
+        .footer-wordmark-icon { width: 45px; height: 45px; background: var(--brand-primary); border-radius: 10px; padding: 6px; display: flex; align-items: center; justify-content: center; }
+        .footer-wordmark-icon img { width: 100%; height: 100%; object-fit: contain; }
+        .footer-wordmark-text { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 900; color: white; letter-spacing: 1px; }
+        .footer-brand-desc { color: #cbd5e1; font-size: 0.95rem; line-height: 1.8; margin-bottom: 30px; max-width: 400px; }
+        .footer-socials { display: flex; gap: 15px; }
+        .footer-social-btn { width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; transition: 0.3s; }
+        .footer-social-btn:hover { background: var(--brand-primary); transform: translateY(-5px); }
+        .footer-col-label { display: block; color: var(--brand-primary); font-weight: 800; font-size: 1.1rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-nav-links { list-style: none; }
+        .footer-nav-links li { margin-bottom: 15px; }
+        .footer-nav-links a { color: #cbd5e1; text-decoration: none; transition: 0.3s; font-weight: 500; }
+        .footer-nav-links a:hover { color: var(--brand-primary); padding-left: 8px; }
+        .footer-contact-item { display: flex; align-items: center; gap: 12px; color: #cbd5e1; }
+        .footer-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 40px; }
+        .footer-bottom { text-align: center; font-size: 0.9rem; color: #94a3b8; }
+        
+        .go-top-anchor {
+            position: fixed; bottom: 25px; right: 25px; background: #22C55E; color: white; 
+            width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: 0.3s ease; z-index: 1000;
+        }
+        .go-top-anchor:hover { transform: translateY(-8px); background-color: var(--brand-dark); }
 
         @media (max-width: 1024px) {
-            .topics-grid .topic-card {
-                flex: 0 1 calc(50% - 35px) !important;
-                max-width: 420px;
-            }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .topic-card { flex: 1 1 calc(50% - 35px); }
         }
 
-        @media (max-width: 640px) {
-            .topics-grid .topic-card {
-                flex: 1 1 100% !important;
-                max-width: 100%;
-            }
+        @media (max-width: 768px) { 
+            .topic-card { flex: 1 1 100%; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; } 
+            .footer-wordmark, .footer-contact-item, .footer-socials { justify-content: center; }
+            .footer-brand-desc { margin-left: auto; margin-right: auto; }
         }
     </style>
 </head>
 
 <body id="top">
-
     <header class="site-header">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a href="../../index.html" class="navbar-brand logo-link">
-                    <div class="logo-img-box">
-                        <img src="../../assets/images/logo/logo-white.png" alt="TechFit Logo">
-                    </div>
-                    <span class="logo-text">TECHFIT</span>
-                </a>
-
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars" style="color:#22C55E; font-size:20px;"></i>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-                    <ul class="navbar-nav nav-list">
-                        <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../index.html#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../features/technology-fitness.html">Tech &amp; Fit</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../features/health-monitoringtools.html">Health Tools</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../features/sustainable-wellness.html">Sustainability</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../index.html#tools">Tools</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
+        <a href="../../index.html" class="logo-link">
+            <div class="logo-img-box">
+                <img src="../../assets/images/logo/logo-white.png" alt="TechFit Logo">
             </div>
+            <span class="logo-text">TECHFIT</span>
+        </a>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../technology-fitness.html">Tech & Fit</a></li>
+                <li><a href="../health-monitoringtools.html">Health Tools</a></li>
+                <li><a href="../sustainable-wellness.html">Sustainability</a></li>
+                <li><a href="../../index.html#tools">Tools</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <div class="bootstrap-scope">
-        <main>
-            <div class="back-nav-container">
-                <a href="../sustainable-wellness.html" class="back-btn">
-                    <i class="fas fa-arrow-left"></i>
-                    <span>Back</span>
-                </a>
-            </div>
+    <main>
+        <section class="subpage-hero">
+            <h1>Digital Detox</h1>
+            <p>Minimize distractions and reclaim your productivity.</p>
+            <a href="../sustainable-wellness.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Wellness
+            </a>
+        </section>
 
-            <section class="subpage-hero">
-                <h1>Community Wellness Apps</h1>
-                <p>Connect, support, and grow with the best digital spaces for mental and physical well-being.</p>
-            </section>
-
-            <section class="ecosystem-section">
-                <div class="topics-grid">
-
-                    <div class="topic-card">
-                        <div>
-                            <a href="../../assets/images/logo/headspace-logo.jpg" target="brand_view" class="logo-zoom-trigger" data-tooltip="Headspace Logo">
-                                <div class="app-logo-box-circle">
-                                    <img src="../../assets/images/logo/headspace-logo.jpg" alt="Headspace Logo">
-                                </div>
-                            </a>
-                            <h3>Headspace</h3>
-                            <p>Guiding users to relax, stress less, and sleep better through meditation and mindfulness.</p>
-                        </div>
-                        <a href="community-wellness-apps/headspace-app.html" class="explore-btn">Explore App</a>
+        <section class="ecosystem-section">
+            <div class="topics-grid">
+                
+                <div class="topic-card">
+                    <div>
+                        <a href="../../assets/images/logo/forest-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Forest Logo">
+                            <div class="app-logo-box-circle">
+                                <img src="../../assets/images/logo/forest-logo.png" alt="Forest Logo">
+                            </div>
+                        </a>
+                        <h3>Forest</h3>
+                        <p>Plant a tree when you need to focus. If you leave the app to check your phone, your tree withers and dies.</p>
                     </div>
-
-                    <div class="topic-card">
-                        <div>
-                            <a href="../../assets/images/logo/pacer-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Pacer Logo">
-                                <div class="app-logo-box-circle">
-                                    <img src="../../assets/images/logo/pacer-logo.png" alt="Pacer Logo">
-                                </div>
-                            </a>
-                            <h3>Pacer: Walking Together</h3>
-                            <p>A fitness community focused on walking and activity tracking, motivating users through global challenges.</p>
-                        </div>
-                        <a href="community-wellness-apps/pacer-app.html" class="explore-btn">Explore App</a>
-                    </div>
-
-                    <div class="topic-card">
-                        <div>
-                            <a href="../../assets/images/logo/tellmi-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Tellmi Logo">
-                                <div class="app-logo-box-circle">
-                                    <img src="../../assets/images/logo/tellmi-logo.png" alt="Tellmi Logo">
-                                </div>
-                            </a>
-                            <h3>Tellmi</h3>
-                            <p>A safe, anonymous space for young people to share openly, offering peer support and advice.</p>
-                        </div>
-                        <a href="community-wellness-apps/tellmi-app.html" class="explore-btn">Explore App</a>
-                    </div>
-
-                    <div class="topic-card">
-                        <div>
-                            <a href="../../assets/images/logo/welltrack-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="WellTrack Logo">
-                                <div class="app-logo-box-circle">
-                                    <img src="../../assets/images/logo/welltrack-logo.png" alt="WellTrack Logo">
-                                </div>
-                            </a>
-                            <h3>WellTrack</h3>
-                            <p>An app with evidence-based tools for building healthier thinking habits designed to help with your mental health.</p>
-                        </div>
-                        <a href="community-wellness-apps/welltrack-app.html" class="explore-btn">Explore App</a>
-                    </div>
-
-                    <div class="topic-card">
-                        <div>
-                            <a href="../../assets/images/logo/happify-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Happify Logo">
-                                <div class="app-logo-box-circle">
-                                    <img src="../../assets/images/logo/happify-logo.png" alt="Happify Logo">
-                                </div>
-                            </a>
-                            <h3>Happify</h3>
-                            <p>Science-based activities and games designed to reduce stress, overcome negative thoughts, and build resilience.</p>
-                        </div>
-                        <a href="community-wellness-apps/happify-app.html" class="explore-btn">Explore App</a>
-                    </div>
-
+                    <a href="digital-detox-apps/forest-app.html" class="explore-btn">Explore App</a>
                 </div>
-            </section>
-        </main>
-    </div>
+
+                <div class="topic-card">
+                    <div>
+                        <a href="../../assets/images/logo/freedom-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Freedom Logo">
+                            <div class="app-logo-box-circle">
+                                <img src="../../assets/images/logo/freedom-logo.png" alt="Freedom Logo">
+                            </div>
+                        </a>
+                        <h3>Freedom</h3>
+                        <p>The gold standard for blocking distracting apps and websites across all your devices simultaneously.</p>
+                    </div>
+                    <a href="digital-detox-apps/freedom-app.html" class="explore-btn">Explore App</a>
+                </div>
+
+                <div class="topic-card">
+                    <div>
+                        <a href="../../assets/images/logo/opal-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Opal Logo">
+                            <div class="app-logo-box-circle">
+                                <img src="../../assets/images/logo/opal-logo.png" alt="Opal Logo">
+                            </div>
+                        </a>
+                        <h3>Opal</h3>
+                        <p>Screen time protection that uses focus sessions to help you disconnect from social media automatically.</p>
+                    </div>
+                    <a href="digital-detox-apps/opal-app.html" class="explore-btn">Explore App</a>
+                </div>
+
+                <div class="topic-card">
+                    <div>
+                        <a href="../../assets/images/logo/flipd-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Flipd Logo">
+                            <div class="app-logo-box-circle">
+                                <img src="../../assets/images/logo/flipd-logo.png" alt="Flipd Logo">
+                            </div>
+                        </a>
+                        <h3>Flipd</h3>
+                        <p>Lock your phone and join live group study rooms — built for students who need both focus and accountability.</p>
+                    </div>
+                    <a href="digital-detox-apps/flipd-app.html" class="explore-btn">Explore App</a>
+                </div>
+
+                <div class="topic-card">
+                    <div>
+                        <a href="../../assets/images/logo/minimalist-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Minimalist Phone Logo">
+                            <div class="app-logo-box-circle">
+                                <img src="../../assets/images/logo/minimalist-logo.png" alt="Minimalist Phone Logo">
+                            </div>
+                        </a>
+                        <h3>Minimalist Phone</h3>
+                        <p>Reclaim your brain from addictive app design by replacing icons with a clean, text-based minimalist interface.</p>
+                    </div>
+                    <a href="digital-detox-apps/minimalist-phone.html" class="explore-btn">Explore App</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="footer-grid">
@@ -179,10 +304,12 @@
                     </div>
                     <span class="footer-wordmark-text">TECHFIT</span>
                 </a>
-                <p class="footer-brand-desc">TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Whether you are a student, a professional, or just starting your fitness journey, our platform provides the digital solutions and guidance needed to stay energized and balanced.</p>
+                <p class="footer-brand-desc">
+                    TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Whether you are a student, a professional, or just starting your fitness journey, our platform provides the digital solutions and guidance needed to stay energized and balanced.
+                </p>
                 <div class="footer-socials">
-                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
@@ -198,17 +325,17 @@
             <div>
                 <span class="footer-col-label">Features</span>
                 <ul class="footer-nav-links">
-                    <li><a href="../../features/technology-fitness.html">Tech &amp; Fit</a></li>
-                    <li><a href="../../features/health-monitoringtools.html">Health Tools</a></li>
-                    <li><a href="../../features/sustainable-wellness.html">Sustainability</a></li>
+                    <li><a href="../technology-fitness.html">Tech & Fit</a></li>
+                    <li><a href="../health-monitoringtools.html">Health Tools</a></li>
+                    <li><a href="../sustainable-wellness.html">Sustainability</a></li>
                 </ul>
             </div>
 
             <div>
-                <span class="footer-col-label">Connect</span>
+                <span class="footer-col-label">Contact Us</span>
                 <div class="footer-contact-item">
                     <i class="fas fa-envelope" style="color:#22C55E;"></i>
-                    <a href="mailto:techfit.itad@gmail.com">techfit.itad@gmail.com</a>
+                    <a href="mailto:techfit.itad@gmail.com" style="color:inherit; text-decoration:none;">techfit.itad@gmail.com</a>
                 </div>
             </div>
         </div>
@@ -220,8 +347,9 @@
         </div>
     </footer>
 
-    <a href="#top" class="go-top-btn"><i class="fas fa-chevron-up"></i></a>
+    <a href="#top" class="go-top-anchor">
+        <i class="fas fa-chevron-up"></i>
+    </a>
 
-    <script src="../../assets/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>
