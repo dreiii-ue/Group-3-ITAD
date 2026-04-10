@@ -317,6 +317,70 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <script>
+        function calculateBMI() {
+            // 1. Get input values
+            const weight = parseFloat(document.getElementById('weight').value);
+            const heightCm = parseFloat(document.getElementById('height').value);
+            const resultDisplay = document.getElementById('result-display');
+
+            // 2. Validation: Check if inputs are valid numbers
+            if (isNaN(weight) || isNaN(heightCm) || weight <= 0 || heightCm <= 0) {
+                alert("Please enter valid positive numbers for weight and height.");
+                return;
+            }
+
+            // 3. BMI Calculation (Formula: kg / m^2)
+            const heightM = heightCm / 100;
+            const bmi = (weight / (heightM * heightM)).toFixed(1);
+
+            // 4. Determine Status, Advice, and Progress Bar Width
+            let status = "";
+            let advice = "";
+            let progressWidth = 0;
+            let progressColor = "";
+
+            if (bmi < 18.5) {
+                status = "Underweight";
+                advice = "Your BMI suggests you are in the underweight category. Consider consulting a nutritionist to ensure you're getting enough nutrients.";
+                progressWidth = 15; // Positioning for progress bar
+                progressColor = "#3b82f6"; // Blue
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                status = "Healthy Weight";
+                advice = "Great job! You are within the healthy weight range. Maintain your current lifestyle with balanced nutrition and regular exercise.";
+                progressWidth = 40; 
+                progressColor = "#22C55E"; // Green
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                status = "Overweight";
+                advice = "You are in the overweight category. Increasing physical activity and monitoring portion sizes can help you reach a healthy range.";
+                progressWidth = 65;
+                progressColor = "#f59e0b"; // Orange/Yellow
+            } else {
+                status = "Obese";
+                advice = "Your BMI falls in the obese category. We recommend speaking with a healthcare professional to create a personalized wellness plan.";
+                progressWidth = 90;
+                progressColor = "#ef4444"; // Red
+            }
+
+            // 5. Update the UI
+            document.getElementById('bmi-value').innerText = bmi;
+            document.getElementById('bmi-status').innerText = status;
+            document.getElementById('bmi-status').style.color = progressColor;
+            document.getElementById('bmi-advice').innerText = advice;
+
+            // Update Progress Bar
+            const progressBar = document.getElementById('bmi-progress');
+            progressBar.style.width = progressWidth + "%";
+            progressBar.style.backgroundColor = progressColor;
+
+            // Show the hidden result section
+            resultDisplay.style.display = 'block';
+            
+            // Smooth scroll to results
+            resultDisplay.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+            
     <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 
