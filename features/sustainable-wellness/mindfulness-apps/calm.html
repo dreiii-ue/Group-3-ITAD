@@ -4,405 +4,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechFit | Calm</title>
-    <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon.ico">
+    <title>Calm | TechFit</title>
+    <link rel="icon" type="image/x-icon" href="../../../../assets/images/favicon.ico">
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../../assets/css/style.css">
+    <style>
+        .bootstrap-scope .row {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 1.5rem;
+        }
+    </style>
 </head>
 
-<body id="top" style="background-color: #F5F5FC; color: #111827; font-family: 'Plus Jakarta Sans', sans-serif;">
-
+<body id="top">
     <header class="site-header">
-        <a href="../../../index.html" class="logo-link text-decoration-none">
-            <div class="logo-img-box"><img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo"></div>
-            <span class="logo-text">TECHFIT</span>
-        </a>
-        <button class="mobile-menu-btn d-md-none border-0 bg-transparent text-success fs-3"
-            onclick="document.getElementById('nav-menu').classList.toggle('active')">
-            <i class="fas fa-bars"></i>
-        </button>
-        <nav class="main-nav d-none d-md-block">
-            <ul class="nav-list m-0 p-0 d-flex gap-2 list-unstyled">
-                <li><a href="../../../index.html">Home</a></li>
-                <li><a href="../../../index.html#about">About</a></li>
-                <li><a href="../../technology-fitness.html">Tech & Fit</a></li>
-                <li><a href="../../health-monitoringtools.html">Health Tools</a></li>
-                <li><a href="../../sustainable-wellness.html">Sustainability</a></li>
-                <li><a href="../../../index.html#tools">Tools</a></li>
-                <li><a href="../../../index.html#contact">Contact</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a href="../../../../index.html" class="navbar-brand logo-link">
+                    <div class="logo-img-box">
+                        <img src="../../../../assets/images/logo/logo-white.png" alt="TechFit Logo"
+                            title="TechFit Logo">
+                    </div>
+                    <span class="logo-text">TECHFIT</span>
+                </a>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars" style="color:#22C55E; font-size:20px;"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                    <ul class="navbar-nav nav-list">
+                        <li class="nav-item"><a class="nav-link" href="../../../../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../../../index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="../../../../features/technology-fitness.html">Tech &amp; Fit</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="../../../../features/health-monitoringtools.html">Health Tools</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="../../../../features/sustainable-wellness.html">Sustainability</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../../../index.html#tools">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../../../../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section style="background-color: #D1FAE5; padding: 120px 0 80px; position: relative;">
-            <div class="container position-relative">
-                <div style="position: absolute; top: -60px; left: 15px; z-index: 10;">
-                    <a href="mindfull-apps.html"
-                        class="d-inline-flex align-items-center gap-2 text-white text-decoration-none px-4 py-2 fw-bold"
-                        style="background-color: #22C55E; border-radius: 50px; font-size: 0.95rem; transition: transform 0.3s, background-color 0.3s;"
-                        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#166534'; this.style.transform='translateX(-5px)';"
-                        onmouseout="this.style.backgroundColor='#22C55E'; this.style.color='#ffffff'; this.style.transform='none';">
-                        <i class="fas fa-arrow-left"></i> Back
-                    </a>
-                </div>
-
-                <div class="row align-items-center g-5 pt-3">
-                    <div class="col-lg-6 text-center text-lg-start">
-                        <span class="d-block fw-bold text-uppercase mb-2"
-                            style="color: #22C55E; letter-spacing: 1px; font-size: 0.85rem;">Mindfulness & Sleep</span>
-                        <h1 class="fw-bolder mb-4"
-                            style="font-size: clamp(2.5rem, 4vw, 3.5rem); line-height: 1.15; color: #111827;">The
-                            Science of <span style="color: #22C55E;">Rest & Recovery.</span></h1>
-                        <p class="fs-5" style="color: #6B7280; max-width: 90%;">Improve sleep quality and reduce anxiety
-                            with relaxing sounds and stories designed specifically to help you unwind and rejuvenate
-                            your mind.</p>
-                    </div>
-                    <div class="col-lg-6 d-flex justify-content-center">
-                        <div class="bg-white d-flex flex-column align-items-center gap-4"
-                            style="border-radius: 28px; padding: 60px 70px; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08); width: 100%; max-width: 420px;">
-                            <a href="https://www.calm.com" target="_blank"
-                                class="d-flex align-items-center justify-content-center overflow-hidden bg-white"
-                                style="width: 200px; height: 200px; border-radius: 50%; border: 1px solid #E5E7EB; text-decoration: none; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);"
-                                onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(34, 197, 94, 0.2)'; this.style.borderColor='#22C55E'; this.querySelector('img').style.transform='scale(1.1)';"
-                                onmouseout="this.style.transform='none'; this.style.boxShadow='none'; this.style.borderColor='#E5E7EB'; this.querySelector('img').style.transform='scale(1)';">
-                                <img src="../../../assets/images/logo/calm-logo.png" alt="Calm Logo"
-                                    style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-                            </a>
-                            <div class="fw-bolder" style="font-size: 2.2rem; color: #15803D;">Calm</div>
-                        </div>
-                    </div>
-                </div>
+    <div class="bootstrap-scope">
+        <main>
+            <div class="back-nav-container">
+                <a href="mindfull-apps.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back</span>
+                </a>
             </div>
-        </section>
 
-        <section class="py-5" style="background-color: #F5F5FC;">
-            <div class="container py-5" style="max-width: 1100px;">
-
-                <div class="mb-5">
-                    <span class="d-block fw-bold text-uppercase mb-2"
-                        style="color: #22C55E; letter-spacing: 1px; font-size: 0.85rem;">What is Calm?</span>
-                    <h2 class="fw-bolder mb-3" style="font-size: clamp(1.8rem, 3vw, 2.2rem); color: #111827;">A
-                        Science-Backed Approach to Relaxation</h2>
-                    <p class="fs-5" style="color: #6B7280;"><strong>Calm is the #1 app for sleep, meditation, and
-                            relaxation. It offers a secure and peaceful way to manage stress, improve focus, and learn
-                            new ways to handle the challenges of daily academic and professional life.</strong></p>
+            <section class="hero d-flex justify-content-center">
+                <div class="hero-text-content">
+                    <p class="sec-label">Sleep & Relaxation</p>
+                    <h1>Sleep More.<br>Stress <span>Less.</span></h1>
+                    <p class="muted">
+                        Calm is the #1 app for sleep, meditation and relaxation, featuring Sleep Stories, breathing
+                        programs, masterclasses, and relaxing music.
+                    </p>
                 </div>
+                <div class="hero-image-content">
+                    <div class="app-logo-card">
+                        <a href="https://www.calm.com/" target="_blank" class="app-icon-box">
+                            <img src="../../../../assets/images/logo/calm-logo.png" alt="Calm App Preview"
+                                title="Calm App Preview">
+                        </a>
+                        <div class="app-name">Calm</div>
+                    </div>
+                </div>
+            </section>
 
-                <div class="mt-5 pt-4">
-                    <span class="d-block fw-bold text-uppercase mb-2"
-                        style="color: #22C55E; letter-spacing: 1px; font-size: 0.85rem;">How To Use Calm</span>
-                    <h2 class="fw-bolder mb-4" style="font-size: clamp(1.8rem, 3vw, 2.2rem); color: #111827;">Get
-                        Started in 6 Easy Steps</h2>
+            <div class="content-wrap">
+                <section class="description-block">
+                    <p class="sec-label">What is Calm?</p>
+                    <h2 class="sec-title">The Ultimate Relaxation Tool</h2>
+                    <p class="sec-description">
+                        <strong>Calm offers immersive audio content designed to lower anxiety, improve sleep quality,
+                            and foster mindfulness through expertly crafted soundscapes and stories.</strong>
+                    </p>
+                </section>
 
-                    <div class="row g-4 mt-2">
-                        <div class="col-md-6">
-                            <div class="bg-white d-flex align-items-start gap-3 h-100"
-                                style="border-radius: 18px; padding: 26px 28px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s;"
-                                onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.08)';"
-                                onmouseout="this.style.transform='none'; this.style.boxShadow='0 2px 12px rgba(0, 0, 0, 0.05)';">
-                                <div class="text-white d-flex align-items-center justify-content-center flex-shrink-0 fw-bolder"
-                                    style="width: 38px; height: 38px; background-color: #15803D; border-radius: 10px;">1
-                                </div>
+                <section class="steps-section mt-5">
+                    <p class="sec-label">How To Use</p>
+                    <h2 class="sec-title">Find Your Calm in 6 Steps</h2>
+                    <div class="row mt-1">
+                        <div class="col-12 col-md-6">
+                            <div class="step-card h-100">
+                                <div class="step-num">1</div>
                                 <div>
-                                    <h4 class="fs-5 fw-bold mb-1" style="color: #111827;">Get the App</h4>
-                                    <p class="mb-0 small" style="color: #6B7280;">Install Calm from your preferred
-                                        mobile application store.</p>
+                                    <h4 class="fw-bold">Set Your Goal</h4>
+                                    <p class="muted small">Choose what you want to achieve: better sleep, less anxiety,
+                                        or improved focus.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="bg-white d-flex align-items-start gap-3 h-100"
-                                style="border-radius: 18px; padding: 26px 28px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s;"
-                                onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.08)';"
-                                onmouseout="this.style.transform='none'; this.style.boxShadow='0 2px 12px rgba(0, 0, 0, 0.05)';">
-                                <div class="text-white d-flex align-items-center justify-content-center flex-shrink-0 fw-bolder"
-                                    style="width: 38px; height: 38px; background-color: #15803D; border-radius: 10px;">2
-                                </div>
+                        <div class="col-12 col-md-6">
+                            <div class="step-card h-100">
+                                <div class="step-num">2</div>
                                 <div>
-                                    <h4 class="fs-5 fw-bold mb-1" style="color: #111827;">Sign Up</h4>
-                                    <p class="mb-0 small" style="color: #6B7280;">Create a secure profile to save your
-                                        listening preferences.</p>
+                                    <h4 class="fw-bold">Explore Sleep Stories</h4>
+                                    <p class="muted small">Listen to soothing tales narrated by well-known voices to
+                                        fall asleep faster.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="bg-white d-flex align-items-start gap-3 h-100"
-                                style="border-radius: 18px; padding: 26px 28px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s;"
-                                onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.08)';"
-                                onmouseout="this.style.transform='none'; this.style.boxShadow='0 2px 12px rgba(0, 0, 0, 0.05)';">
-                                <div class="text-white d-flex align-items-center justify-content-center flex-shrink-0 fw-bolder"
-                                    style="width: 38px; height: 38px; background-color: #15803D; border-radius: 10px;">3
-                                </div>
+                        <div class="col-12 col-md-6">
+                            <div class="step-card h-100">
+                                <div class="step-num">3</div>
                                 <div>
-                                    <h4 class="fs-5 fw-bold mb-1" style="color: #111827;">Select Interests</h4>
-                                    <p class="mb-0 small" style="color: #6B7280;">Choose what matters: sleep, reducing
-                                        anxiety, or self-improvement.</p>
+                                    <h4 class="fw-bold">Try the Daily Calm</h4>
+                                    <p class="muted small">A new 10-minute meditation program added every single day.
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="bg-white d-flex align-items-start gap-3 h-100"
-                                style="border-radius: 18px; padding: 26px 28px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s;"
-                                onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.08)';"
-                                onmouseout="this.style.transform='none'; this.style.boxShadow='0 2px 12px rgba(0, 0, 0, 0.05)';">
-                                <div class="text-white d-flex align-items-center justify-content-center flex-shrink-0 fw-bolder"
-                                    style="width: 38px; height: 38px; background-color: #15803D; border-radius: 10px;">4
-                                </div>
+                        <div class="col-12 col-md-6">
+                            <div class="step-card h-100">
+                                <div class="step-num">4</div>
                                 <div>
-                                    <h4 class="fs-5 fw-bold mb-1" style="color: #111827;">Try a Sleep Story</h4>
-                                    <p class="mb-0 small" style="color: #6B7280;">Listen to a narrated story to help you
-                                        drift off effortlessly.</p>
+                                    <h4 class="fw-bold">Listen to Soundscapes</h4>
+                                    <p class="muted small">Use ambient music and nature sounds to concentrate while
+                                        working.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="bg-white d-flex align-items-start gap-3 h-100"
-                                style="border-radius: 18px; padding: 26px 28px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s;"
-                                onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.08)';"
-                                onmouseout="this.style.transform='none'; this.style.boxShadow='0 2px 12px rgba(0, 0, 0, 0.05)';">
-                                <div class="text-white d-flex align-items-center justify-content-center flex-shrink-0 fw-bolder"
-                                    style="width: 38px; height: 38px; background-color: #15803D; border-radius: 10px;">5
-                                </div>
+                        <div class="col-12 col-md-6">
+                            <div class="step-card h-100">
+                                <div class="step-num">5</div>
                                 <div>
-                                    <h4 class="fs-5 fw-bold mb-1" style="color: #111827;">Daily Calm</h4>
-                                    <p class="mb-0 small" style="color: #6B7280;">Engage with the 10-minute 'Daily Calm'
-                                        program each morning.</p>
+                                    <h4 class="fw-bold">Use Breathing Exercises</h4>
+                                    <p class="muted small">Follow guided visual breathing tools to lower heart rate
+                                        quickly.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="bg-white d-flex align-items-start gap-3 h-100"
-                                style="border-radius: 18px; padding: 26px 28px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s;"
-                                onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0, 0, 0, 0.08)';"
-                                onmouseout="this.style.transform='none'; this.style.boxShadow='0 2px 12px rgba(0, 0, 0, 0.05)';">
-                                <div class="text-white d-flex align-items-center justify-content-center flex-shrink-0 fw-bolder"
-                                    style="width: 38px; height: 38px; background-color: #15803D; border-radius: 10px;">6
-                                </div>
+                        <div class="col-12 col-md-6">
+                            <div class="step-card h-100">
+                                <div class="step-num">6</div>
                                 <div>
-                                    <h4 class="fs-5 fw-bold mb-1" style="color: #111827;">Monitor Mindful Days</h4>
-                                    <p class="mb-0 small" style="color: #6B7280;">Keep track of the consecutive days you
-                                        dedicate to your wellness.</p>
+                                    <h4 class="fw-bold">Track Mindful Minutes</h4>
+                                    <p class="muted small">Monitor your streaks and total time spent relaxing in the
+                                        app.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <hr class="my-5" style="border-color: #E5E7EB; margin: 64px 0;">
+                <div style="margin: 56px 0; border: 0; height: 1px; background: var(--border);"></div>
 
-                <div class="mb-5">
-                    <span class="d-block fw-bold text-uppercase mb-2"
-                        style="color: #22C55E; letter-spacing: 1px; font-size: 0.85rem;">VIDEO PREVIEW</span>
-                    <h2 class="fw-bolder mb-4" style="font-size: clamp(1.8rem, 3vw, 2.2rem); color: #111827;">Overview
-                        of Calm</h2>
-                    <div class="ratio ratio-16x9 bg-dark mx-auto"
-                        style="max-width: 800px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);">
-                        <iframe src="https://www.youtube.com/embed/ZToicYcHIOU" title="Calm App Intro" allowfullscreen
-                            style="border: none;"></iframe>
+                <section class="video-section">
+                    <p class="sec-label">VIDEO TUTORIAL</p>
+                    <h2 class="sec-title">See Calm in Action</h2>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/PYV51mep68c"
+                            title="Moment of Calm | Everything is Happening Right Now" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
-                </div>
+                </section>
 
-                <div class="mt-5 pt-4">
-                    <span class="d-block fw-bold text-uppercase mb-2"
-                        style="color: #22C55E; letter-spacing: 1px; font-size: 0.85rem;">Key Features</span>
-                    <h2 class="fw-bolder mb-4" style="font-size: clamp(1.8rem, 3vw, 2.2rem); color: #111827;">Why
-                        Students Use Calm?</h2>
-                    <div class="row g-4 mt-2">
-                        <div class="col-md-6">
-                            <div class="bg-white h-100"
-                                style="border-radius: 20px; padding: 30px 26px; box-shadow: 0 3px 16px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s;"
-                                onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'; this.querySelector('.benefit-icon').style.backgroundColor='#22C55E'; this.querySelector('.benefit-icon').style.color='#ffffff';"
-                                onmouseout="this.style.transform='none'; this.style.boxShadow='0 3px 16px rgba(0, 0, 0, 0.05)'; this.querySelector('.benefit-icon').style.backgroundColor='#DCFCE7'; this.querySelector('.benefit-icon').style.color='#15803D';">
-                                <div class="benefit-icon d-flex align-items-center justify-content-center mb-3"
-                                    style="width: 44px; height: 44px; border-radius: 12px; background-color: #DCFCE7; color: #15803D; transition: 0.3s;">
-                                    <i class="fa-solid fa-bed-pulse fs-5"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color: #166534; font-size: 1.2rem;">Overcoming Insomnia
-                                </h4>
-                                <p class="mb-0 small" style="color: #6B7280;">Tools and stories specifically designed to
-                                    help overactive minds rest and achieve deep sleep.</p>
+                <section class="benefits-section mt-5">
+                    <p class="sec-label">Benefits</p>
+                    <h2 class="sec-title">Why Use Calm?</h2>
+                    <div class="row mt-1">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="benefit-card h-100">
+                                <div class="benefit-icon"><i class="fas fa-moon"></i></div>
+                                <h4 style="color: var(--brand-primary); margin-bottom: 10px;">Superior Sleep</h4>
+                                <p class="muted small">Scientifically designed audio to help combat insomnia and
+                                    restless nights.</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="bg-white h-100"
-                                style="border-radius: 20px; padding: 30px 26px; box-shadow: 0 3px 16px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s;"
-                                onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'; this.querySelector('.benefit-icon').style.backgroundColor='#22C55E'; this.querySelector('.benefit-icon').style.color='#ffffff';"
-                                onmouseout="this.style.transform='none'; this.style.boxShadow='0 3px 16px rgba(0, 0, 0, 0.05)'; this.querySelector('.benefit-icon').style.backgroundColor='#DCFCE7'; this.querySelector('.benefit-icon').style.color='#15803D';">
-                                <div class="benefit-icon d-flex align-items-center justify-content-center mb-3"
-                                    style="width: 44px; height: 44px; border-radius: 12px; background-color: #DCFCE7; color: #15803D; transition: 0.3s;">
-                                    <i class="fa-solid fa-brain fs-5"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color: #166534; font-size: 1.2rem;">Deep Focus</h4>
-                                <p class="mb-0 small" style="color: #6B7280;">Continuous ambient sounds and lo-fi beats
-                                    perfect for studying and retaining information.</p>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="benefit-card h-100">
+                                <div class="benefit-icon"><i class="fas fa-headphones-alt"></i></div>
+                                <h4 style="color: var(--brand-primary); margin-bottom: 10px;">Premium Content</h4>
+                                <p class="muted small">High-quality production featuring celebrity narrators and
+                                    exclusive music tracks.</p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="bg-white h-100"
-                                style="border-radius: 20px; padding: 30px 26px; box-shadow: 0 3px 16px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s;"
-                                onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'; this.querySelector('.benefit-icon').style.backgroundColor='#22C55E'; this.querySelector('.benefit-icon').style.color='#ffffff';"
-                                onmouseout="this.style.transform='none'; this.style.boxShadow='0 3px 16px rgba(0, 0, 0, 0.05)'; this.querySelector('.benefit-icon').style.backgroundColor='#DCFCE7'; this.querySelector('.benefit-icon').style.color='#15803D';">
-                                <div class="benefit-icon d-flex align-items-center justify-content-center mb-3"
-                                    style="width: 44px; height: 44px; border-radius: 12px; background-color: #DCFCE7; color: #15803D; transition: 0.3s;">
-                                    <i class="fa-solid fa-heart-pulse fs-5"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color: #166534; font-size: 1.2rem;">Anxiety Reduction
-                                </h4>
-                                <p class="mb-0 small" style="color: #6B7280;">Quick interventions to calm the nervous
-                                    system during panicky moments before exams.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="bg-white h-100"
-                                style="border-radius: 20px; padding: 30px 26px; box-shadow: 0 3px 16px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s;"
-                                onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0, 0, 0, 0.1)'; this.querySelector('.benefit-icon').style.backgroundColor='#22C55E'; this.querySelector('.benefit-icon').style.color='#ffffff';"
-                                onmouseout="this.style.transform='none'; this.style.boxShadow='0 3px 16px rgba(0, 0, 0, 0.05)'; this.querySelector('.benefit-icon').style.backgroundColor='#DCFCE7'; this.querySelector('.benefit-icon').style.color='#15803D';">
-                                <div class="benefit-icon d-flex align-items-center justify-content-center mb-3"
-                                    style="width: 44px; height: 44px; border-radius: 12px; background-color: #DCFCE7; color: #15803D; transition: 0.3s;">
-                                    <i class="fa-solid fa-lungs fs-5"></i>
-                                </div>
-                                <h4 class="fw-bold mb-2" style="color: #166534; font-size: 1.2rem;">Breathing Exercises
-                                </h4>
-                                <p class="mb-0 small" style="color: #6B7280;">Visual breathing guides to help regulate
-                                    your heart rate before major presentations.</p>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="benefit-card h-100">
+                                <div class="benefit-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+                                <h4 style="color: var(--brand-primary); margin-bottom: 10px;">Immediate Relief</h4>
+                                <p class="muted small">Quick exercises designed to de-escalate anxiety and panic in the
+                                    moment.</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="mt-5 mb-4 p-4 p-md-5 d-flex flex-column flex-md-row align-items-center justify-content-between gap-4 text-white"
-                    style="background-color: #166534; border-radius: 24px; transition: 0.3s;"
-                    onmouseover="this.style.transform='scale(1.01)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.15)';"
-                    onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-                    <div class="text-center text-md-start">
-                        <h2 class="fw-bolder mb-2 text-white" style="font-size: 2rem;">Ready to Find Your Calm?</h2>
-                        <p class="mb-0 text-white" style="opacity: 0.9;">Access the tools you need to manage your stress
-                            and improve your sleep today.</p>
+                <section class="cta-banner">
+                    <div>
+                        <h2>Ready for a Better Night's Sleep?</h2>
+                        <p>Join millions experiencing better sleep and lower stress.</p>
                     </div>
-                    <a href="https://www.calm.com" target="_blank"
-                        class="bg-white text-decoration-none d-inline-flex align-items-center gap-2 fw-bold"
-                        style="color: #166534; padding: 13px 28px; border-radius: 10px; transition: 0.3s;"
-                        onmouseover="this.style.transform='scale(1.05)'; this.style.backgroundColor='#DCFCE7';"
-                        onmouseout="this.style.transform='none'; this.style.backgroundColor='#ffffff';">
+                    <a href="https://www.calm.com/" target="_blank" class="btn-white">
                         Visit Calm <i class="fas fa-arrow-right"></i>
                     </a>
-                </div>
-
+                </section>
             </div>
-        </section>
-    </main>
+        </main>
+    </div>
 
-    <footer class="site-footer bg-success-dark text-light py-5 mt-0"
-        style="background-color: #064E3B; font-family: 'DM Sans', sans-serif;">
-        <div class="container-fluid px-5">
-            <div class="row g-5 mb-5 mt-3">
-                <div class="col-lg-4 text-center text-lg-start">
-                    <a href="../../../index.html"
-                        class="d-flex align-items-center justify-content-center justify-content-lg-start gap-2 mb-4 text-decoration-none">
-                        <div class="d-flex align-items-center justify-content-center rounded-2"
-                            style="background-color: #22C55E; width: 36px; height: 36px;">
-                            <img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo"
-                                style="width: 22px; height: 22px; object-fit: contain;">
-                        </div>
-                        <span class="fs-4 fw-bolder text-uppercase"
-                            style="color: #22C55E; font-family: 'Space Grotesk', sans-serif;">TECHFIT</span>
-                    </a>
-                    <p class="small mx-auto mx-lg-0" style="color: #cbd5e1; line-height: 1.75; max-width: 320px;">
-                        TechFit was created to bridge the gap between busy modern lifestyles and physical well-being.
-                        Whether you are a student, a professional, or just starting your fitness journey, our platform
-                        provides the digital solutions and guidance needed to stay energized and balanced.</p>
-                    <div class="d-flex justify-content-center justify-content-lg-start gap-2 mt-4">
-                        <a href="https://www.facebook.com/profile.php?id=61576647603926"
-                            class="rounded-circle d-flex align-items-center justify-content-center text-white text-decoration-none"
-                            style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); transition: 0.3s;"
-                            onmouseover="this.style.backgroundColor='#22C55E'; this.style.transform='translateY(-3px)';"
-                            onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.1)'; this.style.transform='none';"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/techfit.ph/"
-                            class="rounded-circle d-flex align-items-center justify-content-center text-white text-decoration-none"
-                            style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); transition: 0.3s;"
-                            onmouseover="this.style.backgroundColor='#22C55E'; this.style.transform='translateY(-3px)';"
-                            onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.1)'; this.style.transform='none';"><i
-                                class="fab fa-instagram"></i></a>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="../../../../index.html" class="footer-wordmark">
+                    <div class="footer-wordmark-icon">
+                        <img src="../../../../assets/images/logo/logo-white.png" alt="TechFit Logo"
+                            title="TechFit Logo">
                     </div>
-                </div>
-
-                <div class="col-lg-2 col-md-4 text-center text-lg-start">
-                    <span class="d-block mb-4 fw-bold text-uppercase"
-                        style="color: #22C55E; font-size: 11px; letter-spacing: 2px; font-family: 'Space Grotesk', sans-serif;">Platform</span>
-                    <ul class="list-unstyled m-0 p-0 d-flex flex-column gap-3">
-                        <li><a href="../../../index.html" class="text-decoration-none"
-                                style="color: #cbd5e1; font-size: 14px; transition: 0.2s;"
-                                onmouseover="this.style.color='#22C55E'; this.style.paddingLeft='5px';"
-                                onmouseout="this.style.color='#cbd5e1'; this.style.paddingLeft='0';">Home</a></li>
-                        <li><a href="../../../index.html#about" class="text-decoration-none"
-                                style="color: #cbd5e1; font-size: 14px; transition: 0.2s;"
-                                onmouseover="this.style.color='#22C55E'; this.style.paddingLeft='5px';"
-                                onmouseout="this.style.color='#cbd5e1'; this.style.paddingLeft='0';">About Us</a></li>
-                        <li><a href="../../../index.html#tools" class="text-decoration-none"
-                                style="color: #cbd5e1; font-size: 14px; transition: 0.2s;"
-                                onmouseover="this.style.color='#22C55E'; this.style.paddingLeft='5px';"
-                                onmouseout="this.style.color='#cbd5e1'; this.style.paddingLeft='0';">Wellness Tools</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-4 text-center text-lg-start">
-                    <span class="d-block mb-4 fw-bold text-uppercase"
-                        style="color: #22C55E; font-size: 11px; letter-spacing: 2px; font-family: 'Space Grotesk', sans-serif;">Features</span>
-                    <ul class="list-unstyled m-0 p-0 d-flex flex-column gap-3">
-                        <li><a href="../../technology-fitness.html" class="text-decoration-none"
-                                style="color: #cbd5e1; font-size: 14px; transition: 0.2s;"
-                                onmouseover="this.style.color='#22C55E'; this.style.paddingLeft='5px';"
-                                onmouseout="this.style.color='#cbd5e1'; this.style.paddingLeft='0';">Tech & Fit</a></li>
-                        <li><a href="../../health-monitoringtools.html" class="text-decoration-none"
-                                style="color: #cbd5e1; font-size: 14px; transition: 0.2s;"
-                                onmouseover="this.style.color='#22C55E'; this.style.paddingLeft='5px';"
-                                onmouseout="this.style.color='#cbd5e1'; this.style.paddingLeft='0';">Health Tools</a>
-                        </li>
-                        <li><a href="../../sustainable-wellness.html" class="text-decoration-none"
-                                style="color: #cbd5e1; font-size: 14px; transition: 0.2s;"
-                                onmouseover="this.style.color='#22C55E'; this.style.paddingLeft='5px';"
-                                onmouseout="this.style.color='#cbd5e1'; this.style.paddingLeft='0';">Sustainability</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-4 col-md-4 text-center text-lg-start">
-                    <span class="d-block mb-4 fw-bold text-uppercase"
-                        style="color: #22C55E; font-size: 11px; letter-spacing: 2px; font-family: 'Space Grotesk', sans-serif;">Contact
-                        Us</span>
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-2 mb-3"
-                        style="font-size: 14px;">
-                        <i class="fas fa-envelope" style="color: #22C55E;"></i>
-                        <a href="mailto:techfit.itad@gmail.com" class="text-decoration-none"
-                            style="color: #cbd5e1; transition: 0.2s;" onmouseover="this.style.color='#22C55E';"
-                            onmouseout="this.style.color='#cbd5e1';">techfit.itad@gmail.com</a>
-                    </div>
+                    <span class="footer-wordmark-text">TECHFIT</span>
+                </a>
+                <p class="footer-brand-desc">
+                    TechFit was created to bridge the gap between busy modern lifestyles and physical well-being.
+                    Whether you are a student, a professional, or just starting your fitness journey, our platform
+                    provides the digital solutions and guidance needed to stay energized and balanced.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn"
+                        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
                 </div>
             </div>
-
-            <hr class="mb-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small pb-3"
-                style="color: #94a3b8; font-size: 13px;">
-                <p class="m-0">&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
+            <div class="footer-links">
+                <span class="footer-col-label">Platform</span>
+                <ul class="footer-nav-links">
+                    <li><a href="../../../../index.html">Home</a></li>
+                    <li><a href="../../../../index.html#about">About Us</a></li>
+                    <li><a href="../../../../index.html#tools">Wellness Tools</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <span class="footer-col-label">Features</span>
+                <ul class="footer-nav-links">
+                    <li><a href="../../../../features/technology-fitness.html">Tech &amp; Fit</a></li>
+                    <li><a href="../../../../features/health-monitoringtools.html">Health Tools</a></li>
+                    <li><a href="../../../../features/sustainable-wellness.html">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <span class="footer-col-label">Connect</span>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope" style="color:#22C55E;"></i>
+                    <a href="mailto:techfit.itad@gmail.com">techfit.itad@gmail.com</a>
+                </div>
             </div>
         </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
+        </div>
     </footer>
-
-    <a href="#top"
-        class="go-top-btn position-fixed rounded-circle d-flex align-items-center justify-content-center text-white text-decoration-none shadow"
-        style="bottom: 35px; right: 35px; width: 55px; height: 55px; background-color: #22C55E; z-index: 1000; transition: 0.3s;"
-        onmouseover="this.style.transform='translateY(-8px)'; this.style.backgroundColor='#166534';"
-        onmouseout="this.style.transform='none'; this.style.backgroundColor='#22C55E';">
+    <a href="#top" class="go-top-btn" aria-label="Go to top">
         <i class="fas fa-chevron-up"></i>
     </a>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../../assets/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
