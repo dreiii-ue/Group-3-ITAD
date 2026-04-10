@@ -1,339 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meet Team Seraphit | TechFit</title>
+
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
     <style>
-        :root {
-            --brand-primary: #22c55e;
-            --brand-dark: #166534;
-            --brand-darker: #064e3b;
-            --brand-light: #dcfce7;
-            --brand-nav-bg: rgba(220, 252, 231, 0.95);
-            --bg-canvas: #f8fafc;
-            --text-body: #111827;
-            --text-muted: #475569;
-            --white: #ffffff;
-            --border: #e5e7eb;
-            --font-main: 'Plus Jakarta Sans', sans-serif;
-            --font-display: 'Space Grotesk', sans-serif;
+        .bootstrap-scope .row {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 1.5rem;
         }
 
-        body {
-            font-family: var(--font-main);
-            background-color: var(--bg-canvas);
-            color: var(--text-body);
-            line-height: 1.6;
-            overflow-x: hidden;
+        .main-wrapper {
+            padding: 40px 0 100px;
+            background-color: #F8FAFC; 
         }
 
-        /* --- HEADER (UNCHANGED AS REQUESTED) --- */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            height: 85px;
-            padding: 0 64px;
-            background: var(--brand-nav-bg);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-        }
-        .navbar { width: 100%; padding: 0 !important; background: transparent !important; }
-        .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-img-box {
-            width: 42px; height: 42px; border-radius: 10px;
-            background: var(--brand-primary); display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);
-        }
-        .logo-img-box img { width: 24px; height: 24px; object-fit: contain; }
-        .logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 800; color: var(--brand-dark); }
-        .navbar-nav .nav-link {
-            padding: 10px 22px !important; border-radius: 50px;
-            font-size: 14px; font-weight: 700; color: var(--brand-dark) !important; transition: 0.3s;
-        }
-        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
-            background: var(--brand-primary); color: var(--white) !important;
-        }
-
-        /* --- TEAM LAYOUT --- */
-        .hero-section {
-            padding: 100px 0;
-            background: radial-gradient(circle at top right, var(--brand-light) 0%, var(--bg-canvas) 70%);
+        .internal-hero { 
+            padding: 80px 8% 60px; 
+            background: linear-gradient(180deg, var(--header-bg) 0%, var(--white) 100%);
             text-align: center;
         }
-        .section-tag {
-            display: inline-block; margin-bottom: 20px; font-size: 13px; font-weight: 800;
-            text-transform: uppercase; letter-spacing: 2px; color: var(--brand-primary);
-        }
-        .hero-section h1 {
-            font-weight: 800; font-size: clamp(3rem, 7vw, 68px); letter-spacing: -3px; color: var(--brand-dark); margin-bottom: 24px;
-        }
-        .hero-section h1 span { color: var(--brand-primary); }
-        .hero-section p { max-width: 650px; margin: 0 auto 35px; font-size: 20px; color: var(--text-muted); }
 
+        /* --- TEAM CARD DESIGN --- */
         .group-photo-container {
-            max-width: 1000px; margin: 50px auto 0; padding: 15px;
-            background: var(--white); border-radius: 32px; border: 1px solid var(--border);
-            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.08);
+            max-width: 1000px;
+            margin: 0 auto 80px;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 32px;
+            border: 2px solid #E5E7EB;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
         }
-        .group-photo-wrapper { border-radius: 20px; overflow: hidden; aspect-ratio: 16/9; }
-        .group-photo-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 
-        .team-grid-container { padding: 80px 0; background: var(--white); }
-        
+        .group-photo-wrapper {
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .group-photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .topic-card {
-            padding: 45px 35px; border-radius: 30px; background: var(--bg-canvas);
-            border: 1px solid rgba(34, 197, 94, 0.1); transition: 0.4s ease;
-            display: flex; flex-direction: column; align-items: center; text-align: center;
-            width: 100%; height: 100%;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 30px;
+            border: 1px solid #E5E7EB;
+            text-align: center;
+            height: 100%;
+            transition: 0.3s ease;
         }
-        .topic-card:hover { transform: translateY(-12px); background: var(--brand-light); border-color: var(--brand-primary); }
-        .leader-card { border: 2px solid var(--brand-primary); background: var(--white); }
-        
+
+        .topic-card:hover {
+            border-color: #22C55E;
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .leader-card {
+            border: 2px solid #22C55E;
+        }
+
         .avatar-box {
-            width: 120px; height: 120px; border-radius: 50%; border: 5px solid var(--white);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; margin-bottom: 25px; flex-shrink: 0;
-        }
-        .avatar-box img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* --- FOOTER (UNCHANGED AS REQUESTED) --- */
-        .site-footer {
-            margin-top: 60px; padding: 72px 8% 30px;
-            background: var(--brand-darker); color: #cbd5e1;
-        }
-        .footer-grid { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1.2fr; gap: 56px; margin-bottom: 60px; }
-        .footer-wordmark { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; text-decoration: none;}
-        .footer-wordmark-icon {
-            width: 36px; height: 36px; border-radius: 8px;
-            background: var(--brand-primary); display: flex; align-items: center; justify-content: center;
-        }
-        .footer-wordmark-icon img { max-width: 20px; height: auto; }
-        .footer-wordmark-text { font-family: var(--font-display); font-size: 24px; font-weight: 800; color: var(--brand-primary); text-transform: uppercase; }
-        .footer-col-label { display: block; margin-bottom: 25px; font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--brand-primary); }
-        .footer-nav-links { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-        .footer-nav-links a { font-size: 14px; color: #cbd5e1; text-decoration: none; transition: 0.2s; }
-        .footer-nav-links a:hover { color: var(--brand-primary); padding-left: 5px; }
-        
-        .footer-social-btn {
-            width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.1);
-            display: inline-flex; align-items: center; justify-content: center; color: #fff; transition: 0.3s; margin-right: 10px;
-        }
-        .footer-social-btn:hover { background: var(--brand-primary); transform: translateY(-3px); }
-        .footer-divider { height: 1px; margin: 40px 0 30px; background: rgba(255, 255, 255, 0.1); }
-        .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #94a3b8; }
-
-        .go-top-btn {
-            position: fixed; right: 32px; bottom: 32px; z-index: 999;
-            width: 55px; height: 55px; border-radius: 50%; background: var(--brand-primary);
-            color: var(--white) !important; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35); transition: 0.3s; text-decoration: none;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background-color: #166534; /* Solid Brand Green Background */
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 4px solid #ffffff;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
 
-        @media (max-width: 991px) {
-            .site-header { padding: 0 30px; }
-            .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; gap: 30px; }
+        .avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            display: inline-block;
+            color: #22C55E;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .member-desc {
+            color: #6B7280;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         @media (max-width: 768px) {
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .footer-wordmark, .footer-socials { justify-content: center; }
-            .hero-section h1 { font-size: 2.5rem; }
-            .site-header { padding: 0 15px; }
+            .tool-intro h2 { font-size: 2rem; }
         }
     </style>
 </head>
-<body id="top">
 
+<body id="top">
     <header class="site-header">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a href="index.html" class="navbar-brand logo-link">
                     <div class="logo-img-box">
-                        <img src="assets/images/logo/logo-white.png" alt="TechFit Logo" title="TechFit Logo">
+                        <img src="assets/images/logo/logo-white.png" alt="TechFit Logo">
                     </div>
                     <span class="logo-text">TECHFIT</span>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="mobile-menu-btn"><i class="fas fa-bars"></i></span>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars" style="color:#22C55E; font-size:20px;"></i>
                 </button>
 
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="features/technology-fitness.html">Tech & Fit</a></li>
+                <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                    <ul class="navbar-nav nav-list">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="features/technology-fitness.html">Tech &amp; Fit</a></li>
                         <li class="nav-item"><a class="nav-link" href="features/health-monitoringtools.html">Health Tools</a></li>
                         <li class="nav-item"><a class="nav-link" href="features/sustainable-wellness.html">Sustainability</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#tools">Tools</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#tools">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="hero-section">
+    <div class="bootstrap-scope">
+        <main class="main-wrapper">
             <div class="container">
-                <span class="section-tag">University of the East - Manila</span>
-                <h1>Meet Team <span>Seraphit.</span></h1>
-                <p>The architects behind TechFit. A collective of computer studies students driven by innovation, health, and a shared vision for a balanced digital lifestyle.</p>
                 
+                <div class="back-nav-container mb-4">
+                    <a href="index.html#tools" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Tools</span>
+                    </a>
+                </div>
+
+                <section class="internal-hero">
+                    <div class="content-container">
+                        <span class="section-tag">University of the East - Manila</span>
+                        <h1 class="section-title" style="color: var(--brand-green);">Team Seraphit</h1>
+                        <p class="page-intro-p" style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">The minds behind TechFit. A collective of information technology students driven by innovation, health, and a shared vision for a balanced digital lifestyle.</p>
+                    </div>
+                </section>
+
+
                 <div class="group-photo-container">
                     <div class="group-photo-wrapper">
                         <img src="assets/images/team/seraphit-group.jpg" alt="Team Seraphit Group Photo">
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="team-grid-container">
-            <div class="container">
                 <div class="row justify-content-center mb-5">
-                    <div class="col-lg-5 col-md-7">
-                        <div class="topic-card leader-card shadow-sm">
+                    <div class="col-lg-5">
+                        <div class="topic-card leader-card">
                             <div class="avatar-box"><img src="assets/images/team/leader.jpg" alt="Leader"></div>
-                            <h3 class="fw-bold" style="color: var(--brand-dark);">Marielle Louise Mactal</h3>
-                            <span class="section-tag mb-3" style="font-size: 11px;">Project Leader</span>
-                            <p class="text-muted mb-0">Steers the overall direction of TechFit while ensuring the platform remains empathetic and user-friendly through intuitive design.</p>
+                            <h3 class="member-name">Marielle Louise Mactal</h3>
+                            <span class="member-role">Project Leader</span>
+                            <p class="member-desc">Steers the overall direction of TechFit while ensuring the platform remains empathetic and user-friendly through intuitive design.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="row g-4 justify-content-center">
+                <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
-                        <div class="topic-card shadow-sm h-100">
+                        <div class="topic-card">
                             <div class="avatar-box"><img src="assets/images/team/espena.jpg" alt="Pierre"></div>
-                            <h3 class="fw-bold">Pierre Espena</h3>
-                            <span class="section-tag mb-2" style="font-size: 10px;">Content Manager</span>
-                            <p class="small text-muted mb-0">Bridges the gap between data and practice by validating and managing wellness content.</p>
+                            <h3 class="member-name">Pierre Espena</h3>
+                            <span class="member-role">Content Manager</span>
+                            <p class="member-desc">Bridges the gap between data and practice by validating and managing wellness content.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="topic-card shadow-sm h-100">
+                        <div class="topic-card">
                             <div class="avatar-box"><img src="assets/images/team/jhamboy.jpg" alt="John"></div>
-                            <h3 class="fw-bold">John Paul Jhamboy</h3>
-                            <span class="section-tag mb-2" style="font-size: 10px;">Content Manager</span>
-                            <p class="small text-muted mb-0">Deciphers raw health metrics into clear, actionable content for our users.</p>
+                            <h3 class="member-name">John Paul Jhamboy</h3>
+                            <span class="member-role">Content Manager</span>
+                            <p class="member-desc">Deciphers raw health metrics into clear, actionable content for our users.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="topic-card shadow-sm h-100">
+                        <div class="topic-card">
                             <div class="avatar-box"><img src="assets/images/team/yu.jpg" alt="Jose"></div>
-                            <h3 class="fw-bold">Jose Gabriel Yu</h3>
-                            <span class="section-tag mb-2" style="font-size: 10px;">UI Designer</span>
-                            <p class="small text-muted mb-0">Expert in creating aesthetic interfaces that turn concepts into dynamic wellness experiences.</p>
+                            <h3 class="member-name">Jose Gabriel Yu</h3>
+                            <span class="member-role">UI Designer</span>
+                            <p class="member-desc">Expert in creating aesthetic interfaces that turn concepts into dynamic wellness experiences.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="topic-card shadow-sm h-100">
+                        <div class="topic-card">
                             <div class="avatar-box"><img src="assets/images/team/cezar.jpg" alt="Remei"></div>
-                            <h3 class="fw-bold">Remei Ajit Ry Cezar</h3>
-                            <span class="section-tag mb-2" style="font-size: 10px;">UI Designer</span>
-                            <p class="small text-muted mb-0">Focuses on user-centric layouts and visual hierarchy for seamless navigation.</p>
+                            <h3 class="member-name">Remei Ajit Ry Cezar</h3>
+                            <span class="member-role">UI Designer</span>
+                            <p class="member-desc">Focuses on user-centric layouts and visual hierarchy for seamless navigation.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="topic-card shadow-sm h-100">
+                        <div class="topic-card">
                             <div class="avatar-box"><img src="assets/images/team/eduarte.jpg" alt="Andrei"></div>
-                            <h3 class="fw-bold">Andrei Jamel Eduarte</h3>
-                            <span class="section-tag mb-2" style="font-size: 10px;">Developer</span>
-                            <p class="small text-muted mb-0">Architecting the complex logic and database systems for real-time tracking.</p>
+                            <h3 class="member-name">Andrei Jamel Eduarte</h3>
+                            <span class="member-role">Developer</span>
+                            <p class="member-desc">Architecting the complex logic and database systems for real-time tracking.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="topic-card shadow-sm h-100">
+                        <div class="topic-card">
                             <div class="avatar-box"><img src="assets/images/team/refolledo.jpg" alt="Sean"></div>
-                            <h3 class="fw-bold">Sean Owen Refolledo</h3>
-                            <span class="section-tag mb-2" style="font-size: 10px;">Tester / QA</span>
-                            <p class="small text-muted mb-0">Ensures deployment stability and platform integrity through rigorous testing.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="topic-card shadow-sm h-100">
-                            <div class="avatar-box"><img src="assets/images/team/ginete.jpg" alt="Ethan"></div>
-                            <h3 class="fw-bold">Ethan Gabriel Ginete</h3>
-                            <span class="section-tag mb-2" style="font-size: 10px;">Tester / QA</span>
-                            <p class="small text-muted mb-0">Maintains standards by identifying edge cases and verifying compatibility.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="topic-card shadow-sm h-100">
-                            <div class="avatar-box"><img src="assets/images/team/carillo.jpg" alt="Kylle"></div>
-                            <h3 class="fw-bold">Kylle Carillo</h3>
-                            <span class="section-tag mb-2" style="font-size: 10px;">Navigation Expert</span>
-                            <p class="small text-muted mb-0">Optimizes user flow to ensure every tool is just a click away.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="topic-card shadow-sm h-100">
-                            <div class="avatar-box"><img src="assets/images/team/eslera.jpg" alt="Al"></div>
-                            <h3 class="fw-bold">Al Christian Eslera</h3>
-                            <span class="section-tag mb-2" style="font-size: 10px;">Navigation Expert</span>
-                            <p class="small text-muted mb-0">Specializes in making the user journey intuitive and stress-free.</p>
+                            <h3 class="member-name">Sean Owen Refolledo</h3>
+                            <span class="member-role">Tester / QA</span>
+                            <p class="member-desc">Ensures deployment stability and platform integrity through rigorous testing.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </div> 
+        </main>
+    </div>
 
-    <footer class="site-footer">
-        <div class="container-fluid px-lg-5">
-            <div class="footer-grid">
-                <div>
-                    <a href="#top" class="footer-wordmark text-decoration-none">
-                        <div class="footer-wordmark-icon"><img src="assets/images/logo/logo-white.png" alt="TechFit Logo"></div>
-                        <span class="footer-wordmark-text">TECHFIT</span>
+        <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <a href="#top" class="footer-wordmark">
+                    <div class="footer-wordmark-icon">
+                        <img src="assets/images/logo/logo-white.png" alt="TechFit Logo">
+                    </div>
+                    <span class="footer-wordmark-text">TECHFIT</span>
+                </a>
+
+                <p class="footer-brand-desc" style="font-size: 14px; line-height: 1.75; opacity: 0.7; max-width: 420px;">
+                    TechFit was created to bridge the gap between busy modern lifestyles and physical well-being.
+                    Our platform provides digital solutions needed to stay energized and balanced.
+                </p>
+
+                <div class="footer-socials" style="margin-top: 25px;">
+                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
                     </a>
-                    <p class="footer-brand-desc mt-3">TechFit bridges the gap between busy modern lifestyles and physical well-being. Our platform provides digital solutions needed to stay energized and balanced.</p>
-                    <div class="footer-socials mt-4">
-                        <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn text-decoration-none" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn text-decoration-none" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <span class="footer-col-label">Platform</span>
-                    <ul class="footer-nav-links mt-3">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="index.html#tools">Wellness Tools</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <span class="footer-col-label">Features</span>
-                    <ul class="footer-nav-links mt-3">
-                        <li><a href="features/technology-fitness.html">Tech & Fit</a></li>
-                        <li><a href="features/health-monitoringtools.html">Health Tools</a></li>
-                        <li><a href="features/sustainable-wellness.html">Sustainability</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <span class="footer-col-label">Contact</span>
-                    <div class="footer-contact-item mt-3 d-flex align-items-center gap-2">
-                        <i class="fas fa-envelope" style="color: var(--brand-primary);"></i>
-                        <a href="mailto:techfit.itad@gmail.com" class="text-decoration-none" style="color: inherit;">techfit.itad@gmail.com</a>
-                    </div>
+                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
             </div>
-            <div class="footer-divider"></div>
-            <div class="footer-bottom d-flex justify-content-between align-items-center">
-                <p class="mb-0">&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
-                <a href="#top" class="text-decoration-none" style="color: #94a3b8;">Back to top</a>
+
+            <div>
+                <span class="footer-col-label">Platform</span>
+                <ul class="footer-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#tools">Wellness Tools</a></li>
+                </ul>
             </div>
+
+            <div>
+                <span class="footer-col-label">Features</span>
+                <ul class="footer-nav-links">
+                    <li><a href="features/technology-fitness.html">Tech & Fit</a></li>
+                    <li><a href="features/health-monitoringtools.html">Health Tools</a></li>
+                    <li><a href="features/sustainable-wellness.html">Sustainability</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <span class="footer-col-label">Contact</span>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope" style="color: var(--brand-primary);"></i>
+                    <a href="mailto:techfit.itad@gmail.com">techfit.itad@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
+            <a href="#top">Back to top</a>
         </div>
     </footer>
 
-    <a href="#top" class="go-top-btn"><i class="fas fa-arrow-up"></i></a>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <a href="#top" class="go-top-btn" aria-label="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
