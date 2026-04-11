@@ -613,12 +613,12 @@ p.sec-description {
 
 .topic-card h3 {
     font-weight: bold;
-    min-height: 72px;
+    min-height: 70px;
     color: var(--text-main);
     display: flex;
-    align-items: top;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
@@ -830,6 +830,11 @@ p.sec-description {
     padding: 30px 26px;
     box-shadow: 0 3px 16px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.benefit-card h4 {
+  font-weight: 700; /* or 800 for extra bold */
+  color: var(--brand-dark);
 }
 
 .benefit-card:hover {
@@ -1296,7 +1301,7 @@ p.sec-description {
     /* Uniform Sizing Logic */
     flex: 0 1 calc(33.333% - 30px);
     min-width: 320px;
-    min-height: 480px; 
+    min-height: 300px; 
 }
 
 .topic-card:hover {
@@ -1323,13 +1328,6 @@ p.sec-description {
     object-fit: cover;
 }
 
-.topic-card p {
-    color: #4b5563;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    flex-grow: 1; /* Ensures text area pushes button down uniformly */
-}
 
 .explore-btn {
     display: inline-block;
@@ -1340,7 +1338,6 @@ p.sec-description {
     border-radius: 12px;
     font-weight: 800;
     transition: 0.3s;
-    margin-top: auto;
 }
 
 .explore-btn:hover {
