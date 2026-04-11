@@ -22,8 +22,8 @@
             color: #111827;
         }
 
-        h1, h2, h3, h4, .logo-text, .member-name, .section-title {
-            font-family: 'Space Grotesk', sans-serif !important;
+        h1, h2, h3, h4, .member-name, .section-title {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
 
         .main-wrapper {
@@ -161,29 +161,31 @@
 </head>
 
 <body id="top">
+
     <header class="site-header">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a href="index.html" class="navbar-brand logo-link">
                     <div class="logo-img-box">
-                        <img src="assets/images/logo/logo-white.png" alt="TechFit Logo">
+                        <img src="assets/images/logo/logo-white.png" alt="TechFit Logo" title="TechFit Logo">
                     </div>
                     <span class="logo-text">TECHFIT</span>
                 </a>
 
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                    <i class="fas fa-bars" style="color:var(--brand-green-bold); font-size:20px;"></i>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="mobile-menu-btn"><i class="fas fa-bars"></i></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-                    <ul class="navbar-nav nav-list">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="features/technology-fitness.html">Tech & Fit</a></li>
                         <li class="nav-item"><a class="nav-link" href="features/health-monitoringtools.html">Health Tools</a></li>
                         <li class="nav-item"><a class="nav-link" href="features/sustainable-wellness.html">Sustainability</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#tools">Tools</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tools">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -228,7 +230,7 @@
                                 <span class="member-role">Project Leader</span>
                                 <p class="member-desc">Steers the overall direction of TechFit while ensuring the platform remains empathetic and user-friendly.</p>
                             </div>
-                            <a href="https://mariellelouisemactal.netlify.app/" target="_blank" class="portfolio-link">Visit Portfolio</a>
+                            <a href="https://mariellelouisemactal.netlify.app/" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
                 </div>
@@ -244,7 +246,7 @@
                                 <span class="member-role">Content Manager</span>
                                 <p class="member-desc">Bridges the gap between data and practice by validating and managing wellness content.</p>
                             </div>
-                            <a href="https://espena-pierre.github.io/PERSONAL-WEBSITE-ESPENA/?" target="_blank" class="portfolio-link">Visit Portfolio</a>
+                            <a href="https://espena-pierre.github.io/PERSONAL-WEBSITE-ESPENA/?" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -257,7 +259,7 @@
                                 <span class="member-role">Content Manager</span>
                                 <p class="member-desc">Deciphers raw health metrics into clear, actionable content for our users.</p>
                             </div>
-                            <a href="https://jhamboyjohnpaul-sudo.github.io/FOLDER_FOR_LANDINGPAGE/?fbclid" target="_blank" class="portfolio-link">Visit Portfolio</a>
+                            <a href="https://jhamboyjohnpaul-sudo.github.io/FOLDER_FOR_LANDINGPAGE/?fbclid" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -270,7 +272,7 @@
                                 <span class="member-role">UI Designer</span>
                                 <p class="member-desc">Expert in creating aesthetic interfaces that turn concepts into dynamic wellness experiences.</p>
                             </div>
-                            <a href="https://joseeegabriel.netlify.app/" target="_blank" class="portfolio-link">Visit Portfolio</a>
+                            <a href="https://joseeegabriel.netlify.app/" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -283,7 +285,7 @@
                                 <span class="member-role">UI Designer</span>
                                 <p class="member-desc">Focuses on user-centric layouts and visual hierarchy for seamless navigation.</p>
                             </div>
-                            <a href="https://cezarremeiajitrye.github.io/2J.io/" target="_blank" class="portfolio-link">Visit Portfolio</a>
+                            <a href="https://cezarremeiajitrye.github.io/2J.io/" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -296,7 +298,7 @@
                                 <span class="member-role">Developer</span>
                                 <p class="member-desc">Architecting the complex logic and database systems for real-time tracking.</p>
                             </div>
-                            <a href="#" target="_blank" class="portfolio-link">Visit Portfolio</a>
+                            <a href="https://dreiii-ue.ct.ws/" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -309,7 +311,7 @@
                                 <span class="member-role">Tester / QA</span>
                                 <p class="member-desc">Ensures deployment stability and platform integrity through rigorous testing.</p>
                             </div>
-                            <a href="#" target="_blank" class="portfolio-link">Visit Portfolio</a>
+                            <a href="https://seanowen0223.github.io/personalized-website/biography.html" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -322,7 +324,7 @@
                                 <span class="member-role">Tester / QA</span>
                                 <p class="member-desc">Specializes in functional analysis and quality assurance for bug-free UX.</p>
                             </div>
-                            <a href="#" target="_blank" class="portfolio-link">Visit Portfolio</a>
+                            <a href="#" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -335,7 +337,7 @@
                                 <span class="member-role">Navigation Expert</span>
                                 <p class="member-desc">Optimizes site architecture and user flow to ensure information is easy to find.</p>
                             </div>
-                            <a href="#" target="_blank" class="portfolio-link">Visit Portfolio</a>
+                            <a href="https://lucky-hummingbird-7e8b9f.netlify.app/" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -348,7 +350,7 @@
                                 <span class="member-role">Navigation Expert</span>
                                 <p class="member-desc">Enhances accessibility and streamlined interactivity across the platform.</p>
                             </div>
-                            <a href="https://aleslera19.github.io/-html-project/" target="_blank" class="portfolio-link">Visit Portfolio</a>
+                            <a href="https://aleslera19.github.io/-html-project/" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
                 </div>
@@ -404,8 +406,17 @@
             <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
             <a href="#top" style="color:#94a3b8; text-decoration:none;">Back to top</a>
         </div>
+
     </footer>
 
+    <a href="#top" class="go-top-btn" aria-label="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> cc4e7405f08e4d9c059c6e7aedc58a0f58f9ca37
     <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 

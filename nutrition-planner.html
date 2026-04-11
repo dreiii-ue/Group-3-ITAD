@@ -19,6 +19,12 @@
         }
 
         /* --- CLEAN SOLID BACKGROUND --- */
+
+        body, html, * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+
         .main-wrapper {
             padding: 40px 0 100px;
             background-color: #F8FAFC; 
@@ -56,7 +62,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
         }
 
-        /* --- SOLID VISUAL BOX (NO GRADIENTS) --- */
+        /* --- SOLID VISUAL BOX --- */
         .visual-box {
             width: 100%;
             aspect-ratio: 1/1;
@@ -74,7 +80,7 @@
         }
 
         .planner-card h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 2.5rem;
             color: #166534;
             font-weight: 800;
@@ -109,7 +115,7 @@
         }
 
         .info-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 800;
             color: #166534;
         }
@@ -178,8 +184,7 @@
     <div class="bootstrap-scope">
         <main class="main-wrapper">
             <div class="container">
-                
-                <div class="back-nav-container mb-4">
+                <div class="back-nav-container container mb-4">
                     <a href="index.html#tools" class="back-btn">
                         <i class="fas fa-arrow-left"></i>
                         <span>Back to Tools</span>
@@ -189,29 +194,30 @@
                 <section class="internal-hero">
                     <div class="content-container">
                         <span class="section-tag">Techfit Tool</span>
-                        <h1 class="section-title" style="color: var(--brand-green);">Nutrition Planner</h1>
-                        <p class="page-intro-p" style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">Optimize your nutrition with a personalized planner that helps you meet your dietary goals and maintain a healthy lifestyle.</p>
+                        <h1 class="section-title" style="color: var(--brand-dark); font-weight: bold;">Nutrition Planner</h1>
+                        <p class="page-intro-p" style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">Fuel your body with precision. Generate personalized meal plans tailored to your caloric needs, dietary preferences, and fitness goals.</p>
                     </div>
                 </section>
 
                 <div class="nutrition-wrapper">
-                    <div class="visual-box">
-                        <i class="fas fa-clipboard-list"></i> </div>
-
                     <div class="planner-card">
-                        <span class="section-tag" style="color: #22C55E; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Powered by Eat This Much</span>
-                        <h2>Eat This Much</h2>
-                        <p class="text-muted">Put your diet on autopilot. We have integrated "Eat This Much" to help you create personalized meal plans based on your calorie goals, budget, and schedule.</p>
+                        <span class="section-tag" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #22C55E; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Smart Meal Prep</span>
+                        <h2>Nutrition Planner</h2>
+                        <p class="text-muted">Take the guesswork out of eating. We have integrated the "Eat This Much" engine to help you automate your diet based on your target macros and budget.</p>
                         
                         <ul class="feature-list">
-                            <li><i class="fas fa-bolt"></i> Instant plans for any macro target</li>
-                            <li><i class="fas fa-filter"></i> Custom filters for Keto, Vegan, or Paleo</li>
-                            <li><i class="fas fa-list-check"></i> Smart grocery lists in one click</li>
+                            <li><i class="fas fa-utensils"></i> Automatic meal plan generation</li>
+                            <li><i class="fas fa-leaf"></i> Support for various dietary types</li>
+                            <li><i class="fas fa-list-check"></i> Integrated grocery lists and prep guides</li>
                         </ul>
 
                         <a href="https://www.eatthismuch.com/" target="_blank" class="btn-launch mt-3">
-                            Open Nutrition Planner <i class="fas fa-external-link-alt"></i>
+                            Launch Planner <i class="fas fa-external-link-alt"></i>
                         </a>
+                    </div>
+
+                    <div class="visual-box">
+                        <i class="fas fa-apple-whole"></i>
                     </div>
                 </div>
 
@@ -219,20 +225,20 @@
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="info-card">
-                                <span class="section-tag" style="color: #22C55E; font-weight: 800;">Fuel for Thought</span>
-                                <h3>Optimizing Your Macros</h3>
-                                <p class="text-muted">What you eat directly impacts your cognitive function. For those balancing long study sessions, a balance of <strong>complex carbohydrates</strong> and <strong>lean proteins</strong> is essential.</p>
-                                <p class="text-muted mb-0">By planning your meals, you avoid the energy crashes caused by processed sugars and maintain steady focus throughout the day.</p>
+                                <span class="section-tag" style="color: #22C55E; font-weight: 800;">Strategic Fueling</span>
+                                <h3>Macro-Balanced Living</h3>
+                                <p class="text-muted">Effective fitness isn't just about movement; it's about what you consume. Balancing proteins, carbohydrates, and fats is essential for recovery and energy.</p>
+                                <p class="text-muted mb-0">TechFit helps you simplify this complex process by providing access to world-class automated nutrition tools.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info-card">
                                 <span class="section-tag" style="color: #22C55E; font-weight: 800;">Healthy Habits</span>
-                                <h3>Sustainability Tips</h3>
+                                <h3>Sustainable Eating</h3>
                                 <ul style="list-style: none; color: #4B5563; padding-left: 0;">
-                                    <li style="margin-bottom: 15px;"><i class="fas fa-droplet" style="color: #3b82f6; margin-right: 10px;"></i> <strong>Hydration:</strong> Aim for 2-3 liters of water daily.</li>
-                                    <li style="margin-bottom: 15px;"><i class="fas fa-carrot" style="color: #f97316; margin-right: 10px;"></i> <strong>Meal Prep:</strong> Prep snacks to avoid unhealthy choices.</li>
-                                    <li><i class="fas fa-chair" style="color: #22C55E; margin-right: 10px;"></i> <strong>Mindful Eating:</strong> Avoid eating while working at your desk.</li>
+                                    <li style="margin-bottom: 15px;"><i class="fas fa-carrot" style="color: #f97316; margin-right: 10px;"></i> <strong>Whole Foods:</strong> Prioritize unprocessed ingredients for better energy.</li>
+                                    <li style="margin-bottom: 15px;"><i class="fas fa-glass-water" style="color: #3b82f6; margin-right: 10px;"></i> <strong>Hydration:</strong> Drink water 30 minutes before every meal.</li>
+                                    <li><i class="fas fa-scale-balanced" style="color: #166534; margin-right: 10px;"></i> <strong>Portion Control:</strong> Use the planner to avoid over-ordering or waste.</li>
                                 </ul>
                             </div>
                         </div>
