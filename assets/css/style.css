@@ -30,7 +30,7 @@
 
     --font-main: 'Plus Jakarta Sans', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-alt: 'DM Sans', sans-serif;
-    --font-display: 'Space Grotesk', sans-serif;
+    --font-display: 'Roboto', sans-serif;
 }
 
 /* =========================
@@ -111,7 +111,7 @@ select {
 
 .sec-title {
     font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-    font-weight: 800;
+    font-weight: 1000;
     color: var(--text-body);
     margin-bottom: 12px;
 }
@@ -123,7 +123,7 @@ select {
 }
 
 p.sec-description {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .small {
@@ -616,7 +616,7 @@ p.sec-description {
     min-height: 72px;
     color: var(--text-main);
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
     margin-bottom: 18px;
     text-align: center;
@@ -772,6 +772,7 @@ p.sec-description {
 }
 
 .app-name {
+    max-width: 250px;
     text-align: center;
     font-size: 2.2rem;
     font-weight: 800;
@@ -1269,88 +1270,80 @@ p.sec-description {
 }
 
 .ecosystem-section {
-            padding: 80px 8%;
-            background-color: #f0fdf4;
-        }
+    padding: 80px 8%;
+    background-color: #f0fdf4;
+}
 
-        .topics-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.topics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .topic-card {
-            background: #ffffff;
-            border-radius: 35px;
-            padding: 40px 30px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            /* Uniform Sizing Logic */
-            flex: 0 1 calc(33.333% - 30px);
-            min-width: 320px;
-            min-height: 480px; 
-        }
+.topic-card {
+    background: #ffffff;
+    border-radius: 35px;
+    padding: 40px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    /* Uniform Sizing Logic */
+    flex: 0 1 calc(33.333% - 30px);
+    min-width: 320px;
+    min-height: 480px; 
+}
 
-        .topic-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(20, 83, 45, 0.1);
-        }
+.topic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(20, 83, 45, 0.1);
+}
 
-        .app-logo-box-circle {
-            height: 120px;
-            width: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            background-color: #fff;
-            border: 1px solid #f3f4f6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-        }
+.app-logo-box-circle {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
 
-        .app-logo-box-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.app-logo-box-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .topic-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            color: #166534;
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
+.topic-card p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Ensures text area pushes button down uniformly */
+}
 
-        .topic-card p {
-            color: #4b5563;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            flex-grow: 1; /* Ensures text area pushes button down uniformly */
-        }
+.explore-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 2px solid #22C55E;
+    color: #166534;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 800;
+    transition: 0.3s;
+    margin-top: auto;
+}
 
-        .explore-btn {
-            display: inline-block;
-            padding: 12px 25px;
-            border: 2px solid #22C55E;
-            color: #166534;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 800;
-            transition: 0.3s;
-            margin-top: auto;
-        }
-
-        .explore-btn:hover {
-            background-color: #22C55E;
-            color: white;
-        }
+.explore-btn:hover {
+    background-color: #22C55E;
+    color: white;
+}
