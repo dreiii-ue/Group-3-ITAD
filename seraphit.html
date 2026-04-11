@@ -14,7 +14,7 @@
 
     <style>
         :root {
-            --brand-green-bold: #16a34a; /* Bold Green */
+            --brand-green-bold: #16a34a;
         }
 
         body {
@@ -26,19 +26,13 @@
             font-family: 'Space Grotesk', sans-serif !important;
         }
 
-        .bootstrap-scope .row {
-            --bs-gutter-x: 1.5rem;
-            --bs-gutter-y: 1.5rem;
-        }
-
         .main-wrapper {
             padding: 40px 0 100px;
-            background-color: #F8FAFC; 
+            background-color: #F8FAFC;
         }
 
-        .internal-hero { 
-            padding: 80px 8% 60px; 
-            background: linear-gradient(180deg, var(--header-bg) 0%, var(--white) 100%);
+        .internal-hero {
+            padding: 80px 8% 60px;
             text-align: center;
         }
 
@@ -69,6 +63,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: 0.3s ease;
+        }
+
+        .group-photo-wrapper a:hover img {
+            transform: scale(1.02);
+            opacity: 0.9;
         }
 
         .topic-card {
@@ -79,12 +79,15 @@
             text-align: center;
             height: 100%;
             transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .topic-card:hover {
             border-color: var(--brand-green-bold);
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
         }
 
         .leader-card {
@@ -95,11 +98,17 @@
             width: 110px;
             height: 110px;
             border-radius: 50%;
-            background-color: #14532d; 
+            background-color: #14532d;
             margin: 0 auto 20px;
             overflow: hidden;
             border: 4px solid #ffffff;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .avatar-box:hover {
+            transform: scale(1.05);
+            border-color: var(--brand-green-bold);
         }
 
         .avatar-box img {
@@ -110,7 +119,6 @@
 
         .member-name {
             font-weight: 800;
-            color: #111827;
             margin-bottom: 5px;
         }
 
@@ -128,10 +136,26 @@
             color: #6B7280;
             font-size: 0.9rem;
             line-height: 1.6;
+            margin-bottom: 25px;
         }
 
-        @media (max-width: 768px) {
-            .tool-intro h2 { font-size: 2rem; }
+        .portfolio-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid var(--brand-green-bold);
+            color: var(--brand-green-bold);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .portfolio-link:hover {
+            background-color: var(--brand-green-bold);
+            color: white;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -147,7 +171,7 @@
                     <span class="logo-text">TECHFIT</span>
                 </a>
 
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                     <i class="fas fa-bars" style="color:var(--brand-green-bold); font-size:20px;"></i>
                 </button>
 
@@ -173,7 +197,7 @@
                 <div class="back-nav-container mb-4">
                     <a href="index.html" class="back-btn">
                         <i class="fas fa-arrow-left"></i>
-                        <span>Back to Home/span>
+                        <span>Back to Home</span>
                     </a>
                 </div>
 
@@ -181,23 +205,30 @@
                     <div class="content-container">
                         <span class="section-tag">University of the East - Manila</span>
                         <h1 class="section-title">Team Seraphit</h1>
-                        <p class="page-intro-p" style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">The minds behind TechFit. A collective of information technology students driven by innovation, health, and a shared vision for a balanced digital lifestyle.</p>
+                        <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">The minds behind TechFit. A collective of information technology students driven by innovation, health and a shared vision for a balanced digital lifestyle.</p>
                     </div>
                 </section>
 
                 <div class="group-photo-container">
                     <div class="group-photo-wrapper">
-                        <img src="assets/images/team/techfit groupphoto.png" alt="Team Seraphit Group Photo">
+                        <a href="assets/images/team/techfit groupphoto.png" target="_blank">
+                            <img src="assets/images/team/techfit groupphoto.png" alt="Team Seraphit Group Photo">
+                        </a>
                     </div>
                 </div>
 
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-5">
                         <div class="topic-card leader-card">
-                            <div class="avatar-box"><img src="assets/images/team/marielle.jpg" alt="Leader"></div>
-                            <h3 class="member-name">Marielle Louise Mactal</h3>
-                            <span class="member-role">Project Leader</span>
-                            <p class="member-desc">Steers the overall direction of TechFit while ensuring the platform remains empathetic and user-friendly through intuitive design.</p>
+                            <div>
+                                <a href="assets/images/team/marielle.jpg" target="_blank">
+                                    <div class="avatar-box"><img src="assets/images/team/marielle.jpg" alt="Leader"></div>
+                                </a>
+                                <h3 class="member-name">Marielle Louise Mactal</h3>
+                                <span class="member-role">Project Leader</span>
+                                <p class="member-desc">Steers the overall direction of TechFit while ensuring the platform remains empathetic and user-friendly.</p>
+                            </div>
+                            <a href="https://mariellelouisemactal.netlify.app/" target="_blank" class="portfolio-link">Visit Portfolio</a>
                         </div>
                     </div>
                 </div>
@@ -205,82 +236,127 @@
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
-                            <div class="avatar-box"><img src="assets/images/team/ESPEÑA.JPG" alt="Pierre"></div>
-                            <h3 class="member-name">Pierre Espena</h3>
-                            <span class="member-role">Content Manager</span>
-                            <p class="member-desc">Bridges the gap between data and practice by validating and managing wellness content.</p>
+                            <div>
+                                <a href="assets/images/team/ESPEÑA.JPG" target="_blank">
+                                    <div class="avatar-box"><img src="assets/images/team/ESPEÑA.JPG" alt="Pierre"></div>
+                                </a>
+                                <h3 class="member-name">Pierre Espena</h3>
+                                <span class="member-role">Content Manager</span>
+                                <p class="member-desc">Bridges the gap between data and practice by validating and managing wellness content.</p>
+                            </div>
+                            <a href="https://espena-pierre.github.io/PERSONAL-WEBSITE-ESPENA/?" target="_blank" class="portfolio-link">Visit Portfolio</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
-                            <div class="avatar-box"><img src="assets/images/team/jhamboy.jpg" alt="John"></div>
-                            <h3 class="member-name">John Paul Jhamboy</h3>
-                            <span class="member-role">Content Manager</span>
-                            <p class="member-desc">Deciphers raw health metrics into clear, actionable content for our users.</p>
+                            <div>
+                                <a href="assets/images/team/jhamboy.jpg" target="_blank">
+                                    <div class="avatar-box"><img src="assets/images/team/jhamboy.jpg" alt="John"></div>
+                                </a>
+                                <h3 class="member-name">John Paul Jhamboy</h3>
+                                <span class="member-role">Content Manager</span>
+                                <p class="member-desc">Deciphers raw health metrics into clear, actionable content for our users.</p>
+                            </div>
+                            <a href="https://jhamboyjohnpaul-sudo.github.io/FOLDER_FOR_LANDINGPAGE/?fbclid" target="_blank" class="portfolio-link">Visit Portfolio</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
-                            <div class="avatar-box"><img src="assets/images/team/yu.jpg" alt="Jose"></div>
-                            <h3 class="member-name">Jose Gabriel Yu</h3>
-                            <span class="member-role">UI Designer</span>
-                            <p class="member-desc">Expert in creating aesthetic interfaces that turn concepts into dynamic wellness experiences.</p>
+                            <div>
+                                <a href="assets/images/team/yu.jpg" target="_blank">
+                                    <div class="avatar-box"><img src="assets/images/team/yu.jpg" alt="Jose"></div>
+                                </a>
+                                <h3 class="member-name">Jose Gabriel Yu</h3>
+                                <span class="member-role">UI Designer</span>
+                                <p class="member-desc">Expert in creating aesthetic interfaces that turn concepts into dynamic wellness experiences.</p>
+                            </div>
+                            <a href="https://joseeegabriel.netlify.app/" target="_blank" class="portfolio-link">Visit Portfolio</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
-                            <div class="avatar-box"><img src="assets/images/team/cezar.jpg" alt="Remei"></div>
-                            <h3 class="member-name">Remei Ajit Ry Cezar</h3>
-                            <span class="member-role">UI Designer</span>
-                            <p class="member-desc">Focuses on user-centric layouts and visual hierarchy for seamless navigation.</p>
+                            <div>
+                                <a href="assets/images/team/cezar.jpg" target="_blank">
+                                    <div class="avatar-box"><img src="assets/images/team/cezar.jpg" alt="Remei"></div>
+                                </a>
+                                <h3 class="member-name">Remei Ajit Ry Cezar</h3>
+                                <span class="member-role">UI Designer</span>
+                                <p class="member-desc">Focuses on user-centric layouts and visual hierarchy for seamless navigation.</p>
+                            </div>
+                            <a href="https://cezarremeiajitrye.github.io/2J.io/" target="_blank" class="portfolio-link">Visit Portfolio</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
-                            <div class="avatar-box"><img src="assets/images/team/eduarte.png" alt="Andrei"></div>
-                            <h3 class="member-name">Andrei Jamel Eduarte</h3>
-                            <span class="member-role">Developer</span>
-                            <p class="member-desc">Architecting the complex logic and database systems for real-time tracking.</p>
+                            <div>
+                                <a href="assets/images/team/eduarte.png" target="_blank">
+                                    <div class="avatar-box"><img src="assets/images/team/eduarte.png" alt="Andrei"></div>
+                                </a>
+                                <h3 class="member-name">Andrei Jamel Eduarte</h3>
+                                <span class="member-role">Developer</span>
+                                <p class="member-desc">Architecting the complex logic and database systems for real-time tracking.</p>
+                            </div>
+                            <a href="#" target="_blank" class="portfolio-link">Visit Portfolio</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
-                            <div class="avatar-box"><img src="assets/images/team/ogip.jpg" alt="Sean"></div>
-                            <h3 class="member-name">Sean Owen Refolledo</h3>
-                            <span class="member-role">Tester / QA</span>
-                            <p class="member-desc">Ensures deployment stability and platform integrity through rigorous testing.</p>
+                            <div>
+                                <a href="assets/images/team/ogip.jpg" target="_blank">
+                                    <div class="avatar-box"><img src="assets/images/team/ogip.jpg" alt="Sean"></div>
+                                </a>
+                                <h3 class="member-name">Sean Owen Refolledo</h3>
+                                <span class="member-role">Tester / QA</span>
+                                <p class="member-desc">Ensures deployment stability and platform integrity through rigorous testing.</p>
+                            </div>
+                            <a href="#" target="_blank" class="portfolio-link">Visit Portfolio</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
-                            <div class="avatar-box"><img src="assets/images/team/ginete.jpg" alt="Ethan"></div>
-                            <h3 class="member-name">Ethan Gabriel Ginete</h3>
-                            <span class="member-role">Tester / QA</span>
-                            <p class="member-desc">Specializes in functional analysis and quality assurance to maintain a bug-free user experience.</p>
+                            <div>
+                                <a href="assets/images/team/ginete.jpg" target="_blank">
+                                    <div class="avatar-box"><img src="assets/images/team/ginete.jpg" alt="Ethan"></div>
+                                </a>
+                                <h3 class="member-name">Ethan Gabriel Ginete</h3>
+                                <span class="member-role">Tester / QA</span>
+                                <p class="member-desc">Specializes in functional analysis and quality assurance for bug-free UX.</p>
+                            </div>
+                            <a href="#" target="_blank" class="portfolio-link">Visit Portfolio</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
-                            <div class="avatar-box"><img src="assets/images/team/carillo.kylle.jpg" alt="Kylle"></div>
-                            <h3 class="member-name">Kylle Carillo</h3>
-                            <span class="member-role">Navigation Expert</span>
-                            <p class="member-desc">Optimizes site architecture and user flow to ensure information is always easy to find.</p>
+                            <div>
+                                <a href="assets/images/team/carillo.kylle.jpg" target="_blank">
+                                    <div class="avatar-box"><img src="assets/images/team/carillo.kylle.jpg" alt="Kylle"></div>
+                                </a>
+                                <h3 class="member-name">Kylle Carillo</h3>
+                                <span class="member-role">Navigation Expert</span>
+                                <p class="member-desc">Optimizes site architecture and user flow to ensure information is easy to find.</p>
+                            </div>
+                            <a href="#" target="_blank" class="portfolio-link">Visit Portfolio</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
-                            <div class="avatar-box"><img src="assets/images/team/Eslera_al.JPG" alt="Al"></div>
-                            <h3 class="member-name">Al Christian Eslera</h3>
-                            <span class="member-role">Navigation Expert</span>
-                            <p class="member-desc">Enhances accessibility and streamlined interactivity across the TechFit platform.</p>
+                            <div>
+                                <a href="assets/images/team/Eslera_al.JPG" target="_blank">
+                                    <div class="avatar-box"><img src="assets/images/team/Eslera_al.JPG" alt="Al"></div>
+                                </a>
+                                <h3 class="member-name">Al Christian Eslera</h3>
+                                <span class="member-role">Navigation Expert</span>
+                                <p class="member-desc">Enhances accessibility and streamlined interactivity across the platform.</p>
+                            </div>
+                            <a href="https://aleslera19.github.io/-html-project/" target="_blank" class="portfolio-link">Visit Portfolio</a>
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </main>
     </div>
 
-<footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-grid">
             <div>
                 <a href="#top" class="footer-wordmark">
@@ -289,18 +365,10 @@
                     </div>
                     <span class="footer-wordmark-text">TECHFIT</span>
                 </a>
-
-                <p class="footer-brand-desc" style="font-size: 14px; line-height: 1.75; opacity: 0.7; max-width: 420px;">
-                    TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Our platform provides digital solutions needed to stay energized and balanced.
-                </p>
-
-                <div class="footer-socials" style="margin-top: 25px;">
-                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                <p class="footer-brand-desc">TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Our platform provides digital solutions needed to stay energized and balanced.</p>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
 
@@ -308,8 +376,8 @@
                 <span class="footer-col-label">Platform</span>
                 <ul class="footer-nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#tools">Wellness Tools</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#tools">Wellness Tools</a></li>
                 </ul>
             </div>
 
@@ -325,20 +393,20 @@
             <div>
                 <span class="footer-col-label">Contact</span>
                 <div class="footer-contact-item">
-                    <i class="fas fa-envelope" style="color: var(--brand-primary);"></i>
-                    <a href="mailto:techfit.itad@gmail.com">techfit.itad@gmail.com</a>
+                    <i class="fas fa-envelope" style="color: #22C55E;"></i>
+                    <a href="mailto:techfit.itad@gmail.com" style="color:#cbd5e1; text-decoration:none; font-size:14px; margin-left:8px;">techfit.itad@gmail.com</a>
                 </div>
             </div>
         </div>
 
         <div class="footer-divider"></div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
-            <a href="#top">Back to top</a>
+            <a href="#top" style="color:#94a3b8; text-decoration:none;">Back to top</a>
         </div>
     </footer>
 
     <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
