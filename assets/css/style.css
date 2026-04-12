@@ -55,9 +55,6 @@ body {
     line-height: 1.6;
 }
 
-body#top {
-    background-color: var(--bg-soft);
-}
 
 img {
     display: block;
@@ -524,6 +521,7 @@ p.sec-description {
 .ecosystem-section {
     padding: 90px 8%;
     background: var(--bg-soft);;
+    
 }
 
 .ecosystem-desc {
@@ -542,20 +540,29 @@ p.sec-description {
 }
 
 .topic-card {
+    padding: 45px 40px;
+    border-radius: 30px;
     width: 320px;
     min-height: 300px;
     background: var(--white);
+    border-bottom: 6px solid transparent;
+    transition: 0.4s ease;
     border-radius: 35px;
     padding: 40px 30px;
     text-align: center;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    text-align: center;
     justify-content: space-between;
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    text-align: center;
 }
 
 .topic-card:hover {
+    transform: translateY(-12px);
+    border-bottom-color: var(--brand-primary);
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(20, 83, 45, 0.1);
 }
@@ -971,7 +978,6 @@ p.sec-description {
    9. FOOTER
 ========================= */
 .site-footer {
-    margin-top: 60px;
     padding: 72px 8% 30px;
     background: var(--brand-darker);
     color: #cbd5e1;
@@ -1764,8 +1770,8 @@ p.sec-description {
 }
 
 .team-page .back-nav-container {
-    position: static;
-    margin-bottom: 24px;
+    margin-top: 20px; /* small spacing only */
+    margin-bottom: 30px;
     padding: 0;
     background: transparent;
 }
