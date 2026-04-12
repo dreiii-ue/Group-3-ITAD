@@ -523,7 +523,7 @@ p.sec-description {
 ========================= */
 .ecosystem-section {
     padding: 90px 8%;
-    background: var(--bg-soft);
+    background: var(--bg-soft);;
 }
 
 .ecosystem-desc {
