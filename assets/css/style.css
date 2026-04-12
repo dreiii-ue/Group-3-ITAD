@@ -55,6 +55,10 @@ body {
     line-height: 1.6;
 }
 
+body#top {
+    background-color: var(--bg-soft);
+}
+
 img {
     display: block;
     width: 100%;
@@ -1571,5 +1575,300 @@ p.sec-description {
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+
+/* =========================
+   13. TEAM PAGE ONLY
+   Add class="team-page" to the body
+========================= */
+
+.team-page {
+    color: var(--text-body);
+    background-color: var(--bg-canvas);
+}
+
+.team-page .main-wrapper {
+    padding: 40px 0 100px;
+    background-color: #f8fafc;
+}
+
+.team-page .internal-hero {
+    padding: 80px 8% 60px;
+    text-align: center;
+}
+
+.team-page .section-title {
+    color: var(--brand-primary) !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.team-page .internal-hero p {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+.team-page .group-photo-container {
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    padding: 15px;
+    background: var(--white);
+    border-radius: 32px;
+    border: 2px solid var(--border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+.team-page .group-photo-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.team-page .group-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+
+.team-page .group-photo-wrapper a:hover img {
+    transform: scale(1.02);
+    opacity: 0.92;
+}
+
+.team-page .leader-row,
+.team-page .team-grid {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 1.5rem;
+}
+
+.team-page .leader-row > [class*="col-"],
+.team-page .team-grid > [class*="col-"] {
+    display: flex;
+}
+
+.team-page .topic-card {
+    width: 100%;
+    min-height: 100%;
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 30px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.team-page .topic-card:hover {
+    border-color: var(--brand-primary);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.team-page .leader-card {
+    border: 2px solid var(--brand-primary);
+}
+
+.team-page .avatar-box {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 4px solid #ffffff;
+    background-color: #14532d;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.team-page .avatar-box:hover {
+    transform: scale(1.05);
+    border-color: var(--brand-primary);
+}
+
+.team-page .avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-page .member-name {
+    font-family: var(--font-main);
+    font-weight: 800;
+    color: var(--brand-darker);
+    margin-bottom: 6px;
+    line-height: 1.2;
+    font-size: clamp(1.7rem, 2.4vw, 2.2rem);
+}
+
+.team-page .team-grid .member-name {
+    font-size: clamp(1.35rem, 1.8vw, 1.8rem);
+}
+
+.team-page .member-role {
+    display: inline-block;
+    color: var(--brand-primary);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.team-page .member-desc {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 25px;
+    max-width: 32ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-page .portfolio-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    min-width: 170px;
+    padding: 11px 22px;
+    background-color: transparent;
+    border: 2px solid var(--brand-primary);
+    color: var(--brand-primary);
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+}
+
+.team-page .portfolio-link:hover {
+    background-color: var(--brand-primary);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.team-page .topic-card > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-page .back-nav-container {
+    position: static;
+    margin-bottom: 24px;
+    padding: 0;
+    background: transparent;
+}
+
+@media (max-width: 991.98px) {
+    .team-page .main-wrapper {
+        padding: 30px 0 80px;
+    }
+
+    .team-page .internal-hero {
+        padding: 60px 20px 40px;
+    }
+
+    .team-page .group-photo-container {
+        margin-bottom: 50px;
+    }
+
+    .team-page .member-name {
+        font-size: 1.8rem;
+    }
+
+    .team-page .team-grid .member-name {
+        font-size: 1.55rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .team-page .main-wrapper {
+        padding: 24px 0 60px;
+    }
+
+    .team-page .internal-hero {
+        padding: 50px 20px 35px;
+    }
+
+    .team-page .internal-hero p {
+        font-size: 1rem;
+    }
+
+    .team-page .group-photo-container {
+        padding: 10px;
+        border-radius: 24px;
+        margin-bottom: 40px;
+    }
+
+    .team-page .group-photo-wrapper {
+        border-radius: 16px;
+    }
+
+    .team-page .topic-card {
+        padding: 32px 22px;
+        border-radius: 24px;
+    }
+
+    .team-page .avatar-box {
+        width: 96px;
+        height: 96px;
+        margin-bottom: 18px;
+    }
+
+    .team-page .member-name {
+        font-size: 1.6rem;
+    }
+
+    .team-page .team-grid .member-name {
+        font-size: 1.4rem;
+    }
+
+    .team-page .member-desc {
+        font-size: 0.92rem;
+        max-width: 30ch;
+    }
+
+    .team-page .portfolio-link {
+        min-width: 155px;
+        font-size: 0.86rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .team-page .topic-card {
+        padding: 28px 18px;
+    }
+
+    .team-page .member-name {
+        font-size: 1.45rem;
+    }
+
+    .team-page .team-grid .member-name {
+        font-size: 1.28rem;
+    }
+
+    .team-page .member-role {
+        font-size: 0.72rem;
+    }
+
+    .team-page .member-desc {
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    .team-page .portfolio-link {
+        width: 100%;
+        max-width: 180px;
     }
 }
