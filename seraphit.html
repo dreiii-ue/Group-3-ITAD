@@ -11,156 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <style>
-        :root {
-            --brand-green-bold: #16a34a;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: #111827;
-        }
-
-        h1, h2, h3, h4, .member-name, .section-title {
-            font-family: 'Plus Jakarta Sans', sans-serif !important;
-        }
-
-        .main-wrapper {
-            padding: 40px 0 100px;
-            background-color: #F8FAFC;
-        }
-
-        .internal-hero {
-            padding: 80px 8% 60px;
-            text-align: center;
-        }
-
-        .section-title {
-            color: var(--brand-green-bold) !important;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-
-        .group-photo-container {
-            max-width: 1000px;
-            margin: 0 auto 80px;
-            padding: 15px;
-            background: #ffffff;
-            border-radius: 32px;
-            border: 2px solid #E5E7EB;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-        }
-
-        .group-photo-wrapper {
-            border-radius: 20px;
-            overflow: hidden;
-            aspect-ratio: 16/9;
-        }
-
-        .group-photo-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.3s ease;
-        }
-
-        .group-photo-wrapper a:hover img {
-            transform: scale(1.02);
-            opacity: 0.9;
-        }
-
-        .topic-card {
-            background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 30px;
-            border: 1px solid #E5E7EB;
-            text-align: center;
-            height: 100%;
-            transition: 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .topic-card:hover {
-            border-color: var(--brand-green-bold);
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .leader-card {
-            border: 2px solid var(--brand-green-bold);
-        }
-
-        .avatar-box {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            background-color: #14532d;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            border: 4px solid #ffffff;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            transition: 0.3s ease;
-        }
-
-        .avatar-box:hover {
-            transform: scale(1.05);
-            border-color: var(--brand-green-bold);
-        }
-
-        .avatar-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .member-name {
-            font-weight: 800;
-            margin-bottom: 5px;
-        }
-
-        .member-role {
-            display: inline-block;
-            color: var(--brand-green-bold);
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        .member-desc {
-            color: #6B7280;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .portfolio-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: transparent;
-            border: 2px solid var(--brand-green-bold);
-            color: var(--brand-green-bold);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
-
-        .portfolio-link:hover {
-            background-color: var(--brand-green-bold);
-            color: white;
-            text-decoration: none;
-        }
-    </style>
 </head>
 
-<body id="top">
+<body id="top" class="team-page">
 
     <header class="site-header">
         <nav class="navbar navbar-expand-lg">
@@ -179,13 +32,13 @@
 
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="features/technology-fitness.html">Tech & Fit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about/about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="features/technology-fitness.html">Tech &amp; Fit</a></li>
                         <li class="nav-item"><a class="nav-link" href="features/health-monitoringtools.html">Health Tools</a></li>
                         <li class="nav-item"><a class="nav-link" href="features/sustainable-wellness.html">Sustainability</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#tools">Tools</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./tools.html">Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -195,7 +48,7 @@
     <div class="bootstrap-scope">
         <main class="main-wrapper">
             <div class="container">
-                
+
                 <div class="back-nav-container mb-4">
                     <a href="index.html" class="back-btn">
                         <i class="fas fa-arrow-left"></i>
@@ -207,7 +60,7 @@
                     <div class="content-container">
                         <span class="section-tag">University of the East - Manila</span>
                         <h1 class="section-title">Team Seraphit</h1>
-                        <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">The minds behind TechFit. A collective of information technology students driven by innovation, health and a shared vision for a balanced digital lifestyle.</p>
+                        <p>The minds behind TechFit. A collective of information technology students driven by innovation, health and a shared vision for a balanced digital lifestyle.</p>
                     </div>
                 </section>
 
@@ -219,12 +72,14 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-center mb-5">
-                    <div class="col-lg-5">
-                        <div class="topic-card leader-card">
+                <div class="row justify-content-center g-4 mb-5 leader-row">
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="topic-card leader-card w-100">
                             <div>
-                                <a href="assets/images/team/marielle.jpg" target="_blank">
-                                    <div class="avatar-box"><img src="assets/images/team/marielle.jpg" alt="Leader"></div>
+                                <a href="assets/images/team/maye.png" target="_blank">
+                                    <div class="avatar-box">
+                                        <img src="assets/images/team/marielle.jpg" alt="Marielle Louise Mactal">
+                                    </div>
                                 </a>
                                 <h3 class="member-name">Marielle Louise Mactal</h3>
                                 <span class="member-role">Project Leader</span>
@@ -235,12 +90,14 @@
                     </div>
                 </div>
 
-                <div class="row g-4">
+                <div class="row team-grid justify-content-center">
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
                             <div>
                                 <a href="assets/images/team/ESPEÑA.JPG" target="_blank">
-                                    <div class="avatar-box"><img src="assets/images/team/ESPEÑA.JPG" alt="Pierre"></div>
+                                    <div class="avatar-box">
+                                        <img src="assets/images/team/ESPEÑA.JPG" alt="Pierre Espena">
+                                    </div>
                                 </a>
                                 <h3 class="member-name">Pierre Espena</h3>
                                 <span class="member-role">Content Manager</span>
@@ -249,11 +106,14 @@
                             <a href="https://espena-pierre.github.io/PERSONAL-WEBSITE-ESPENA/?" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
                             <div>
                                 <a href="assets/images/team/jhamboy.jpg" target="_blank">
-                                    <div class="avatar-box"><img src="assets/images/team/jhamboy.jpg" alt="John"></div>
+                                    <div class="avatar-box">
+                                        <img src="assets/images/team/jhamboy.jpg" alt="John Paul Jhamboy">
+                                    </div>
                                 </a>
                                 <h3 class="member-name">John Paul Jhamboy</h3>
                                 <span class="member-role">Content Manager</span>
@@ -262,11 +122,14 @@
                             <a href="https://jhamboyjohnpaul-sudo.github.io/FOLDER_FOR_LANDINGPAGE/?fbclid" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
                             <div>
                                 <a href="assets/images/team/yu.jpg" target="_blank">
-                                    <div class="avatar-box"><img src="assets/images/team/yu.jpg" alt="Jose"></div>
+                                    <div class="avatar-box">
+                                        <img src="assets/images/team/yu.jpg" alt="Jose Gabriel Yu">
+                                    </div>
                                 </a>
                                 <h3 class="member-name">Jose Gabriel Yu</h3>
                                 <span class="member-role">UI Designer</span>
@@ -275,11 +138,14 @@
                             <a href="https://joseeegabriel.netlify.app/" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
                             <div>
                                 <a href="assets/images/team/cezar.jpg" target="_blank">
-                                    <div class="avatar-box"><img src="assets/images/team/cezar.jpg" alt="Remei"></div>
+                                    <div class="avatar-box">
+                                        <img src="assets/images/team/cezar.jpg" alt="Remei Ajit Ry Cezar">
+                                    </div>
                                 </a>
                                 <h3 class="member-name">Remei Ajit Ry Cezar</h3>
                                 <span class="member-role">UI Designer</span>
@@ -288,11 +154,14 @@
                             <a href="https://cezarremeiajitrye.github.io/2J.io/" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
                             <div>
                                 <a href="assets/images/team/eduarte.png" target="_blank">
-                                    <div class="avatar-box"><img src="assets/images/team/eduarte.png" alt="Andrei"></div>
+                                    <div class="avatar-box">
+                                        <img src="assets/images/team/eduarte.png" alt="Andrei Jamel Eduarte">
+                                    </div>
                                 </a>
                                 <h3 class="member-name">Andrei Jamel Eduarte</h3>
                                 <span class="member-role">Developer</span>
@@ -301,11 +170,14 @@
                             <a href="https://dreiii-ue.ct.ws/" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
                             <div>
                                 <a href="assets/images/team/ogip.jpg" target="_blank">
-                                    <div class="avatar-box"><img src="assets/images/team/ogip.jpg" alt="Sean"></div>
+                                    <div class="avatar-box">
+                                        <img src="assets/images/team/ogip.jpg" alt="Sean Owen Refolledo">
+                                    </div>
                                 </a>
                                 <h3 class="member-name">Sean Owen Refolledo</h3>
                                 <span class="member-role">Tester / QA</span>
@@ -314,24 +186,30 @@
                             <a href="https://seanowen0223.github.io/personalized-website/biography.html" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
                             <div>
                                 <a href="assets/images/team/ginete.jpg" target="_blank">
-                                    <div class="avatar-box"><img src="assets/images/team/ginete.jpg" alt="Ethan"></div>
+                                    <div class="avatar-box">
+                                        <img src="assets/images/team/ginete.jpg" alt="Ethan Gabriel Ginete">
+                                    </div>
                                 </a>
                                 <h3 class="member-name">Ethan Gabriel Ginete</h3>
                                 <span class="member-role">Tester / QA</span>
                                 <p class="member-desc">Specializes in functional analysis and quality assurance for bug-free UX.</p>
                             </div>
-                            <a href="#" target="_blank" class="portfolio-link">About Me</a>
+                            <a href="https://gineteethangabriel.github.io/Personal-Website/act%201%20page.html" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
                             <div>
                                 <a href="assets/images/team/carillo.kylle.jpg" target="_blank">
-                                    <div class="avatar-box"><img src="assets/images/team/carillo.kylle.jpg" alt="Kylle"></div>
+                                    <div class="avatar-box">
+                                        <img src="assets/images/team/carillo.kylle.jpg" alt="Kylle Carillo">
+                                    </div>
                                 </a>
                                 <h3 class="member-name">Kylle Carillo</h3>
                                 <span class="member-role">Navigation Expert</span>
@@ -340,11 +218,14 @@
                             <a href="https://lucky-hummingbird-7e8b9f.netlify.app/" target="_blank" class="portfolio-link">About Me</a>
                         </div>
                     </div>
+
                     <div class="col-lg-4 col-md-6">
                         <div class="topic-card">
                             <div>
                                 <a href="assets/images/team/Eslera_al.JPG" target="_blank">
-                                    <div class="avatar-box"><img src="assets/images/team/Eslera_al.JPG" alt="Al"></div>
+                                    <div class="avatar-box">
+                                        <img src="assets/images/team/Eslera_al.JPG" alt="Al Christian Eslera">
+                                    </div>
                                 </a>
                                 <h3 class="member-name">Al Christian Eslera</h3>
                                 <span class="member-role">Navigation Expert</span>
@@ -386,7 +267,7 @@
             <div>
                 <span class="footer-col-label">Features</span>
                 <ul class="footer-nav-links">
-                    <li><a href="features/technology-fitness.html">Tech & Fit</a></li>
+                    <li><a href="features/technology-fitness.html">Tech &amp; Fit</a></li>
                     <li><a href="features/health-monitoringtools.html">Health Tools</a></li>
                     <li><a href="features/sustainable-wellness.html">Sustainability</a></li>
                 </ul>
@@ -406,17 +287,12 @@
             <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
             <a href="#top" style="color:#94a3b8; text-decoration:none;">Back to top</a>
         </div>
-
     </footer>
 
     <a href="#top" class="go-top-btn" aria-label="Go to top">
         <i class="fas fa-arrow-up"></i>
     </a>
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> cc4e7405f08e4d9c059c6e7aedc58a0f58f9ca37
     <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 
