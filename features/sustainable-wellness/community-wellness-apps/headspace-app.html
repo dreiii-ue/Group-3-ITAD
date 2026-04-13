@@ -16,8 +16,6 @@
       --bs-gutter-x: 1.5rem;
       --bs-gutter-y: 1.5rem;
     }
-    /* Optional: Custom brand color for Headspace (Orange-ish) if you want to override the green */
-    /* :root { --brand-primary: #FF835B; } */
   </style>
 </head>
 
@@ -72,8 +70,8 @@
 
         <div>
           <div class="app-logo-card">
-            <a href="../../../assets/images/logo/headspace-logo.jpg" target="_blank" class="app-icon-box">
-              <img src="../../../assets/images/logo/headspace-logo.jpg" alt="Headspace Logo">
+            <a href="../../../assets/images/logo/headspace-logo.jpg" target="_blank" class="app-icon-box" title="Headspace Logo">
+              <img src="../../../assets/images/logo/headspace-logo.jpg" alt="Headspace Logo" title="Headspace Logo">
             </a>
             <div class="app-name">Headspace</div>
           </div>
@@ -85,9 +83,20 @@
         <h2 class="sec-title">A Digital Guide to Mental Wellness</h2>
         <p class="sec-description">
           <strong>
-            Headspace is a world-leading meditation and mindfulness app designed to make mental health accessible to everyone. Through science-backed tools and guided sessions, it helps users manage anxiety, build resilience, and maintain a healthier, happier state of mind.
+            Headspace is a world-leading meditation app designed to make mental health accessible. Through science-backed tools, it helps users manage anxiety and build resilience.
           </strong>
         </p>
+
+        <div class="mb-5">
+          <div class="d-flex align-items-center gap-2 text-warning fs-5 mt-2">
+            <span class="text-dark fw-bold ms-2">Editor's Rating: 4.8 / 5 </span>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
 
         <p class="sec-label">How To Use</p>
         <h2 class="sec-title">Master Mindfulness in 6 Simple Steps</h2>
@@ -98,7 +107,7 @@
               <div class="step-num">1</div>
               <div>
                  <h4 class="fw-bold">Pick Your Goal</h4>
-                <p class="muted small">Choose what you want to focus on: sleeping better, reducing stress, or improving focus.</p>
+                <p class="muted small">Choose your focus: better sleep, reducing stress, or improving concentration.</p>
               </div>
             </div>
           </div>
@@ -108,7 +117,7 @@
               <div class="step-num">2</div>
               <div>
                  <h4 class="fw-bold">Start with Basics</h4>
-                <p class="muted small">If you're new, begin with the "Basics" course to learn the fundamentals of meditation.</p>
+                <p class="muted small">Begin with the "Basics" course to learn the core fundamentals of meditation.</p>
               </div>
             </div>
           </div>
@@ -118,7 +127,7 @@
               <div class="step-num">3</div>
               <div>
                  <h4 class="fw-bold">Find a Quiet Space</h4>
-                <p class="muted small">Set aside just 5-10 minutes in a comfortable spot where you won't be interrupted.</p>
+                <p class="muted small">Set aside 5-10 minutes in a comfortable spot without interruptions.</p>
               </div>
             </div>
           </div>
@@ -128,7 +137,7 @@
               <div class="step-num">4</div>
               <div>
                  <h4 class="fw-bold">Listen & Follow</h4>
-                <p class="muted small">Play a guided session and follow the narrator's instructions on breathing and awareness.</p>
+                <p class="muted small">Play a guided session and follow the instructions on breathing and awareness.</p>
               </div>
             </div>
           </div>
@@ -138,7 +147,7 @@
               <div class="step-num">5</div>
               <div>
                  <h4 class="fw-bold">Explore Sleepcasts</h4>
-                <p class="muted small">Use "Sleepcasts" or calming audio landscapes to help you drift off into a restful slumber.</p>
+                <p class="muted small">Use calming audio landscapes to help you drift off into a restful slumber.</p>
               </div>
             </div>
           </div>
@@ -148,7 +157,7 @@
               <div class="step-num">6</div>
               <div>
                  <h4 class="fw-bold">Track Your Journey</h4>
-                <p class="muted small">Check your "Mindful Minutes" and streaks to see how your practice grows over time.</p>
+                <p class="muted small">Check your "Mindful Minutes" and streaks to see your practice grow.</p>
               </div>
             </div>
           </div>
@@ -160,11 +169,48 @@
           <p class="sec-label">VIDEO TUTORIAL</p>
           <h2 class="sec-title">The Power of Meditation</h2>
           <div class="video-wrapper">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/QHkXvPq2pQE?si=nP_IrrZI0BNCCfrj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/QHkXvPq2pQE?si=nP_IrrZI0BNCCfrj" title="Headspace Meditation Overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </section>
 
-        <p class="sec-label">Benefits</p>
+        <p class="sec-label mt-5">App Capabilities</p>
+        <h2 class="sec-title">Core Features</h2>
+        <div class="row mt-1">
+          <div class="col-12 col-md-6">
+            <div class="benefit-card h-100" style="padding: 24px;">
+              <h4 style="color: var(--brand-primary); margin-bottom: 10px; font-size: 1.25rem;">
+                <i class="fas fa-spa me-2"></i> Guided Meditation
+              </h4>
+              <p class="muted small">Thousands of sessions for every mood and experience level, from 3 to 30 minutes.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="benefit-card h-100" style="padding: 24px;">
+              <h4 style="color: var(--brand-primary); margin-bottom: 10px; font-size: 1.25rem;">
+                <i class="fas fa-bed me-2"></i> Sleep Experience
+              </h4>
+              <p class="muted small">Sleepcasts, wind-downs, and sleep music designed to help you drift off faster.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 mt-3">
+            <div class="benefit-card h-100" style="padding: 24px;">
+              <h4 style="color: var(--brand-primary); margin-bottom: 10px; font-size: 1.25rem;">
+                <i class="fas fa-bolt me-2"></i> Focus Music
+              </h4>
+              <p class="muted small">Curated playlists and 3D recordings to help you get in the zone and stay productive.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 mt-3">
+            <div class="benefit-card h-100" style="padding: 24px;">
+              <h4 style="color: var(--brand-primary); margin-bottom: 10px; font-size: 1.25rem;">
+                <i class="fas fa-running me-2"></i> Mindful Movement
+              </h4>
+              <p class="muted small">Guided yoga, stretches, and cardio exercises to connect your mind and body.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="sec-label mt-5">Benefits</p>
         <h2 class="sec-title">Why Use Headspace?</h2>
 
         <div class="row mt-1">
@@ -184,7 +230,7 @@
                 <i class="fas fa-moon"></i>
               </div>
               <h4 style="color: var(--brand-primary); margin-bottom: 10px;">Better Sleep</h4>
-              <p class="muted small">Enjoy a unique sleep experience with audio designed to create the perfect conditions for rest.</p>
+              <p class="muted small">Unique sleep audio designed to create the perfect conditions for deep, restful sleep.</p>
             </div>
           </div>
 
@@ -194,9 +240,44 @@
                 <i class="fas fa-bullseye"></i>
               </div>
               <h4 style="color: var(--brand-primary); margin-bottom: 10px;">Enhanced Focus</h4>
-              <p class="muted small">Train your mind to stay present and focused on the tasks that matter most throughout the day.</p>
+              <p class="muted small">Train your mind to stay present and focused on the tasks that matter most.</p>
             </div>
           </div>
+        </div>
+
+        <p class="sec-label mt-5">Evaluation</p>
+        <h2 class="sec-title">Pros &amp; Cons</h2>
+        <div class="row mt-1">
+          <div class="col-12 col-md-6">
+            <div class="step-card h-100" style="border-top: 4px solid var(--brand-primary);">
+              <h4 class="fw-bold mb-3" style="color: var(--brand-dark);"><i class="fas fa-plus-circle me-2" style="color: var(--brand-primary);"></i> Pros</h4>
+              <ul class="list-unstyled muted small" style="line-height: 1.8;">
+                <li class="mb-2 d-flex"><i class="fas fa-check mt-1 me-3" style="color: var(--brand-primary);"></i> <span>Clean, charming interface with friendly animations.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-check mt-1 me-3" style="color: var(--brand-primary);"></i> <span>Very beginner-friendly guided approach to meditation.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-check mt-1 me-3" style="color: var(--brand-primary);"></i> <span>High-quality production value for all audio content.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-check mt-1 me-3" style="color: var(--brand-primary);"></i> <span>Scientific validation and partnership with research labs.</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="step-card h-100" style="border-top: 4px solid #ef4444;">
+              <h4 class="fw-bold text-danger mb-3"><i class="fas fa-minus-circle me-2"></i> Cons</h4>
+              <ul class="list-unstyled muted small" style="line-height: 1.8;">
+                <li class="mb-2 d-flex"><i class="fas fa-times mt-1 me-3 text-danger"></i> <span>Limited free content; most features require a subscription.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-times mt-1 me-3 text-danger"></i> <span>Can feel slightly repetitive for very advanced practitioners.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-times mt-1 me-3 text-danger"></i> <span>Subscription cost is on the higher side of wellness apps.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-times mt-1 me-3 text-danger"></i> <span>Requires stable internet for high-quality streaming sessions.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="sec-label mt-5">Verdict</p>
+        <h2 class="sec-title">Final Review</h2>
+        <div class="p-4 rounded shadow-sm mb-5" style="background-color: var(--bg-soft, #dafce4); border-left: 5px solid var(--brand-primary);">
+          <p class="mb-0 text-dark" style="font-size: 1.05rem; line-height: 1.7;">
+            <strong>Headspace remains the gold standard for meditation apps.</strong> Its ability to demystify mindfulness and present it in an approachable, engaging way is unmatched. Whether you are struggling with insomnia, work stress, or just want to be more present, Headspace provides a structured, science-backed path to better mental health that is well worth the subscription price.
+          </p>
         </div>
 
         <div class="cta-banner">
