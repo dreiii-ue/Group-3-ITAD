@@ -1,265 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glucose Buddy | TechFit</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glucose Buddy | TechFit</title>
 
-    <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../../assets/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../../../assets/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../assets/css/style.css">
-
-    <style>
-        .bootstrap-scope .row {
-            --bs-gutter-x: 1.5rem;
-            --bs-gutter-y: 1.5rem;
-        }
-    </style>
+  <style>
+    .bootstrap-scope .row {
+      --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 1.5rem;
+    }
+  </style>
 </head>
 
 <body id="top">
 
-    <header class="site-header">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a href="../../../index.html" class="navbar-brand logo-link">
-                    <div class="logo-img-box">
-                        <img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo">
-                    </div>
-                    <span class="logo-text">TECHFIT</span>
-                </a>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a href="../../../index.html" class="navbar-brand logo-link">
+          <div class="logo-img-box">
+            <img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo">
+          </div>
+          <span class="logo-text">TECHFIT</span>
+        </a>
 
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars" style="color:#22C55E; font-size:20px;"></i>
-                </button>
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars" style="color:#22C55E; font-size:20px;"></i>
+        </button>
 
-                <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-                    <ul class="navbar-nav nav-list">
-                        <li class="nav-item"><a class="nav-link" href="../../../index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../../index.html#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../../features/technology-fitness.html">Tech &amp; Fit</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../../features/health-monitoringtools.html">Health Tools</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../../features/sustainable-wellness.html">Sustainability</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../../index.html#tools">Tools</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../../index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+          <ul class="navbar-nav nav-list">
+            <li class="nav-item"><a class="nav-link" href="../../../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../../index.html#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../../features/technology-fitness.html">Tech &amp; Fit</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../../features/health-monitoringtools.html">Health Tools</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../../features/sustainable-wellness.html">Sustainability</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../../index.html#tools">Tools</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../../index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="bootstrap-scope">
+    <main>
+      <div class="back-nav-container">
+        <a href="../../../features/health-monitoring/blood-glucose-monitoring-apps.html" class="back-btn">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back</span>
+        </a>
+      </div>
+
+      <section class="hero d-flex justify-content-center">
+        <div>
+          <p class="sec-label">Comprehensive Diabetes Management</p>
+          <h1>Your All-in-One<br><span>Diabetes Logbook.</span></h1>
+          <p class="muted">
+            Glucose Buddy is the web's first and most comprehensive diabetes management platform. Designed to help you track blood sugar, meals, medication, and A1C in one place, it provides data-driven insights to take control of your metabolic health.
+          </p>
+        </div>
+
+        <div>
+          <div class="app-logo-card">
+            <a href="../../../assets/images/logo/glucose.png" target="_blank" class="app-icon-box" title="Glucose Buddy Logo">
+              <img src="../../../assets/images/logo/glucose.png" alt="Glucose Buddy Logo" title="Glucose Buddy Logo">
+            </a>
+            <div class="app-name">Glucose Buddy</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="content-wrap">
+        <p class="sec-label">What is Glucose Buddy?</p>
+        <h2 class="sec-title">The #1 Diabetes Tracking Tool</h2>
+        <p class="sec-description">
+          <strong>
+            Glucose Buddy automates the tracking of blood sugar, carb intake, and physical activity by syncing seamlessly with Dexcom CGMs and Apple Health.
+          </strong>
+        </p>
+
+        <div class="mb-5">
+          <div class="d-flex align-items-center gap-2 text-warning fs-5 mt-2">
+            <span class="text-dark fw-bold ms-2">Editor's Rating: 4.8 / 5 </span>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+
+        <p class="sec-label">How To Use</p>
+        <h2 class="sec-title">Start Tracking in 6 Steps</h2>
+
+        <div class="row mt-1">
+          <div class="col-12 col-md-6">
+            <div class="step-card h-100">
+              <div class="step-num">1</div>
+              <div>
+                 <h4 class="fw-bold">Download & Register</h4>
+                <p class="muted small">Install Glucose Buddy from the App Store or Google Play and create your secure profile.</p>
+              </div>
             </div>
-        </nav>
-    </header>
+          </div>
 
-    <div class="bootstrap-scope">
-        <main>
-            <div class="back-nav-container">
-                <a href="../../../features/health-monitoring/blood-glucose-monitoring-apps.html" class="back-btn">
-                    <i class="fas fa-arrow-left"></i>
-                    <span>Back</span>
-                </a>
+          <div class="col-12 col-md-6">
+            <div class="step-card h-100">
+              <div class="step-num">2</div>
+              <div>
+                 <h4 class="fw-bold">Log Your Glucose</h4>
+                <p class="muted small">Enter your blood sugar readings manually or sync with compatible glucose meters via Bluetooth.</p>
+              </div>
             </div>
+          </div>
 
-            <section class="hero d-flex justify-content-center">
-                <div class="hero-text-content">
-                    <p class="sec-label">Comprehensive Diabetes Management</p>
-                    <h1>Your All-in-One<br><span>Diabetes Logbook.</span></h1>
-                    <p class="muted">
-                        Glucose Buddy is the web's first and most comprehensive diabetes management platform. Designed to help you track blood sugar, meals, medication, and A1C in one place, it provides the data-driven insights you need to take control of your metabolic health.
-                    </p>
-                </div>
-
-                <div class="hero-image-content">
-                    <div class="app-logo-card">
-                        <a href="../../../assets/images/logo/glucose.png" target="_blank" class="app-icon-box">
-                            <img src="../../../assets/images/logo/glucose.png" alt="Glucose Buddy App Preview" title="Glucose Buddy App Logo">
-                        </a>
-                        <div class="app-name">Glucose Buddy</div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="content-wrap">
-                <section class="description-block">
-                    <p class="sec-label">What is Glucose Buddy?</p>
-                    <h2 class="sec-title">The #1 Diabetes Tracking Tool</h2>
-                    <p class="sec-description">
-                        <strong>Glucose Buddy automates the tracking of blood sugar, carb intake, and physical activity by syncing seamlessly with Dexcom CGMs and Apple Health. It also features a "Meal IQ" tool that helps users visualize how specific foods impact their glucose levels while generating comprehensive PDF reports for clinical visits.</strong>
-                    </p>
-                </section>
-
-                <section class="steps-section mt-5">
-                    <p class="sec-label">How To Use</p>
-                    <h2 class="sec-title">Start Tracking in 6 Steps</h2>
-
-                    <div class="row mt-1">
-                        <div class="col-12 col-md-6">
-                            <div class="step-card h-100">
-                                <div class="step-num">1</div>
-                                <div>
-                                    <h4 class="fw-bold">Download & Register</h4>
-                                    <p class="muted small">Install Glucose Buddy from the App Store or Google Play and create your secure profile.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="step-card h-100">
-                                <div class="step-num">2</div>
-                                <div>
-                                    <h4 class="fw-bold">Log Your Glucose</h4>
-                                    <p class="muted small">Enter your blood sugar readings manually or sync with compatible glucose meters via Bluetooth.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="step-card h-100">
-                                <div class="step-num">3</div>
-                                <div>
-                                    <h4 class="fw-bold">Track Meals & Carbs</h4>
-                                    <p class="muted small">Use the built-in food database to log your carbohydrate intake and see how food affects your levels.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="step-card h-100">
-                                <div class="step-num">4</div>
-                                <div>
-                                    <h4 class="fw-bold">Record Medication</h4>
-                                    <p class="muted small">Set reminders and log your insulin doses or oral medications to ensure consistent management.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="step-card h-100">
-                                <div class="step-num">5</div>
-                                <div>
-                                    <h4 class="fw-bold">Monitor Activity</h4>
-                                    <p class="muted small">Integrate with Apple Health or Google Fit to track steps and exercise alongside your glucose data.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="step-card h-100">
-                                <div class="step-num">6</div>
-                                <div>
-                                    <h4 class="fw-bold">Export Reports</h4>
-                                    <p class="muted small">Generate detailed PDF reports of your logs to share with your doctor during your next visit.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <div style="margin: 56px 0; border: 0; height: 1px; background: var(--border);"></div>
-
-                <section class="video-section">
-                    <p class="sec-label">APP PREVIEW</p>
-                    <h2 class="sec-title">Seamless Tracking Technology</h2>
-                    <div class="video-wrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/OzOlwFnQ8mI?si=7--PeAqqUfLpC6py" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </section>
-
-                <section class="benefits-section mt-5">
-                    <p class="sec-label">Benefits</p>
-                    <h2 class="sec-title">Why Use Glucose Buddy?</h2>
-
-                    <div class="row mt-1">
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="benefit-card h-100">
-                                <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
-                                <h4 style="color: var(--brand-primary); margin-bottom: 10px;">Visual Trends</h4>
-                                <p class="muted small">Identify patterns in your blood sugar with easy-to-read graphs and charts that show daily and weekly progress.</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="benefit-card h-100">
-                                <div class="benefit-icon"><i class="fas fa-sync"></i></div>
-                                <h4 style="color: var(--brand-primary); margin-bottom: 10px;">Cloud Sync</h4>
-                                <p class="muted small">Your data is automatically backed up and accessible across all your mobile devices and the web portal.</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="benefit-card h-100">
-                                <div class="benefit-icon"><i class="fas fa-user-md"></i></div>
-                                <h4 style="color: var(--brand-primary); margin-bottom: 10px;">Actionable Data</h4>
-                                <p class="muted small">Turn your raw numbers into meaningful reports that help your healthcare provider optimize your treatment plan.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="cta-banner">
-                    <div>
-                        <h2>Ready to Take Control?</h2>
-                        <p>Join millions of users who trust Glucose Buddy to manage their diabetes and improve their long-term health outcomes.</p>
-                    </div>
-                    <a href="https://www.glucosebuddy.com" target="_blank" class="btn-white">
-                        Visit Glucose Buddy <i class="fas fa-arrow-right"></i>
-                    </a>
-                </section>
+          <div class="col-12 col-md-6">
+            <div class="step-card h-100">
+              <div class="step-num">3</div>
+              <div>
+                 <h4 class="fw-bold">Track Meals & Carbs</h4>
+                <p class="muted small">Use the built-in food database to log your carbohydrate intake.</p>
+              </div>
             </div>
-        </main>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="step-card h-100">
+              <div class="step-num">4</div>
+              <div>
+                 <h4 class="fw-bold">Record Medication</h4>
+                <p class="muted small">Set reminders and log your insulin doses or oral medications.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="step-card h-100">
+              <div class="step-num">5</div>
+              <div>
+                 <h4 class="fw-bold">Monitor Activity</h4>
+                <p class="muted small">Integrate with Apple Health or Google Fit to track steps and exercise.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="step-card h-100">
+              <div class="step-num">6</div>
+              <div>
+                 <h4 class="fw-bold">Export Reports</h4>
+                <p class="muted small">Generate detailed PDF reports of your logs to share with your doctor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin: 56px 0; border: 0; height: 1px; background: var(--border);"></div>
+
+        <section class="video-section">
+          <p class="sec-label">APP PREVIEW</p>
+          <h2 class="sec-title">Seamless Tracking Technology</h2>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/OzOlwFnQ8mI?si=7--PeAqqUfLpC6py" title="Glucose Buddy App Overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <p class="sec-label mt-5">App Capabilities</p>
+        <h2 class="sec-title">Core Features</h2>
+        <div class="row mt-1">
+          <div class="col-12 col-md-6">
+            <div class="benefit-card h-100" style="padding: 24px;">
+              <h4 style="color: var(--brand-primary); margin-bottom: 10px; font-size: 1.25rem;">
+                <i class="fas fa-brain me-2"></i> Meal IQ Tool
+              </h4>
+              <p class="muted small">Visualize how specific foods impact your glucose levels to make better dietary choices.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="benefit-card h-100" style="padding: 24px;">
+              <h4 style="color: var(--brand-primary); margin-bottom: 10px; font-size: 1.25rem;">
+                <i class="fas fa-mobile-alt me-2"></i> CGM Integration
+              </h4>
+              <p class="muted small">Seamlessly sync with Dexcom Continuous Glucose Monitors for real-time data flow.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 mt-3">
+            <div class="benefit-card h-100" style="padding: 24px;">
+              <h4 style="color: var(--brand-primary); margin-bottom: 10px; font-size: 1.25rem;">
+                <i class="fas fa-bell me-2"></i> Custom Reminders
+              </h4>
+              <p class="muted small">Set personalized alerts for glucose checks, medication times, and activity goals.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 mt-3">
+            <div class="benefit-card h-100" style="padding: 24px;">
+              <h4 style="color: var(--brand-primary); margin-bottom: 10px; font-size: 1.25rem;">
+                <i class="fas fa-file-pdf me-2"></i> Clinical Export
+              </h4>
+              <p class="muted small">Generate comprehensive PDF reports designed specifically for healthcare provider reviews.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="sec-label mt-5">Benefits</p>
+        <h2 class="sec-title">Why Use Glucose Buddy?</h2>
+
+        <div class="row mt-1">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="benefit-card h-100">
+              <div class="benefit-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4 style="color: var(--brand-primary); margin-bottom: 10px;">Visual Trends</h4>
+              <p class="muted small">Identify patterns in your blood sugar with easy-to-read graphs and charts.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="benefit-card h-100">
+              <div class="benefit-icon">
+                <i class="fas fa-sync"></i>
+              </div>
+              <h4 style="color: var(--brand-primary); margin-bottom: 10px;">Cloud Sync</h4>
+              <p class="muted small">Your data is automatically backed up and accessible across all your mobile devices.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="benefit-card h-100">
+              <div class="benefit-icon">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <h4 style="color: var(--brand-primary); margin-bottom: 10px;">Actionable Data</h4>
+              <p class="muted small">Turn raw numbers into meaningful reports that help optimize your treatment plan.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="sec-label mt-5">Evaluation</p>
+        <h2 class="sec-title">Pros &amp; Cons</h2>
+        <div class="row mt-1">
+          <div class="col-12 col-md-6">
+            <div class="step-card h-100" style="border-top: 4px solid var(--brand-primary);">
+              <h4 class="fw-bold mb-3" style="color: var(--brand-dark);"><i class="fas fa-plus-circle me-2" style="color: var(--brand-primary);"></i> Pros</h4>
+              <ul class="list-unstyled muted small" style="line-height: 1.8;">
+                <li class="mb-2 d-flex"><i class="fas fa-check mt-1 me-3" style="color: var(--brand-primary);"></i> <span>Extremely user-friendly interface for logging multi-factor data.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-check mt-1 me-3" style="color: var(--brand-primary);"></i> <span>Robust integration with major health platforms like Apple Health.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-check mt-1 me-3" style="color: var(--brand-primary);"></i> <span>"Meal IQ" provides unique insights into food triggers.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-check mt-1 me-3" style="color: var(--brand-primary);"></i> <span>Highly professional reporting system for doctor visits.</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="step-card h-100" style="border-top: 4px solid #ef4444;">
+              <h4 class="fw-bold text-danger mb-3"><i class="fas fa-minus-circle me-2"></i> Cons</h4>
+              <ul class="list-unstyled muted small" style="line-height: 1.8;">
+                <li class="mb-2 d-flex"><i class="fas fa-times mt-1 me-3 text-danger"></i> <span>Premium features require a subscription plan.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-times mt-1 me-3 text-danger"></i> <span>The food database can sometimes be overwhelming for new users.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-times mt-1 me-3 text-danger"></i> <span>Ad-supported in the free version.</span></li>
+                <li class="mb-2 d-flex"><i class="fas fa-times mt-1 me-3 text-danger"></i> <span>Requires manual entry for non-Bluetooth meters.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="sec-label mt-5">Verdict</p>
+        <h2 class="sec-title">Final Review</h2>
+        <div class="p-4 rounded shadow-sm mb-5" style="background-color: var(--bg-soft, #dafce4); border-left: 5px solid var(--brand-primary);">
+          <p class="mb-0 text-dark" style="font-size: 1.05rem; line-height: 1.7;">
+            <strong>Glucose Buddy remains the gold standard for comprehensive diabetes management.</strong> Its ability to synthesize blood sugar, diet, and exercise into a single cohesive story makes it an invaluable tool for anyone living with diabetes. While the premium subscription is an added cost, the depth of the "Meal IQ" insights and the quality of clinical reports make it a worthwhile investment for long-term metabolic health. Highly recommended for its reliability and professional data handling.
+          </p>
+        </div>
+
+        <div class="cta-banner">
+          <div>
+            <h2>Ready to Take Control?</h2>
+            <p>Join millions of users who trust Glucose Buddy to manage their diabetes and improve their long-term health outcomes.</p>
+          </div>
+          <a href="https://www.glucosebuddy.com" target="_blank" class="btn-white">
+            Visit Glucose Buddy <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <a href="../../../index.html" class="footer-wordmark">
+          <div class="footer-wordmark-icon">
+            <img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo">
+          </div>
+          <span class="footer-wordmark-text">TECHFIT</span>
+        </a>
+
+        <p class="footer-brand-desc" style="font-size: 14px; line-height: 1.75; opacity: 0.7; max-width: 420px;">
+          TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Our platform provides digital solutions needed to stay energized and balanced.
+        </p>
+
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <span class="footer-col-label">Platform</span>
+        <ul class="footer-nav-links">
+          <li><a href="../../../index.html">Home</a></li>
+          <li><a href="../../../index.html#about">About Us</a></li>
+          <li><a href="../../../index.html#tools">Wellness Tools</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="footer-col-label">Features</span>
+        <ul class="footer-nav-links">
+          <li><a href="../../../features/technology-fitness.html">Tech &amp; Fit</a></li>
+          <li><a href="../../../features/health-monitoringtools.html">Health Tools</a></li>
+          <li><a href="../../../features/sustainable-wellness.html">Sustainability</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="footer-col-label">Connect</span>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope" style="color:#22C55E;"></i>
+          <a href="mailto:techfit.itad@gmail.com">techfit.itad@gmail.com</a>
+        </div>
+      </div>
     </div>
 
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="../../../index.html" class="footer-wordmark">
-                    <div class="footer-wordmark-icon">
-                        <img src="../../../assets/images/logo/logo-white.png" alt="TechFit Logo">
-                    </div>
-                    <span class="footer-wordmark-text">TECHFIT</span>
-                </a>
-                <p class="footer-brand-desc" style="font-size: 14px; line-height: 1.75; opacity: 0.7; max-width: 420px;">
-                    TechFit was created to bridge the gap between busy modern lifestyles and physical well-being. Our platform provides digital solutions needed to stay energized and balanced.
-                </p>
-                <div class="footer-socials">
-                    <a href="https://www.facebook.com/profile.php?id=61576647603926" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/techfit.ph/" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+    <div class="footer-divider"></div>
 
-            <div class="footer-links">
-                <span class="footer-col-label">Platform</span>
-                <ul class="footer-nav-links">
-                    <li><a href="../../../index.html">Home</a></li>
-                    <li><a href="../../../index.html#about">About Us</a></li>
-                    <li><a href="../../../index.html#tools">Wellness Tools</a></li>
-                </ul>
-            </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
+    </div>
+  </footer>
 
-            <div class="footer-links">
-                <span class="footer-col-label">Features</span>
-                <ul class="footer-nav-links">
-                    <li><a href="../../../features/technology-fitness.html">Tech &amp; Fit</a></li>
-                    <li><a href="../../../features/health-monitoringtools.html">Health Tools</a></li>
-                    <li><a href="../../../features/sustainable-wellness.html">Sustainability</a></li>
-                </ul>
-            </div>
+  <a href="#top" class="go-top-btn" aria-label="Go to top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
 
-            <div class="footer-links">
-                <span class="footer-col-label">Connect</span>
-                <div class="footer-contact-item">
-                    <i class="fas fa-envelope" style="color:#22C55E;"></i>
-                    <a href="mailto:techfit.itad@gmail.com">techfit.itad@gmail.com</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <a href="#top" class="go-top-btn" aria-label="Go to top">
-        <i class="fas fa-chevron-up"></i>
-    </a>
-
-    <script src="../../../assets/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="../../../assets/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
