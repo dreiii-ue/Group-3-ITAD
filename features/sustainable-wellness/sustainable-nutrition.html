@@ -10,6 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css" />
 
+    <style>
+        /* Interactive Hover Effect for Subpage Navigation */
+        .subpage-nav a {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .subpage-nav a:hover {
+            opacity: 1 !important;
+            transform: translateY(-3px);
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            color: #22C55E !important; /* TechFit Brand Green */
+        }
+    </style>
 </head>
 
 
@@ -49,12 +63,18 @@
             <h1>Sustainable Nutrition</h1>
             <p>Explore top nutrition and meal tracking applications designed to help you log meals, understand your nutrients, plan your diet, and make healthier food choices every day.</p>
 
+            <div class="subpage-nav" style="display: flex; justify-content: center; gap: 20px; margin-top: 25px; flex-wrap: wrap; align-items: center;">
+                <a href="../../features/technology-fitness.html" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; opacity: 0.85;">Tech & Fit</a>
+                <span style="color: rgba(255,255,255,0.3);">|</span>
+                <a href="../../features/health-monitoringtools.html" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; opacity: 0.85;">Health Tools</a>
+                <span style="color: rgba(255,255,255,0.3);">|</span>
+                <a href="../../features/sustainable-wellness.html" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; opacity: 0.85;">Sustainability</a>
+            </div>
         </section>
 
         <section class="ecosystem-section">
             <div class="topics-grid">
 
-                <!-- Cronometer -->
                 <div class="topic-card">
                     <div>
                         <a href="../../assets/images/logo/cronometer-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Cronometer Logo">
@@ -68,7 +88,6 @@
                     <a href="../sustainable-wellness/sustainable-nutrition-apps/cronometer-app.html" class="explore-btn">Explore App</a>
                 </div>
 
-                <!-- Eat This Much -->
                 <div class="topic-card">
                     <div>
                         <a href="../../assets/images/logo/eat-this-much-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Eat This Much Logo">
@@ -82,7 +101,6 @@
                     <a href="../sustainable-wellness/sustainable-nutrition-apps/eat-this-much-app.html" class="explore-btn">Explore App</a>
                 </div>
 
-                <!-- FoodPrint -->
                 <div class="topic-card">
                     <div>
                         <a href="../../assets/images/logo/foodprint-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="FoodPrint Logo">
@@ -96,7 +114,6 @@
                     <a href="../sustainable-wellness/sustainable-nutrition-apps/foodprint-app.html" class="explore-btn">Explore App</a>
                 </div>
 
-                <!-- MyFitnessPal -->
                 <div class="topic-card">
                     <div>
                         <a href="../../assets/images/logo/myfitnesspal-logo.jpg" target="brand_view" class="logo-zoom-trigger" data-tooltip="MyFitnessPal Logo">
@@ -110,7 +127,6 @@
                     <a href="../sustainable-wellness/sustainable-nutrition-apps/myfitnesspal-app.html" class="explore-btn">Explore App</a>
                 </div>
 
-                <!-- Yuka -->
                 <div class="topic-card">
                     <div>
                         <a href="../../assets/images/logo/yuka-logo.png" target="brand_view" class="logo-zoom-trigger" data-tooltip="Yuka Logo">
