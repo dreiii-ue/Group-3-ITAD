@@ -12,6 +12,21 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        /* Interactive Hover Effect for Subpage Navigation */
+        .subpage-nav a {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .subpage-nav a:hover {
+            opacity: 1 !important;
+            transform: translateY(-3px);
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            color: #22C55E !important; /* TechFit Brand Green */
+        }
+    </style>
 </head>
 
 <body id="top">
@@ -36,12 +51,9 @@
                     <ul class="navbar-nav nav-list">
                         <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../features/technology-fitness.html">Tech &amp;
-                                Fit</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../features/health-monitoringtools.html">Health
-                                Tools</a></li>
-                        <li class="nav-item"><a class="nav-link"
-                                href="../features/sustainable-wellness.html">Sustainability</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../features/technology-fitness.html">Tech &amp; Fit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../features/health-monitoringtools.html">Health Tools</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../features/sustainable-wellness.html">Sustainability</a></li>
                         <li class="nav-item"><a class="nav-link" href="../index.html#tools">Tools</a></li>
                         <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
                     </ul>
@@ -53,9 +65,15 @@
     <main>
         <section class="subpage-hero">
             <h1>Tech-Powered Healthy Habits</h1>
-            <p>Discover devices and apps that track heart rate, sleep quality, glucose levels, and more, helping you
-                stay healthy and reach your fitness goals.</p>
+            <p>Discover devices and apps that track heart rate, sleep quality, glucose levels, and more, helping you stay healthy and reach your fitness goals.</p>
 
+            <div class="subpage-nav" style="display: flex; justify-content: center; gap: 20px; margin-top: 25px; flex-wrap: wrap; align-items: center;">
+                <a href="../features/technology-fitness.html" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; opacity: 0.85;">Tech & Fit</a>
+                <span style="color: rgba(255,255,255,0.3);">|</span>
+                <a href="../features/health-monitoringtools.html" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; opacity: 0.85;">Health Tools</a>
+                <span style="color: rgba(255,255,255,0.3);">|</span>
+                <a href="../features/sustainable-wellness.html" style="color: white; text-decoration: none; font-weight: 500; font-size: 16px; opacity: 0.85;">Sustainability</a>
+            </div>
         </section>
 
         <section class="ecosystem-section">
@@ -173,9 +191,9 @@
         <div class="footer-divider"></div>
 
         <div class="footer-bottom">
-      <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
-      <a href="#top">Back to top</a>
-    </div>
+            <p>&copy; 2026 TechFit by Seraphit. All rights reserved.</p>
+            <a href="#top">Back to top</a>
+        </div>
     </footer>
 
     <script src="../assets/bootstrap/bootstrap.bundle.min.js"></script>
